@@ -15,5 +15,21 @@ The course is aimed at first-year PhD (and prepared MA) students in economics an
 
 The materials are shared for reference and teaching purposes. You are welcome to adapt them with attribution. Please note that the reading list and assigned papers remain the intellectual property of their respective authors and publishers.
 
+## Course Topics
 
+For each week, the slides contain the following topic. There are no folders for weeks overlapping with national holidays and student presentations. 
+
+| Part | Topic | 
+|------|-------|
+| **Week01** | Course description and empirical analysis | 
+| **Week02** | Economic incentives behind conflicts  | 
+| **Week03** | Political and ethnic origins of conflicts  | 
+| **Week04** | Engaging in (organized) crime  | 
+| **Week05** | Impact of conflicts on individuals  | 
+| **Week07** | Impact of conflicts on economic and institutional development  | 
+| **Week10** | Resistance: Overcoming collective action problems  | 
+| **Week11** | Consequences of migration and host society perceptions  | 
+| **Week12** | Theoretical frameworks for state capacity and weak states  | 
+| **Week13** | Fiscal capacity | 
+| **Week14** | Personnel capacity | 
 
