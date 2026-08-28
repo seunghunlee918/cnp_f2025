@@ -1,0 +1,903 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 3: Ethnic and Political Origins of Conflicts}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{September 19th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{How do institutional backgrounds shape conflicts?} 
+Institutional backgrounds can interact with economic factors that affect conflicts
+\begin{itemize}\setlength\itemsep{3pt}
+\item Democracies can hold decisionmakers accountable
+\item Transparency reduces uncertainties and misperceptions
+\item Cohesive institutions can defuse conflict by bridging different groups/stakeholders
+\end{itemize}\medskip
+Yet, there are many cases where institutions can foster conflict
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many states are still autocratic
+\item Many democracies are also experiencing surge of extremist movements
+\item Media are often misused as tools of propaganda and misinformation, not transparency
+\item Leads to difficulty in fostering cohesion: Cultural and ethnic wars on the rise
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conflict across countries with different political spectrum}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio,width=0.8\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Political motives and violence}
+\begin{figure}
+  \centering
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{fig2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Where we are at} 
+Need to understand institutions and economics behind conflicts
+\begin{itemize}\setlength\itemsep{3pt}
+\item Context-by-context: Fractionalized and polarized ethnicities, religion
+\item Attempt to understand what institutional backgrounds shapes economic motives
+\item Possible with innovative research design based on new numerical, satellite, text data 
+\end{itemize}\medskip
+
+We explore the cultural origins of war: Ethnicity, colonialism, religion etc \\
+\medskip
+We also look at how political motives shape wars: Propaganda, misinformation, strategic moves for political gain in elections etc.
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Institutional and cultural origins of conflict}
+
+\subsection{Esteban, Mayoral, and Ray (2012): Ethnicity and Conflict: an Empirical Study}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Esteban, Mayoral, and Ray (2012): \\ Ethnicity and Conflict: an Empirical Study
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do ethnic divisions affect conflict?} 
+Are there meaningful relationship between ethnic division and social conflict?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Early on: Income and wealth distribution $\to$ conflict?
+\begin{itemize}
+\item Poor antagonistic to the rich
+\end{itemize}
+\item Lacked explanation on how this sentiment channels into organized action
+\item Start looking into different markers: Identities, ethnicities, religions etc
+\end{itemize} \medskip
+This paper extends the explanation of sources of conflicts beyond economic factors
+\begin{itemize}\setlength\itemsep{3pt}
+\item In particular, focuses on how fractionalized the society is along ethnic lines
+\item Provides definition of ethnic division and how each relate to conflicts
+\item Heterogeneities depending on conflict over public goods and private goods 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Public: Benefits independent of group size, but depends on identity (ethnic dominance)
+  \item Private goods: Benefits decrease with group size, but identity does not matter (resources)
+  \end{itemize}
+\item Empirically demonstrates their finding at a country level data
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the ethnic conflict model} 
+Setup: Total of $m$ groups within a society in conflict over public and private goods
+\begin{itemize}\setlength\itemsep{3pt}
+\item Group $i$ has $N_i$ people (Total population: $N$), with $n_i$ share of population
+\item Each individual exerts effort $r$, with cost of that effort being $c(r)$
+\item Each group exerts $R_i$ effort, with probability of winning being $p_i=\frac{R_i}{R_1+...+R_N}$
+\item Private goods of $\mu$  and public good of $\pi$ at stake (per capita)
+\end{itemize} \medskip
+What are the payoffs of conflict for group $i$?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Private goods are divided among same groups
+  \item If group $i$'s desired public good chosen, $\pi u_{ii}$, otherwise incurs cost $\pi(u_{ii}-u_{ij})=\pi d_{ij}$
+  \[
+\underbrace{\pi u_{ii} -\sum_{j=1}^m p_j \pi d_{ij}}_{\text{Net gains of public good $j$ chosen for $i$}} + \underbrace{p_i \frac{\mu}{n_i}}_{\text{Gains from private good}} - \underbrace{c(r)}_{\text{cost of effort}}
+  \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definition of indices of ethnic division} 
+Different types of measures
+\begin{itemize}\setlength\itemsep{3pt}
+\item Polarization: Emphasis of number \textit{and symmetry in distribution} of groups in conflict
+\[
+P = \sum_{i=1}^m\sum_{j=1}^m n_i^2 n_j d_{ij}
+\]
+\item Greenberg-Gini Index: Emphasis on the number of groups in conflict
+\[
+G = \sum_{i=1}^m\sum_{j=1}^m n_i n_j d_{ij}
+\] 
+\item Fractionalization: Generalized G to case where $d_{ii}=0$ and $d_{ij}=1$ for $j\neq i$
+ \[
+F = \sum_{i=1}^m n_i(1- n_i)
+\]
+
+\end{itemize} \medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Hypotheses and data} 
+Hypotheses
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public goods: Polarization increases conflicts (symmetric groups $\to$ contention $\uparrow$)
+\item Private goods: Fractionalization increases conflict  (Division of limited goods)
+\item Group cohesion (low $G/N$, groups per capita) increases conflict (easier mobilization)
+\end{itemize} \medskip
+Dataset
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflicts: UCDP/PRIO dataset 
+\item Definition of groups: Ethnolinguistic dataset from Fearon (2003), among others 
+\item Also control for GDP, population, resources (oil), terrains, democracy, past conflict
+\item Runs OLS to map correlation between conflict and indices
+ \[
+Y_{it} = \alpha + \beta_1 P + \beta_2 F + \beta_3 (G/N) + \gamma X_{it} + e_{it}
+ \]
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Baseline findings} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{emr2012_t1.jpeg}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item p-values in parenthesis
+\item Polarization explains conflicts far more than Fractionalization
+\item Group cohesion (smaller G/N) increases conflicts
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Graphical findings} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{emr2012_f1.jpeg}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Polarization has steeper slope
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways} 
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Each conflict contains fight for private and public goods
+  \item Polarization explains the incidence of conflicts, especially those with public nature
+  \item Fractionalization explains conflicts too, albeit with limited scope
+  \item Group cohesion increases conflicts
+\end{itemize}\medskip
+Limits and going forward
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Empirically separating private and public component: Not mutually exclusive
+  \item Applicable to other divides: Religion, caste, language etc
+  
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Bonomi, Gennaioli, Tabellini (2021): Identity, Beliefs, and Political Conflict}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Bonomi, Gennaioli, Tabellini (2021): \\ Identity, Beliefs, and Political Conflict
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does identity affect behavior of groups in conflict} 
+Increasing salience of conflicts over identity and culture
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflict (not necessarily violent) over immigration, race, and ethnicity on the rise
+\begin{itemize}
+\item Preference for redistribution increasingly correlated with progressive cultural policy
+\end{itemize}
+\item Growing partisanship and hatred towards outsiders
+\item While mostly confined to politics, it can extend to violent conflicts
+\end{itemize}\medskip
+This paper models how identity becomes important in forming beliefs
+\begin{itemize}\setlength\itemsep{3pt}
+\item Cultural conflict $\Uparrow$ $\to$ salience of identity $\Uparrow$ $\to$ Belief on group-linked stereotypes $\Uparrow$
+\item If culture becomes more relevant for welfare, it becomes key determinant of identity
+\item Similar if economic shocks affects cultural groups differently (globalization)
+\item Increased belief distortions leading to rise of ingroup vs outgroup conflict
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Model of identity and political conflict} 
+Setup of policies and voters
+\begin{itemize}\setlength\itemsep{3pt}
+\item Policy 1: Proportional income tax $\tau$ that finances public good, but has distortion $-\frac{\varphi}{2}\tau^2$
+\item Policy 2: Cultural policy $q$ (race, immigration) where $q\Uparrow\to$ more liberal stance
+\item Voters are defined by relative income $\epsilon$ and cultural trait $\psi$ (mean 0, st.dev 1)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher $\epsilon$: Relatively wealthy; Higher $\psi$: Prefer progressive values
+\item $\rho$ captures correlation between $\epsilon$ and $\psi$: We assume non-negative correlation
+\end{itemize}
+\item Public goods have marginal value $\nu$, and $\psi$ types value it additionally by $\beta$
+\end{itemize}\medskip
+Policy preference is the sum of expected income, public goods, and cultural policy
+\[
+W^{\epsilon\psi}(\tau,q)=\underbrace{(1+\epsilon)(1-\tau)-\frac{\varphi}{2}\tau^2}_{\text{Income net of taxes and distortions}}+\underbrace{(\nu+\beta\psi)\tau}_{\text{Value of public goods to $\psi$}}-\underbrace{\frac{\kappa}{2}(q-\psi)^2}_{\text{preference on $q$, weighed by $\kappa$}}
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal policy preference} 
+
+How do voters evaluate policies?
+\[
+W^{\epsilon\psi}(\tau,q)=\underbrace{(1+\epsilon)(1-\tau)-\frac{\varphi}{2}\tau^2}_{\text{Income net of taxes and distortions}}+\underbrace{(\nu+\beta\psi)\tau}_{\text{Value of public goods to $\psi$}}-\underbrace{\frac{\kappa}{2}(q-\psi)^2}_{\text{preference on $q$, weighed by $\kappa$}}
+\]
+\begin{itemize}\setlength\itemsep{3pt}
+\item The optimal individual (involves calculs) and social (plug in mean values) policies are 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individual: $\tau=\frac{(\nu+\beta\psi)-(1+\epsilon)}{\varphi}, q=\psi$; \ \ \ \  \ \ \    Social: $\tau=\frac{\nu-1}{\varphi}, q=0$
+\item More progressive ($\psi\uparrow$): More redistribution and more liberal; Richer ($\epsilon\uparrow$): Less tax
+\item Social optimum reflects average income and identities
+\end{itemize}
+\end{itemize}\medskip
+Identities change, especially if only one categorization defines an identity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Categories: Wealth (poor or rich) and culture (progressive or conservative)
+\item Identity is set to maximize similarities within groups and conflicts between groups
+\item Culture matters with high $\kappa$, inter-cultural differences, and $\rho$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{How changes in identity affects policy preferences?} 
+Changes in salience of identities distort beliefs that decide preferences for $\tau$ and $q$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Belief: One's perceived future income and cultural trait relative to real mean values
+\[
+\epsilon^\theta_G=\epsilon+\theta(\bar{\epsilon}_G - \bar{\epsilon}_{\text{not}\ G}), \ \ \ \  \psi^\theta_G=\psi+\theta(\bar{\psi}_G - \bar{\psi}_{\text{not}\ G})
+\]
+\item Distortion comes from perceived differences between in-group and out-groups
+\end{itemize}\medskip
+Distortion of beliefs $\to$ Distortion of preferred policies
+\begin{itemize}\setlength\itemsep{3pt}
+\item Poor and conservative voter: Demand for redistribution $\Uparrow$ ($\tau\Uparrow$) \& Liberal policy $\Downarrow$($q\Downarrow$)
+  \item Salience of conservatism $\Uparrow$ ($\psi\Downarrow$) $\to$  preference for $q$ $\Downarrow$ \& $\tau$ $\Downarrow$
+\begin{itemize}
+\item Salience of culture over income decreases concerns about being poor (more optimistic $\epsilon$)
+\end{itemize}
+\item This could be triggered by shocks irrelevant to redistribution (e.g. migrant inflow)
+\item Explain why some group of voters change parties entirely
+\begin{itemize}
+\item Conservative and poor voters: Left-wing (class salient) $\to$ Right-wing (culture salient)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Salience of immigration shifted policy preferences} 
+Salience of immigration $\Uparrow$ (early 2010s) $\to$ Shift policy preferences across different groups
+\begin{center}
+\begin{figure}
+  
+\begin{subfigure}{0.475\textwidth}
+  
+\includegraphics[keepaspectratio, width=0.9\textwidth]{bgt2021_f1.jpeg}
+\caption{Salience of issues over time}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.475\textwidth}
+  
+\includegraphics[keepaspectratio, width=0.725\textwidth]{bgt2021_f2.jpeg}
+\caption{Group conflict over time}
+\end{subfigure}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways} 
+Takeaways from the paper
+\begin{itemize}\setlength\itemsep{3pt}
+\item Voters decide based on the perspective of the most salient group (income vs culture)
+\item Changes in salience of certain groups $\to$ Changes in preferred policies 
+\item These could change what is being contested in politics (and beyond)
+\end{itemize}\medskip
+Potential extensions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Changes in salience of identity explains economic outcomes
+\begin{itemize}
+\item How does migration affect tax preferences? \\ (Alesina, Miano, Stantcheva 2023, to be covered later in course)
+\end{itemize}
+\item Violent conflicts could explained by this framework
+\begin{itemize}
+\item If what is at stake is resources and vengeance, conflicts can happen with wars
+\end{itemize}
+\item Potential implications for understanding modern party politics
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Michalopoulos, Papaiaonnou (2016): The Long-Run Effects of the Scramble for Africa}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Michalopoulos, Papaiaonnou (2016): \\ The Long-Run Effects of the Scramble for Africa
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does colonial border design affect conflict and development?} 
+Long-lasting consequences of colonial institutions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Extractive institutions $\to$ long-run impacts on economic \& human capital development
+\item Less highlighted: Design of arbitrary borders without local knowledge
+\begin{itemize}\setlength\itemsep{3pt}
+\item Territorial borders became strict (not the case before)  
+\item Many ethnic groups were spilt to multiple countries
+\item Many countries ended up with multiple ethnic groups
+\end{itemize}
+\end{itemize}\medskip
+This paper analyzes the long-run impact of such colonial institution
+\begin{itemize}\setlength\itemsep{3pt}
+\item Compare partitioned ethnic groups to non-split groups
+\item Do they have different characteristics (geography, pre-colonial economics etc)?
+\item Are partitioned groups susceptible to conflicts? What about economic development?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Scramble for Africa} 
+Timeline
+\begin{itemize}\setlength\itemsep{3pt}
+\item 1860s: French and British enter West Africa under agreement on areas of influence
+\item More Europeans enter $\to$ Divide unexplored areas (e.g.1885 Berlin Conference)
+\item Inadequate local knowledge (no African representatives)
+\end{itemize} \medskip
+Who are the partitioned ethnic groups?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ethnicities with 10\%+ of their surface belonging to multiple countries
+\item 229 ethnicities (27.7\% of sample)
+\end{itemize} \medskip
+How partitioning can affect conflicts and development
+\begin{itemize}\setlength\itemsep{3pt}
+\item Secessionism: 20\% of African civil wars involve secessionist component
+\item Repression: Ethnicity-based discrimination on economic and social activities
+\item Spillover: Population displacement $\to$ Ethnic component change in neighbors
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Scramble for Africa} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{mp2016_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data Sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ethnic distribution: Ethnolinguistic map (George Peter Murdock, 1959)
+\item Geography: 2000 Digital Chart of the World
+  \item Conflict: ACLED, UCDP dataset
+  \item Individual-level outcomes: Demographic and Health Surveys
+\end{itemize} \medskip
+Empirical strategies compare partitioned ethnic groups to non-partitioned ones
+\begin{gather*}
+\text{Conflict:}\ y_{ec} = \alpha_c + \gamma\text{SPLIT}_{ec}+\phi\text{SPIL}_{ec}+\delta X_{ec}+e_{ec} \\
+\text{Indiv:}\ y_{ierc}=\alpha_c + \beta\text{SPLIT}_{e}+ \delta X_{ierc}+\psi Z_{irc}+u_{ierc}
+\end{gather*}
+\vspace{-2em} 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Control for fraction of partitioned adjacent groups in country $c$ $\text{SPIL}_{ec}$
+  \item Land and individual characteristics controlled for
+  \item For comparability, partitioned and non-partitioned groups need similar characteristics \\ (Only land mass differs)
+\end{itemize} \medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{More conflicts in partitioned groups} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{mp2016_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Partitioned groups experience more discrimination} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{mp2016_t3.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Individuals from partitioned groups are worse-off} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.67\textwidth]{mp2016_t4.jpeg}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Discussion and Takeaways} 
+Arbitrarily drawn borders $\to$ conflict
+\begin{itemize}\setlength\itemsep{3pt}
+\item Neighboring countries support co-ethnics on other side of border
+\item State-driven conflicts against rebels (of different ethnicities)
+\item Political discrimination: Increase participation in ethnic-based civil wars
+\end{itemize} \medskip
+It also hurts individual well-being
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fewer assets owned, poor access to public goods, less education
+\item Not explained by split country contexts, but due to split ethnicity
+\end{itemize} \medskip
+\end{frame}
+
+\subsection{Bonnier, Poulsen, Rogall, Stryjan (2020): Preparing for Genocide: Quasi-experimental Evidence from Rwanda [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Bonnier, Poulsen, Rogall, Stryjan (2020): \\ Preparing for Genocide: Quasi-experimental Evidence from Rwanda [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\section{Political motivations behind conflicts}
+\subsection{Yanagizawa-Drott (2014): Propaganda and Conflict: Evidence from Rwandan Genocide}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Yanagizawa-Drott (2014): \\ Propaganda and Conflict: Evidence from Rwandan Genocide
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What roles do mass media play in conflict and violence?} 
+What drives participation into political mass violence?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Usually sponsored by elites with agendas to eliminate groups considered threatening
+\item Reportedly used mass media to justify and induce citizen participation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Nazis in WW2: Joseph Goebbels as propaganda minister
+\item Russia's state-controlled media in its invasion of Ukraine
+\end{itemize}
+\item So how does these propaganda work?
+\end{itemize}\medskip
+This paper uses radio campaigns during Rwandan Genocide to answer this question
+\begin{itemize}
+\item Violence by military, local militias, and ordinary civilians against non-ruling ethnicity
+\item Investigates the mechanism of direct persuasion and local spillovers
+\begin{itemize}\setlength\itemsep{3pt}
+\item Direct persuasion: Convince listeners directly
+\item Local spillovers: Spread info and belief via social networks
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{History of Rwandan Genocide} 
+Rwandan Genocide in early 1990s
+\begin{itemize}\setlength\itemsep{3pt}
+\item Hutus majority and Tutsi minority clashed since 1973
+\item After assassination of Hutu president (Apr. 1994), extremists began ethnic cleansing
+\item State-sponsored militias and civilian-led violence ensued
+\item Wave of genocides ended in July 1994: 500,000 Tutsis killed
+\end{itemize}\medskip
+How was mass media utilized
+\begin{itemize} \setlength\itemsep{3pt}
+\item Inflammatory messages by RTLM: Run by an extremist Hutu faction (Hutu Power)
+\item Called for extermination of Tutsis
+\begin{itemize} \setlength\itemsep{3pt}
+\item Justified genocide for ``self-defense'' against Tutsis
+\item Referred to Tutsis as cockroaches
+\item Claimed that Hutus engaged in killings would not be held accountable
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Conceptual frameworks and mechanisms} 
+Direct Effects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Exposure to media alters behavior by affecting beliefs and preferences
+\item Listeners consider RTLM messages as credible: even moderate Hutus were killed
+\item But participation in violence is costly: so was RTLM messages persuasive enough?
+\end{itemize}\medskip
+Spillover Effects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Social interactions can augment influence of media Exposure
+\item Word-of-mouth to nonlisteners, peer pressure, lower cost via collective action 
+\item Countervailing effect: Free-rider problem can co-exist in theory
+\end{itemize}\medskip
+How to distinguish these mechanisms
+\begin{itemize}\setlength\itemsep{3pt}
+\item Direct effect: Only consider own location
+\item Spillover: Also consider characteristics of neighboring villages
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Sources of key variables
+\begin{itemize}\setlength\itemsep{3pt}
+\item Violence data from court records (Gacaca courts)
+\item Village-level radio data from Bureau of Information and Broadcasting
+\item Topography data from Shuttle Radar Topography Mission dataset
+\end{itemize}\medskip
+Empirical strategy leverages strength of transmission predicted by topography
+\begin{itemize}\setlength\itemsep{3pt}
+\item i.e. Presence of hills, which is not correlated with other factors affecting conflict
+\item Direct and spillovers estimated as follows
+\begin{gather*}
+\text{Direct:}\ y_{vci}=\beta_v r_{ci}+\pi X_{ci} + \gamma_c + e_{civ} \\
+\text{Spillover:}\ y_{vci}=\lambda_{vd} \bar{r}_{dci}+\phi_d \bar{X}_{dci} + \gamma_c + e_{ci}
+\end{gather*}
+where $\bar{r}$ captures average coverage within $d$km from village $i$ in commune $c$
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Distribution of violence and radio} 
+\begin{figure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{y2014_f1.jpeg}
+\caption{Violence distribution}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{y2014_f2.jpeg}
+\caption{Radio distribution}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Direct effects: Organized violence increases significantly} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.45\textwidth]{y2014_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Spillovers larger than direct effects} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{y2014_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussion} 
+Direct effect $<<<<$ Spillover
+\begin{itemize}\setlength\itemsep{3pt}
+\item Militia presence in \textit{neighboring} villages increased significantly
+\item Social interactions do augment influence of direct exposure to media
+\item Thus, violence begets violence
+\end{itemize}\medskip
+Implications
+\begin{itemize}\setlength\itemsep{3pt}
+\item Need further studies on what type of social interactions matter
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Collective action change cost-benefit analysis? Social pressure to conform? 
+\end{itemize}
+\item Dangers of mass media that promotes inflammatory messages
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Not just violence, but any type of misinformation could have wide-ranging effects
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Condra, Long, Shaver, Wright (2018): The Logic of Insurgent Electoral Violence}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Condra, Long, Shaver, Wright (2018) \\ The Logic of Insurgent Electoral Violence
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How are politically-motivated attacks designed?} 
+Does elections promote peace or trigger violence?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduce incentives for rebellion and symbolizes state-building and consolidation
+  \item Attacks often committed around elections by entities trying to undermine the state
+\item Implications for efforts to promote free and fair elections in post-conflict societies
+\end{itemize}\medskip
+This paper demonstrates logics of insurgents in electoral violence
+\begin{itemize}\setlength\itemsep{3pt}
+\item Opportunity to undermine legitimacy of the formal government
+\item Also cautious enough to minimize civilian targets (sustain civilian support to attackers)
+\item Leverages variation in timing and location of violence around election periods
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Attack earlier in the day than usual?
+  \item Damage select routes that voters use to go to polls
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Background and framework} 
+Afghanistan in 2001-2017 (before Taliban re-takeover)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Elections in `04(Pr), `05(Pa), `09(Pr), `10(Pa), `14(Pr) 
+\item Taliban actively tried to undermine legitimacy of the Afghan government
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Targeted candidates, poll booths, security forces, and voters around elections
+  \item Qualitative evidence that they calibrated attacks to avoid excessive civilian harm
+\end{itemize}
+\end{itemize}\medskip
+Framework: Competitive governance between insurgents and the state
+\begin{itemize}\setlength\itemsep{3pt}
+\item Insurgents benefit from violence directed against government
+\item But it is undermined if civilians are attacked and consequently
+oppose insurgents
+\item Electoral violence: Target state legitimacy vs. Harmful when civilians are attacked
+\end{itemize} \medskip
+Claims to be tested in this paper
+\begin{itemize}\setlength\itemsep{3pt}
+\item Insurgents time attacks during elections to damage state legitimacy
+\item Select location and timing strategically: Use IEDs on key routes and early hours
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data Sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Attacks (`03-`15): International Security Assistance Force (ISAF)
+\item Combined with survey data, population data, voting records, and road network maps
+\end{itemize}\medskip
+Empirical strategy leverages timing and location of attacks in election vs. non-election days
+\begin{itemize}\setlength\itemsep{3pt}
+\item Timing: $A_{d_i} = \xi + \sum_{i=1(\neq13)}^{24}\theta_i \text{hour}_{d_i}+ \sum_{i=1(\neq13)}^{24}\alpha_i (\text{hour}_{d_i}\times \text{election}_d)+\psi_d+e_{d_i}$
+\item Location: $Y_r = \alpha + \beta_1(\text{Route}_r)+ \beta_2(\text{Violence}_{rw})+\beta_3 X_r + e_r$
+\end{itemize} \medskip
+Then, the paper estimates the effect of these violence on voting behaviors (IV)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Morning attacks: $Y_{de}=\alpha +\beta_1 \widehat{\text{Attacks}}_{det}+\beta_2 X_{de}+e_{de}$
+\begin{itemize}
+\item IV: average of wind conditions in 10:30PM (day before)-4:30AM and 4:30AM-10:30AM
+\end{itemize}
+\item Location effects: $Y_r=\alpha+\beta_1\widehat{\text{IED}}_r+\beta_2\text{violence}_{rw}+\beta_3 X_r + e_r$
+\begin{itemize}
+\item IV: Nighttime cloud cover (high cover $\to$ hard to detect $\to$ more attack)
+\end{itemize}
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Rise of early-morning attacks, but not targeting civilians} 
+\begin{figure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{clsw2018_f1.jpeg}
+\caption{Timing of all attacks}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{clsw2018_f2.jpeg}
+\caption{Timing of attacks causing civilian casualties}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Rise of IEDs at key roads and population centers, but not more intense} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.8\textwidth]{clsw2018_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Attacks decrease voter turnout} 
+\begin{figure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{clsw2018_t2.jpeg}
+\caption{Effect of morning attacks}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{clsw2018_t3.jpeg}
+\caption{Effect of IEDs}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways} 
+Counterfactual exercise to see how alternate violence would have changed outcomes
+\begin{itemize}\setlength\itemsep{3pt}
+  \item 340-670 IEDs needed to tip election for favor of pro-Taliban parties
+  \item Complete elimination of morning attacks $\to$ 12.3 \% $\Uparrow$ in voter turnout
+  \item Additional patrol to 1 rotation per month from none $\to$ 5\% $\Downarrow$ Reported frustration
+\end{itemize}\medskip
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Insurgents do compete for governance with the formal state
+  \begin{itemize}
+    \item This includes other criminal actors like organized criminal groups
+  \end{itemize}
+  \item Attackers do consider various trade-offs in committing political violence
+ \begin{itemize}
+    \item Civilian support vs. Undermining state legitimacy
+  \end{itemize}
+  \item Guidance on designing counterinsurgency efforts: When \& where to invest in security
+\end{itemize}
+\end{frame}
+
+\subsection{Dube, Naidu (2015): Bases, Bullets, and Ballots: The Effect of US Military Aid on Political Conflict in Colombia [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dube, Naidu (2015): \\ Bases, Bullets, and Ballots: The Effect of US Military Aid on Political Conflict in Colombia [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Politics, ethnicity, and institutions affect conflicts
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ethnicity and other institutional backdrop create differing interests that lead to conflict
+\item Politics can propagate incentives to fight and provide opportunities for insurgents
+\item Overall, identity has been a driving force behind various conflicts
+\end{itemize}\medskip
+Unanswered questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item What to prioritize: Rein in economic incentives or set up inclusive institutions?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Very complementary: One affects other and vice versa
+\item Ongoing debate in the economics of institutions
+\end{itemize}
+\item Individual participation in these activities?
+\begin{itemize}\setlength\itemsep{3pt}
+\item We have mostly looked at effects of systematic economic incentives and institutions
+\item For individuals, conflicts and crime are very costly. Yet why do the participate?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%
+\end{document}
+
+
