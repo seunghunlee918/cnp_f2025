@@ -1,0 +1,892 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 7: Impact of crime and conflict on economic and institutional development}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{October 17th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{How do conflicts affect economic and institutional development?} 
+Conflicts impose negative impact both in short and long-run
+\begin{itemize}\setlength\itemsep{3pt}
+\item Short: Loss of human life, destruction of capital, increased uncertainty
+\item Long: Loss of tax base $\to$ Difficult to finance reconstruction, reliance on debt $\Uparrow$
+\item It can also spill over into other regions (depress trade, increased social strains)
+\end{itemize}\medskip
+Conflicts undermine the foundation for institutions that support growth and development
+\begin{itemize}\setlength\itemsep{3pt}
+\item Weakened governance: Perpetrators gain influence over decisionmakers
+\item Weakened accountability: General public gets less priority
+\item Leads to more corrupt and incapable state
+\end{itemize}\medskip
+These factors put many conflict-affected societies into ``conflict trap"
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflict $\to$ Economy and institution$\Downarrow$ $\to$ Conflict $\to$Economy and institution$\Downarrow$ $\to$.....
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Long-run effects of armed conflicts} 
+\begin{figure}
+\begin{subfigure}{0.475\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig1.png}
+  \caption{Actual GDP vs GDP with no conflict}
+\end{subfigure}
+\begin{subfigure}{0.45\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2.png}
+  \caption{Accrual of debt post-conflict}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Can scars of conflict and crime be undone?} 
+Wartime trauma has serious long-run development consequences
+\begin{itemize}\setlength\itemsep{3pt}
+\item Stunted economic development and recurrence of war if trauma is not treated
+\item But also difficult to escape: Many reconstruction programs do face shortfalls
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many reconstruction fail to foster trust across fractionalized groups and outsiders
+\item Reintegration programs sometimes fail to generate interest among participants
+\end{itemize}
+
+\item So what are the required approaches
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reshape incentives: Make it more costly to engage in conflicts
+\item Winning hearts and minds: Trust across warring groups need to be rebuilt
+\item For intervention led by third party: Trust in intervening entities too
+\end{itemize}
+\item Some of these efforts do succeed in rebuilding capital and trust
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some countries do find some hope} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.7\textwidth]{fig3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Question to explore today} 
+
+\begin{itemize}\setlength\itemsep{3pt}
+\item How does conflict hurt aggregate economic and institutional performance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Destroys foundations needed for economic activities and growth
+\item Distorts resource allocation to favor attackers, not general public
+\item Captures state apparatus (politicians, institutions) $\to$ lead to above consequences
+\end{itemize}
+\item How do you design effective counter-conflict programs?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Just addressing perpetrators may not suffice (e.g Mexico)
+\item Need to reshape incentives and perceptions
+\end{itemize}
+\end{itemize} \medskip
+We investigate how conflicts affect economic and institutional development \\ \medskip
+We then probe into how conflicts can be undone
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Economic impact of conflicts}
+\subsection{Pinotti (2015): The Economic Costs of Organised Crime: Evidence from Southern Italy}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Pinotti (2015):  \\ The Economic Costs of Organised Crime: Evidence from Southern Italy
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Presence of organized crime $\Rightarrow$ economic development?} 
+Organized crime is perceived as barrier to economic development
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not just in developing countries, but also more developed countries too 
+\item Among developed countries, Italy stands out
+\begin{itemize}\setlength\itemsep{3pt}
+\item 5 regions with highest organized crime are also the poorest
+\end{itemize}
+\item Challenge: Reverse causality among economic development and organized crime
+\begin{itemize}\setlength\itemsep{3pt}
+\item We want to confirm organized crime $\Uparrow$ $\Rightarrow$ economic development $\Downarrow$
+\item It could be organized crime $\Uparrow$ $\Leftarrow$ economic development $\Downarrow$
+\end{itemize}
+\end{itemize}\medskip
+This paper addresses this with unexpected changes in criminal presence in select regions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Setting: Apulia and Basilicata (normal levels of criminal presence $\to$ heavy)
+\item This trend arose due to changes in entry point of smuggled tobacco in Italy
+\item These changes are unrelated to socio-economic environments
+\item Generate counterfactual using synthetic control methods
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{History of organized crime in Italy} 
+Description of their activities
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Supply illicit goods, extortion and threats, private protection where state is absent
+\item Arose from the vacuum property rights protection following 1861 Italian Unification
+\item Italian judicial system began to address organized crime actively since 1980s (!)
+\begin{itemize}
+  \item Before: Applied rules that treats organized crime equally with small \# of individuals
+\end{itemize}
+\end{itemize}\medskip
+Economic growth and crime in Southern Italy
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Generally, convergence between north and south stopped around 70s
+  \item Apulia and Basilicata: High growth in 60s-70s $\to$ lowest growth rates in Italy
+  \item The down-growth period coincides with increased organized criminal presence
+ \begin{itemize} 
+  \item Tobacco smuggling $\Uparrow$ + Relief money after major earthquake + Criminals \textit{in confino}
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Measuring Crime
+\begin{itemize}\setlength\itemsep{3pt}
+\item Data from Parliamentary Antimafia Commission and Italian Statistical institute
+\item Regional GDP per capita from 1951-2005
+\item Value added by industry and population density accounted for
+\end{itemize}\medskip
+Synthetic control to create a counterfactual of the treated areas
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Idea: Actual outcome in treated area vs weighted average of control group
+  \item Weights are chosen to match pre-treatment characteristics of treated areas
+  \item Includes other regions except Sicily, Campania, and Calabria (pervasive OCG presence) 
+  \item Therefore, this method generates counterfactual out of the basket of control group
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Trend in growth and organized criminal presence} 
+\begin{figure}
+  \begin{subfigure}{0.35\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{p2015_f1.jpeg}
+  \caption{OCG distribution}
+  \end{subfigure}
+  \begin{subfigure}{0.6\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{p2015_f2.jpeg}
+  \caption{Growth rates across time and regions}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Criminmal presence negatively affects growth} 
+\begin{figure}
+  \begin{subfigure}{0.475\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{p2015_t1.jpeg}
+  \caption{Synthetic control similar to treatment}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.475\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{p2015_f3.jpeg}
+  \caption{Actual GDP $<$ Synthetic GDP growth}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Results largely driven by decrease in economic activity} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{p2015_f4.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways} 
+Other mechanisms tested
+\begin{itemize}\setlength\itemsep{3pt}
+\item No shift in economic activities from formal to informal sectors
+\item Measured with electricity usage (even informal sectors use them)
+\item Electricity decreases: Suggests that the economic activities themselves decrease
+\end{itemize}\medskip
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Presence of organized crime $\to$ Economic development $\Downarrow$
+  \item Driven by decrease in economic activities (investment, electricity usage)
+  \item Macroeconomic outcomes: Does not capture effects on individual economic activities
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Need to observe individuals as unit of analysis (last week!)
+  \end{itemize}
+  \item Also, there could be evidence that informal sectors grow due to organized crime
+\end{itemize}
+\end{frame}
+
+\subsection{Fenizia, Saggio (2024): Organized Crime and Economic Growth: Evidence from Municipalities Infiltrated by the Mafia}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Fenizia, Saggio (2024): \\ Organized Crime and Economic Growth: Evidence from Municipalities Infiltrated by the Mafia
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Break up institutions infiltrated by crime $\Rightarrow$ development?} 
+How do you undo effects of organized crime?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Illegal activities, extortions, hinders competition, stunt development
+\item What are the effects of efforts to regain control from organized crime?
+\begin{itemize}
+\item Ultimately relates to regaining legitimacy in areas with long history of organized crime
+\end{itemize}
+\end{itemize} \medskip
+This paper analyzes the long-run economic effects of actions to regain control
+\begin{itemize}\setlength\itemsep{3pt}
+\item Italy: Dismiss city councils infiltrated by the Mafia (CCD)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Central government dismiss mayor and city council and appoints commissioners
+\item Commissioners administer with full legislative and executive authorities until next election 
+\end{itemize}
+\item Compare areas with CCDs to observationally similar municipalities w/o CCDs
+\item Leverage changes in economic activities: Employment, Firms, Real estate price etc
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Counter-organized crime activities in Italy} 
+Dismissal of city councils (CCDs)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Introduced in 1991 in response to rise in Mafia influence in 1980s
+\item Any sign of Mafia influence detected $\to$ appoint commissioner to replace city council
+\begin{itemize}\setlength\itemsep{3pt}
+\item Usually instigated by unrelated police investigations 
+\item Lower evidentiary bar compared to legal prosecution
+\end{itemize}
+\item The commissioners are experienced career civil servants
+\item Legislative and executive authority until next local elections (roughly 24-36 months)
+\end{itemize} \medskip
+ What do these commissioners do?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Freeze all investment in new projects (review financial situation)
+\item Revoke procurement contracts, permits, licenses with connection to organized crime
+\item Replace municipal personnel and mandate training 
+\item Attempt to gain trust and support of local communities (free job training etc)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Sources of data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employer-Employee matched social security data: Employment, wage, residence etc
+\item Real estate prices from Italian Treasury
+\item Politicians data from Ministry of interior (educational attainment and age)
+\item Councils: Ministry of interior (expenditures, revenues) \& ANAC (contracts)
+\end{itemize} \medskip
+Leverage DID matching treated area to observationally similar control group (Matched DID)
+\[
+Y_{mt}=\alpha_m + \lambda_{r(m),t}+\sum_{k=a}^b \tilde{\theta}^k I[t=t_m^*+k]+\sum_{k=a(\neq-1)}^b \theta^k I[t=t_m^*+k]\times \text{CCD}_m + u_{mt}
+\]\vspace{-10pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Each treated municipalities are matched to close counterparts without CCD
+\item $t_m^*$: Year of CCD for municipality $m$, $I[t=t_m^*+k]$ is the event-time dummy
+\item $\tilde{\theta}^k$: Effect of event time dummies for control group (similar to time FE)
+  \item $\theta^k$ is the effect of CCD $k$ years later on the treated municipalities
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{CCDs over time and place} 
+\begin{figure}
+\begin{subfigure}{0.375\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{fs2024_f1_1.jpeg}
+\end{subfigure}
+\begin{subfigure}{0.575\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{fs2024_f1_2.jpeg}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rising employment and stock of firms} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=\textwidth]{fs2024_f2.jpeg}
+\end{figure}
+\begin{itemize}
+  \item Industrial real estate prices also rises (not on this slide)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Driven by weakened mafia connections} 
+\begin{figure}
+\begin{subfigure}{0.525\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{fs2024_f3.jpeg}
+\caption{New face to local politics}
+\end{subfigure}
+\hspace{20pt}
+\begin{subfigure}{0.275\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{fs2024_f4.jpeg}
+\caption{Old corrupt politicians out}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Key takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Dismissing Mafia influence allows formal governments to reassert legitimacy 
+\item Long term effects $>$ Short-run effects
+\item New faces: Suggests that Mafia presence is actually diminishing here
+\item Effects of directly targeting local institutions $>$ just illicit activities (see Mexico)
+\end{itemize} \medskip
+Discussions for further studies
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Institutional shake-up is required to counter long-standing crime/conflict?
+\item Why did the Mafia not fight back?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item They may have changed their operation strategy (less confrontation with the state)
+  \item Would this work in places where organized crime actively confronts the state?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Korovkin, Marakin (2023): Conflict and Intergroup Trade: Evidence from the 2014 Russia-Ukraine Crisis [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Korovkin, Marakin (2023): \\ Conflict and Intergroup Trade: Evidence from the 2014 Russia-Ukraine Crisis [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+\section{Institutional impact of conflicts}
+\subsection{Alesina, Piccolo, Pinotti (2019): Organized Crime, Violence, and Politicians}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Alesina, Piccolo, Pinotti (2019): \\ Organized Crime, Violence, and Politicians
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do organized crime influence institutional quality?} 
+One of the worst aspects of organized crime: State capture
+\begin{itemize}\setlength\itemsep{3pt}
+\item Distort allocation of resources in favor of the captors (criminal organizations)
+\item Unjustly relax rules for their favor
+\item Why and how do criminal organizations take over politicians and elections?
+\end{itemize}\medskip
+This paper models this phenomena and identifies empirical patterns 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Violence: Signal strength and will to use violence 
+\item Candidates scared off and influences behavior of elected politicians
+\item Leverages presence of Sicilian Mafia to test theoretical predictions
+\item Compare regions with and without significant presence of organized crime
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime and politics in Italy} 
+Key features of organized criminal group (Italy, but also others)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Command armed men capable of exerting intimidation and influence official economy
+\item Sicilian Mafia colluded with certain parties
+\begin{itemize}
+\item Christian Democrats (CD) accepted Mafia support to gain advantage against opponents
+\end{itemize}
+\item Targeted political activists and politicians supporting left-wing parties
+\item Target national elections: National officials determine scope of criminal group activities
+\end{itemize}\medskip
+Theoretical predictions that explain criminal organization behaviors
+\begin{itemize}\setlength\itemsep{3pt}
+\item More likely to be violent during elections, and in swing districts (majoritarian system)
+\item Violence results in lower votes for honest party, higher votes for captured parties
+\item Anti-organized crime effort $\to$ retaliation $\to$ lower future anti-crime efforts
+\item These efforts from honest party decrease with rising pre-election crimes
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Criminal group presence: Various NGOs (e.g Libera)
+\item Electoral results from Italian Interior Ministry
+\item Politician behavior: Transcripts of speeches from 1948-2008 in national Parliament
+\begin{itemize}
+  \item Track mentions of Mafia-related terms (almost all of them in negative light)
+\end{itemize}
+\item 
+\end{itemize} \medskip
+Empirical strategy leverages differences in Mafia vs non-Mafia regions
+\begin{itemize}
+  \item Primarily Difference-in-differences
+  \item But also does wide range of heterogeneity analysis (Triple differences)
+\[
+  \begin{aligned}
+  Y_{it} &= \alpha+\beta_1\text{Treat1}_i + \beta_2\text{Treat2}_i + \beta_3\text{Post}_t  \\
+         & + \beta_4\text{Treat1}_i \times \text{Treat2}_i + \beta_5 \text{Treat1}_i \times \text{Post}_t + \beta_6\text{Treat2}_i \times \text{Post}_t  \\
+         & +\beta_7\text{Treat1}_i\times \text{Treat2}_i \times \text{Post}_t +e_{it}
+  \end{aligned}
+  \]
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{More attacks, particularly in swing states}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.67\textwidth]{app2019_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Uncooperative party vote share falls}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{app2019_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Political attacks discourage politicians (esp left-wing)}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.65\textwidth]{app2019_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and Takeaways} 
+Criminal organizations and conflicts capture politicians and the states
+\begin{itemize}\setlength\itemsep{3pt}
+\item Strategically use elections: Timing and place
+\item Aim to favor the cooperating politicians by hurting the uncooperative
+\item Does affect behaviors of elected politicians: Reduce anti-conflict efforts
+\item They especially affect efforts of the honest politicians (capture ones are unaffected)
+\end{itemize}\medskip
+Discussions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Generalizable? Likely (we have already seen this with insurgents in Afghanistan)
+\item Long run effects of such capture? (Distortionary allocations?)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item How are public expenditures and procurement affected?
+  \item These could skew towards favoring captors over general public
+  \item We look extensively at weak states and state capture late in the semester
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Brückner, Ciccone (2011): Rain and the Democratic Window of Opportunity }
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Brückner, Ciccone (2011): \\ Rain and the Democratic Window of Opportunity 
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Can economic shocks induce democratic transitions?} 
+What causes movements behind democratic change?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many argue that economic recessions lead to democratic improvements
+\begin{itemize}\setlength\itemsep{3pt}
+\item Transitory shocks $\to$ window of opportunity to contest power
+\item Autocratic regime may have to make concessions
+\end{itemize}
+\item Challenges: Democratic transition affect economics (reverse causality)
+\end{itemize}\medskip
+This paper isolates exogenous link between recessions and democratic transitions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Uses negative rainfall shocks (i.e. droughts) that affect economic performance
+\item Finds that even temporary shocks can lead to concessions from autocratic regimes
+\item Rainfall $\Downarrow$ $\to$ GDP \& opportunity cost of contesting power $\Downarrow$ $\to$ Democratic transitions
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Dataset and definitions} 
+Sources of main measures and definitions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Polity IV: Polity2 score that defines level of democracy (1984-2004)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Executive constraint + competitive executive recruitment + political participation
+\item Range: -10 to 10 (0-: Autocracy, 1-6: Partial democracy, 7-10: Full democracy )
+\item Dataset is available as Polity V (updated, \hyperlink{https://www.systemicpeace.org/polityproject.html}{check here}) 
+\end{itemize}
+\item Democratic transitions at year $t$: Autocracy to democracy between year $t$ and $t+1$
+\begin{itemize}
+\item Vice versa for autocratic transitions at year $t$
+\end{itemize}
+\item Democratic step at year $t$: Becomes partial/full democracy between year $t$ and $t+1$
+\item Rainfall estimates: NASA Global Precipitation Climatology Project 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Democratic transitions in sample countries} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.8\textwidth]{bc2011_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical strategy} 
+How to isolate exogenous changes to economic conditions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Rainfall shock: Affect income through agricultural productivity
+\item When income is accounted for, rainfall $\nRightarrow $ democratic transition on its own
+\item These constitute relevancy and exogeneity conditions for instrumental variables
+\end{itemize}\medskip
+Regression specification
+\[
+\Delta D_{ct} = \alpha_c + \phi_c \times t + \delta _t + \beta_0 \log{y_{ct}}+\beta_1 \widehat{\log{y_{ct-1}}}+\epsilon_{ct}
+\]
+with the first stage 
+\[
+\log{y_{ct-1}} = a_c + f_c \times (t-1) + d_{t-1} + b \log{\text{rainfall}_{ct-1}}+e_{ct-1}
+\]
+\begin{itemize}
+\item Why $t-1$: Time it takes from shock to action 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Democratic transitions following negative rainfall shocks} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{bc2011_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Democratic transitions following negative rainfall shocks} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{bc2011_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Economic shocks induced by (lack of) rainfall $\to$ democratic transition
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Suggests that transitory shocks open up opportunities for change (protests)
+  \item These apply to countries reliant on agriculture
+  \begin{itemize}
+    \item In countries with low agriculture, these effects do not appear
+  \end{itemize}
+\end{itemize} \medskip
+Discussions 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Connects to how economic conditions shape incentives to contest power
+  \item Also show that these changes can lead to structural and institutional changes
+  \item Can this be extended to other exogenous sources to economic shocks?
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Sudden disruption of trade opportunities
+  \item Resource shocks from foreign countries (esp. for countries importing resources)
+  \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+\subsection{Blouin, Murkand (2019):  Erasing Ethnicity? Propaganda, Nation Building, and Identity in Rwanda}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Blouin, Murkand (2019): \\ Erasing Ethnicity? Propaganda, Nation Building, and Identity in Rwanda
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Can you undo ethnic divisions that cause conflicts?} 
+How do you bridge divides in conflict-ridden society?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflicts, institutional fragility, low growth more likely in countries with ethnic divide
+\item Need to increase ethnic trust, cooperation \& reduce salience of ethnics
+\begin{itemize}
+\item Conversely, nation-building that addresses these points may be effective
+\end{itemize}
+\end{itemize}\medskip
+This paper examines how propaganda can be used in nation-building
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Propaganda: Govt-owned Radio Rwanda messages on reconciliation
+  \begin{itemize}
+  \item Contrast to hate message spread by RTLM (Yanagizawa-Drott 2014)
+  \end{itemize}
+\item Contention as to whether inter-ethnic reconciliation brought real progress 
+\begin{quote}
+  Mr. Kagame has created a nation that is orderly but repressive ... Against this backdrop, it is difficult to gauge sentiment about the effectiveness of reconciliation efforts \\ (New York Times, 2017)
+\end{quote}
+\item Leverage geographical traits that determines the broadcast reception
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Ethnicity and post-civil war nation-building in Rwanda} 
+Post-war Rwanda
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Three ethnic groups: Hutu, Tutsis (both 97\%), and Twa 
+\item Tutsi superiority over Hutus during colonial period $\to$ inter-ethnic resentment $\Uparrow$
+\item 1994 Genocide: 70\% of Tutsis slaughtered 
+\item Post-conflict: RPF (Tutsi-controlled) asserted control $\to$ Paul Kagame took presidency
+\end{itemize}\medskip
+Reconciliation under Kagame Administration
+\begin{itemize}\setlength\itemsep{3pt}
+\item Promote new Rwandan identity: Media, textbooks, and enforced social interaction
+\item \textit{Umuganda}: Get individuals from all ethnicities for a collective project on public goods
+\item Messages were spread using radio (Radio Rwanda)
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources (lab-in-the-field)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Salience of Identity Test (SIT) score from participants
+\item Games to identify inter-ethnicity cooperation: Partner selection game and trust game
+\item Individual data: Demographics (not ethnicity - illegal to ask), socioeconomic status
+\item Radio signal data from various geospatial sources
+\end{itemize}\medskip
+Empirical strategy uses randomization and variation across areas
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverages differences in radio reception across 27 transmission towers
+\[
+Y_{ivd}=\alpha_0 + \phi_d + \beta\text{Radio}_{vd}+\Gamma X_{ivd}+e_{ivd}
+\]
+\item $\text{Radio}_{vd}$: 1 if signal strength $> 45 dB$ at village $v$ in district $d$
+\item Outcome at individual level
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Variation in radio strength across locations} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.45\textwidth]{bm2019_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lower salience following exposure to radio} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.8\textwidth]{bm2019_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{More inter-ethnic trust and cooperation} 
+\begin{figure}
+\begin{subfigure}{0.4\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{bm2019_t2.jpeg}
+\caption{Partnership game}
+\end{subfigure}
+\hspace{20pt}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[keepaspectratio,width=\textwidth]{bm2019_t3.jpeg}
+\caption{Trust game}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Key takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reconciliation program made some significant progress
+\begin{itemize}
+\item Salience of ethnicity $\downarrow$, Trust across ethnic groups $\uparrow$
+\end{itemize}
+\item Nation-building that address inter-ethnic relationship may be productive
+\end{itemize} \medskip
+Discussions for further studies
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Is this effect long-lasting? Unsure
+   \begin{itemize}
+\item Would need a follow-up investigation 
+\end{itemize}
+\item What happens if the focus of propaganda shifts? Unsure
+   \begin{itemize}\setlength\itemsep{3pt}
+\item Current reconciliation is the personal agenda of President Kagame
+\item What happens if priority shifts?
+\end{itemize}
+\item Generalizable outside of autocratic (i.e. lack of media freedom) settings? Unsure
+\end{itemize}
+\end{frame}
+
+
+\subsection{Berrebi, Klor (2008): Are Voters Sensitive to Terrorism? Direct Evidence from Israeli Electorate [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Berrebi, Klor (2008): \\ Are Voters Sensitive to Terrorism? Direct Evidence from Israeli Electorate [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflicts can hurt economic and institutional development
+\begin{itemize}\setlength\itemsep{3pt}
+\item It could shift to illicit sectors (i.e. increase undetectable activities)
+  \item But the volume of economic activities can decrease
+  \item State apparatus captured to bend to will of the insurgents/organized criminals
+\end{itemize}
+\item However, these can be reversed with right actions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Shake-up institutional factors that cause conflicts (intergroup distrust and incentives)
+\item Reduced costs of protest can lead to institutional progress
+\end{itemize}
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item How do individuals respond to or mitigate these effects?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Some choose to protest
+\item Others migrate to seek new opportunities
+\end{itemize}
+\item Which types of institutions are vulnerable or resilient to these damages?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Need to decompose state capacity and characterize ``weak states"
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
