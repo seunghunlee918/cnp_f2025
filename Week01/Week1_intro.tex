@@ -1,0 +1,711 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 1: Introduction to the course and empirical analysis}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{September 5th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Introduction}
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\setlength{\parskip}{1.25ex}
+\tableofcontents[currentsection, hideothersubsections]
+\end{transitionframe}
+
+\subsection{Course logistics}
+\begin{frame}
+\frametitle{Course logistics} 
+\begin{wideitemize}
+\item Instructor: Seung-hun Lee 
+\begin{itemize}
+\item Office location: Room C06 in this building
+\item Office hours: Thursdays 3:30-5:30PM \href{https://www.calendly.com/seunghunlee0918}{(Sign up here)}
+\item From South Korea
+\item Ph.D. in Economics from Columbia University (2024)
+\end{itemize}
+\item TA: Su Mon Htet Naing
+\begin{itemize}
+\item Contact: ekaterina.naing@gmail.com
+\end{itemize}
+\item Class time and location
+\begin{itemize}
+\item Time: Fridays 9AM - 12PM
+\item Location: Room A09
+\end{itemize}
+\item Coming prepared to the lecture
+\begin{itemize}
+\item Lecture notes are uploaded a day in advance (No separate textbooks)
+\item Keep up with the readings: more on that later
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\subsection{Topics covered in course}
+\begin{frame}
+\frametitle{Course goal: Viewing politics from an economic perspective} 
+\begin{wideitemize}
+\item Focus on political economy of development related to conflict and peace
+\begin{itemize}
+\item Conflicts: Violent events that disrupt economic and social stability - crime, political violence, civil wars, inter-state wars
+\item Peace: Absence of conflict, or development of economic and institutional arrangements that prevents conflict
+\end{itemize}
+\item Economic perspective: Making causal inferences between events/outcomes
+\begin{itemize}
+\item Understand the theories behind incentives of stakeholders involved
+\item Able to make educated, empirical analysis that identifies causal relations
+\end{itemize}
+\item Goals and requirements
+\begin{itemize}
+\item Be able to critically engage with scholarly work, conduct independent empirical analysis, and develop original research
+\item Familiarity with statistical inference is necessary!
+\item \textit{Helpful: Graduate-level micro/macroeconomics}
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Course topics (Refer to syllabus for full reading list)} 
+\begin{wideitemize}
+  \item Course introduction and empirical analysis tools (Week 1)
+\item Cause of conflicts (Week 2-4)
+\begin{itemize}
+\item \textit{How do economic incentives drive individuals and states to conflict?}
+\item \textit{How do political and ethnic dynamics lead to conflict?}
+\item \textit{How and why do people engage in criminal activites?}
+\end{itemize}
+\item Consequences of conflicts (Week 5-7)
+\begin{itemize}
+\item \textit{How do they affect individuals?}
+\item \textit{How do they shape economic development?}
+\item \textit{How do they alter the institutional development of the state?}
+\end{itemize}
+
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Course topics (Refer to syllabus for full reading list)} 
+\begin{wideitemize}
+
+\item Responses to conflicts (Week 9-10)
+\begin{itemize}
+\item \textit{How do individuals overcome collective action problems?}
+\item \textit{What drives people to migrate?}
+\item \textit{Hoow do people integrate to the new society?}
+\end{itemize}
+\item State capacity (Week 11-13)
+\begin{itemize}
+\item \textit{Why do some states fail?}
+\item \textit{How do capable states build and maintain fiscal capacity?}
+\item \textit{How do capable states manage personnel capacity?}
+\end{itemize}
+
+\end{wideitemize}
+\end{frame}
+
+
+
+
+\subsection{Course grading, tasks, and timeline}
+\begin{frame}
+\frametitle{Tasks and grading scale} 
+\begin{wideitemize}
+\item Weekly snap presentation (10\% of the grades)
+\begin{itemize}
+\item Two students will give a 15-minute presentation on two papers from the reading list marked with double asterisks
+\item The presenters will be chosen at random on the day of the class - \textbf{So everyone must prepare the slides before the class}
+\item Use \textbf{no more} than 8 slides, upload slides to eeclass after class
+\end{itemize}
+\item Replication exercise (20\% of the grades) - Due on Nov 21st
+\begin{itemize}
+\item You are asked to use R or Stata to replicate Brodeur (2018), or Campante, Do (2014) - further details on these papers in syllabus
+\item You will produce key results (in tables and figures) from one of those papers, and submit a \textbf{replication report} and \textbf{codes}
+\item Report whether the data is accessible, and the key findings replicate. 
+\item More important: \textbf{Make your own extension} - alternative regression specifications, different independent variables, different falsification tests
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tasks and grading scale} 
+\begin{wideitemize}
+\item Virtual paper (50\% of the grades)
+\begin{itemize}
+\item Develop a viable paper plan that clearly motivates the research question, explains the background and data, empirical strategy, and preliminary findings
+\item Does not need to be a complete paper - \textbf{A half-finished but original and exciting project is preferred} over a complete yet uninteresting one
+\item Start with a two-page proposal (10\% of the grades) - Due October 24 
+\item Then, 30-minute presentation on the full paper (10\% of the grades) - December 5th 
+\item Based on comments, finish the draft (30\% of the grades) - December 21st
+\end{itemize}
+\item Final Exam (20\% of the grades) - December 19th 
+\begin{itemize}
+\item Cumulative exam that will cover papers in single/double asterisks
+\item Exact format to be determined soon
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{More on the virtual paper} 
+\begin{wideitemize}
+\item Format of the virtual paper: Mimics many scholarly articles
+\begin{enumerate}
+\item \underline{Introduction}: What is your research question? Why is it important from a scholarly or policy standpoint?
+\item \underline{Literature review}: What is the gap in the literature that you relate your work to? How are you filling that gap?
+\item \underline{Background}: What is the relevant information on the context that you are studying?
+\item \underline{Data}: What data source are you using or planning to use? Why should it be that dataset? 
+\item \underline{Empirical strategy}: What statistical methods do you use? How do they allow for causal inference? What are the potential threats to that inference?
+\item \underline{Preliminary results}: What are the statistical relationships that you have found so far?
+\item \underline{Mechanism and falsification tests}: What factors may explain your main results? What are your plans to address potential factors that may nullify your findings?
+\end{enumerate}
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Important deadlines} 
+\begin{wideitemize}
+\item October 24th: Presentation on 2-page proposal (submit draft before class)
+\item November 21st: Replication exercise (submit report and codes by email)
+\item December 5th: Virtual paper presentation
+\item (Week of) December 19th: Final Exam (exact time TBA)
+\item December 21st: Submit draft of the virtual paper by midnight
+\end{wideitemize}
+\end{frame}
+
+
+
+
+\subsection{Rules and Tips}
+\begin{frame}
+\frametitle{Some ground rules} 
+\begin{wideitemize}
+\item Usage of AI: Strictly for assistive purposes
+\begin{itemize}
+\item Allowed for proofreading, coding support
+\item Do not generate complete assignments using AI 
+\item All writings, especially virtual paper, must be original
+\item To show that you are working on your own idea, regularly discuss your ideas with me through office hours
+\end{itemize}
+\item Collaboration: You can collaborate, under these two conditions
+\begin{itemize}
+\item Each student must write up their own assignments
+\item Students must clearly identify their collaborators
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+
+
+
+
+% Second paragraph of intro
+\section{Empirical Analysis}
+\begin{transitionframe}
+\setlength{\parskip}{1.25ex}
+\tableofcontents[currentsection, hideothersubsections]
+\end{transitionframe}
+
+
+
+\subsection{Conceptualizing Treatment Effects}
+\begin{frame}
+\frametitle{Causal inference in social sciences: Quantifying causal relationships} 
+\begin{wideitemize}
+\item In this class (and beyond), we aim to clarify quantitative, causal relationship between different events and outcomes
+\begin{itemize}
+\item \textit{Does higher commodity prices reduce wars? (Caselli et al 2015; Dube, Vargas 2013)}
+\item \textit{Does extractive colonial institutional backdrop hurt current institutional development? (Acemoglu et al 2001; Michalopoulos, Papaiaonnou 2016)}
+\item \textit{Does negative shocks to economic productivity lead to revolutions (Brückner, Ciccone 2011)}
+\end{itemize}
+\item Treatment effect measures the size of impact these events have on sample of interest
+\begin{itemize}
+\item Identify an event that induces some shocks to individual behavior/societal outcome
+\item Find a suitably comparable sample (i.e. the control group and treatment)
+\item Compare outcomes for those affected by the event to those not affected 
+\end{itemize}
+\item To that end, we collect data from a suitably defined population and use various methods to estimate the effects of these events.
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Correlation vs Causation}
+\begin{wideitemize}
+\item Suppose you have random variables $X$ and $Y$. You want to identify if $X$ \textit{causes} $Y$
+\item A \textbf{correlation} between $X$ and $Y$ is a statistical measure that describes how the two variables move together
+\begin{itemize}
+\item It captures \textit{any} type of statistical dependence that moves the two variables together: Causation, but also others too!
+\item Not causal 1: $Y$ can cause $X$ (reverse causality)
+\item Not causal 2: $X$ and $Y$ co-move because of $Z$ that affects both (Omitted variable bias)
+\end{itemize}
+\item A \textbf{causal} relationship: \textit{Cleanly (exogenously)} changing variables $X$ leads to changes in $Y$
+\begin{itemize}
+\item Changes in $X$ may be a combination of changes from $X$ alone + other factors that co-move with $X$ and affect $Y$ (You do not want the latter)
+\item Randomized experiments: One way of Isolating clean changes in $X$ 
+\item Econometrics: Concisely explains the relationship between $X$ and $Y$ variables in a single equation (Even when experiment is not feasible)
+\end{itemize}
+ \end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Treatment effect in mathematics} 
+\begin{wideitemize}
+\item Mathematical notations
+\begin{itemize}
+  \item $Y_i$: observed outcome for individual $i$ % e.g. Income, votes, vote particpation, health
+  \item $D_i=d$: Treatment assignment ($d=1$ for treated, 0 for control group) 
+  \item $Y_i(d)$: Outcome for treated individual if $d=1$, control group if $d=0$. 
+\end{itemize}
+\item Treatment effect: How much does outcome differ between treated and control group
+\[
+  TE = Y_i(1)-Y_i(0)
+\]
+\begin{itemize}
+\item With large number of $i$, we want an average of TE (henceforth average treatment effect)
+\[
+ATE = E[Y_i(1)-Y_i(0)]=E[Y_i(1)]-E[Y_i(0)]
+\]
+\item Fundamental problem: If $i$ is treated, it cannot be in the control group 
+\item So either one of $Y_i(1)$ or $Y_i(0)$ is missing! $\to$ We do not exactly know the \textbf{counterfactual}
+\item Econometrics provides ways to provide sound judgement on what the counterfactual looks like  
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Potential outcomes and randomized experiments} 
+\begin{wideitemize}
+\item Potential outcomes provides framework to match observations to treatment effect
+\[ 
+\begin{aligned}
+Y_ i &= Y_i(1)D_i + Y_i(0)(1-D_i)\\
+&=Y_i(0)+D_i(Y_i(1)-Y_i(0))\\
+\end{aligned}
+\]
+\item In terms of conditional expectations, 
+\[ 
+\begin{aligned}
+E[Y_ i|D_i] &=E[Y_i(0)+D_i(Y_i(1)-Y_i(0)) |D_i]   \\
+&=E[Y_i(0)|D_i]+E[Y_i(1)-Y_i(0)|D_i]D_i \\
+\end{aligned}
+\]
+\item Note that 
+\begin{itemize}
+\item If $D_i=1$, then $Y_i = Y_i(1)$ and $E[Y_i|D_i=1]=E[Y_i(1)|D_i=1]$
+\item If $D_i=0$, then $Y_i = Y_i(0)$ and $E[Y_i|D_i=0]=E[Y_i(0)|D_i=0]$
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Potential outcomes and randomized experiments} 
+\begin{wideitemize}
+
+\item With randomized experiments, we assume that the counterfactual is identical \textbf{except} for treatment status
+\begin{itemize}
+\item Mathematically, treatment assignment is independent of potential outcomes
+\[
+E[Y_i(d)]=E[Y_i(d)|D_i=1]=E[Y_i(d)|D_i=0] \ \text{for } d\in\{0,1\}
+\]
+\item This implies that 
+\[
+\begin{aligned}
+ATE &= E[Y_i(1)]-E[Y_i(0)]\\
+&=E[Y_i(1)|D_i=1]-E[Y_i(0)|D_i=0]\\
+&=E[Y_i|D_i=1]-E[Y_i|D_i=0] (\because\text{previous slide})\\
+\end{aligned}
+\]
+or that ATE is obtained by subtracting average value of $Y_i$ for treatment group by that of control group (which we can do with the observed data we have)
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\subsection{Basic Regressions: Ordinary Least Squares}
+\begin{frame}
+\frametitle{Ordinary Least Square (OLS): Mathematical approach } 
+\begin{wideitemize}
+\item Write 
+\[
+Y_i = \alpha + \beta X_i + u_i 
+\] 
+where $X_i$ is an independent variable and $u_i$ is the error (determinants of $Y_i$ not captured by $X_i$) 
+\item Exogeneity: We assume that $u_i$ is uncorrelated with $X_i$, $E[u_i|X_i]=0$ (very important!)
+\item OLS estimates the parameter of interest $\beta$ by minimizing the sum squared of errors, giving us the $\beta$ that best matches the patterns in the observation
+\[
+\hat{\beta}_{OLS} = \min_\beta \sum_{i=1}^n (Y_i - \alpha-\beta X_i)^2
+\]
+\begin{itemize}
+\item We can do the same for $\alpha$, which capture baseline average (average when all independent variables are zero)
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conceptualizing OLS} 
+\begin{figure}
+\includegraphics[width=0.67\textwidth, keepaspectratio]{ols.png}
+\end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Ordinary Least Square (OLS): Potential outcomes approach } 
+\begin{wideitemize}
+\item Recall the potential outcome framework 
+\[
+\begin{aligned}
+Y_ i &=Y_i(0)+D_i(Y_i(1)-Y_i(0))\\
+E[Y_ i|D_i]&=E[Y_i(0)|D_i]+E[Y_i(1)-Y_i(0)|D_i]D_i\\
+\end{aligned}
+\] 
+
+\item Combined with OLS regression
+\[
+\begin{aligned}
+Y_i &= \alpha + \beta D_i + u_i \\
+\implies E[Y_i|D_i]&=\alpha+\beta D_i+E[u_i|D_i] \\
+&=\alpha+\beta D_i\\
+\end{aligned}
+\] 
+\begin{itemize}
+\item With random assignment, $ATE=E[Y_i(1)-Y_i(0)|D_i]=E[Y_i(1)-Y_i(0)]=\beta$
+\item Thus, ATE can be obtained with OLS estimates of $\beta$, or $\hat{\beta}_{OLS}$
+\end{itemize}
+\item You can add more variables, include $X_i$ on top of $D_i$ for better precision
+\end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Internal and external validity problems: Why OLS is not always usable} 
+\begin{wideitemize}
+\item \textbf{External validity} is concerned with the applicability to other contexts.  \medskip
+\item \textbf{Internal validity} assesses whether the model accurately represents the sample
+\begin{itemize}
+\item \textbf{Omitted variable bias: } Did the researcher left out factors that could affect $Y$ and are correlated with $X$?  $\to$ \textcolor{blue}{Multivariate regression, panel regression}
+\item \textbf{Wrong functional form: } Did the researcher incorporate $X$ in a proper functional form? (quadratic, logs?) $\to$ \textcolor{blue}{add logs, or use logit/probit}
+\item \textbf{Measurement error: } If $X$ does not have an accurate measure, OLS results in attenuation bias   $\to$ \textcolor{blue}{Instrumental variable}
+\item \textbf{Sample selection bias: }  If certain groups are more likely to not respond, then the data fails to estimate the true effects $\to$ \textcolor{blue}{Instrumental variable, Natural experiments} 
+\item \textbf{Simultaneous causality bias: } There are cases where $Y$ causes $X$ too, also leading to the bias (consider supply and demand) $\to$ \textcolor{blue}{Instrumental variable}
+\end{itemize}
+\item Controlled experiment nearly impossible in political economy $\to$ Natural experiment that uses external events/shock as treatment
+\end{wideitemize}
+\end{frame}
+
+
+\subsection{Panel Regressions}
+\begin{frame}
+\frametitle{When exogeneity fails} 
+\begin{wideitemize}
+\item  $E[u_i|D_i]=0$ rarely holds: Treatment is not always random, or some individuals are more likely to be treated than others
+\begin{itemize}
+\item This biases our results: Suppose that $E[u_i|D_i]=\phi D_i + v_i$ ($u_i$ and $D_i$ have correlation)
+ \[
+ \begin{aligned}
+  E[Y_i|D_i]&=\alpha+\beta D_i+E[u_i|D_i]\\
+  &=\alpha + (\beta+\phi)D_i + v_i\\
+ \end{aligned}
+\]
+With OLS on $Y_i$ and $D_i$, $\hat{\beta}$ captures $\beta+\phi$ - Treatment effect and \textcolor{red}{endogeneity bias}
+\end{itemize}
+\item When and why do biases happen?
+\begin{itemize}
+\item Treated groups may be a good performer to begin with (and vice versa)
+\item Differences in baseline characteristics besides treatment $\to$ inaccurate TE estimates
+\end{itemize}
+\item Now what? Control for $\phi$ with individual/time indicators (Panel), exogenous proxy (IV), or natural experiments
+\end{wideitemize}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Panel regression fixed effects approach} 
+\begin{wideitemize}
+\item We observe multiple individuals for multiple time periods ($i\in \{1,...,N\}, t\in \{1,...,T\}$)
+\[
+Y_{it} = \beta_0 + \beta_1X_{1,it}+ ... +\beta_kX_{k,it}+u_{it}
+\]
+\item Problem: Unobserved individual characteristics and time trends could affect outcomes and cause omitted variable bias
+\begin{itemize}
+\item Individual's unobserved ability/characteristics (e.g. culture)
+\item A bad shock in year $t$ that affects everyone (COVID years)
+\end{itemize}
+\item Panel regression allows us to capture these using individual and time fixed effects\
+\[
+Y_{it}=\beta_1 X_{1,it}+...+\beta_k X_{k,it} + \alpha_i +\lambda_t + u_{it}
+\]
+\begin{itemize}
+\item $\alpha_i$: Dummy for each individual $i\in\{1,...,N\}$
+\item $\delta_t$: Dummy for each time $t\in\{1,...,T\}$
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\subsection{Instrumental Variable Regressions}
+\begin{frame}
+\frametitle{Instrumental variables: Exogeneity amidst endogeneity} 
+\begin{wideitemize}
+\item OLS hinges on independent variable $X_i$ being uncorrelated with $u_i$
+\begin{itemize}
+\item This often breaks: omitted variable bias, measurement error, and reverse causality etc..
+\item Parts of $X_i$ that are \textcolor{red}{correlated with $u_i$}: What we want is part of $X_i$ \textcolor{blue}{independent of $u_i$}.
+\end{itemize}
+\item Solution is to find another variable $Z_i$ that are
+\begin{itemize}
+\item (1) Correlated with $X$ but (2) not with $u$: This gets us part of $X_i$ \textcolor{blue}{independent of $u_i$}
+\item (1) is the relevancy condition, (2) is the exogeneity condition
+\item Challenge: Exogeneity is difficult to argue (usually argue that $Z_i$ affects $Y_i$ only through $X_i$)
+\end{itemize}
+\item This is estimated with two stage least squares (2SLS)
+\begin{itemize}
+\item Original Equation: $Y_i = \alpha + \beta X_i + u_i$
+\item First stage: $X_i=\delta_0 + \delta_1Z_i+v_i \to$ Get $\widehat{X}_i=\hat{\delta}_0+\hat{\delta}_1Z_i$ ($\widehat{X}_i$ is uncorrelated with $u_i$ )
+\item Second stage: $Y_i = \beta_0 + \beta_1 \widehat{X}_i + u_i$
+\end{itemize}
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Instrumental variables using natural environment} 
+\begin{wideitemize}
+\item Source: Brückner, Ciccone, ``Rain and the Democratic Window of Opportunity'', \textit{Econometrica}, 79(3), 923-947
+
+\item Question: Can transitory shocks to income ($X_i$) lead to democratic changes ($Y_i$)?
+
+\item Income shocks can be endogenous: Places with higher income are likely more democratic to begin with
+\begin{itemize}
+\item Use (lack of) rainfall ($Z_i$): Correlates with income through agricultural productivity but unlikely to affect democratic transitions alone
+\item Plausible: Very hard for rainfall itself to lead to democratization
+\end{itemize}
+
+\item Result: 1\% transitory negative income shock $\to$ 1.3 percentage point rise in democratic transitions
+
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+  \centering
+\frametitle{Instrumental variables using natural environment} 
+\includegraphics[width=0.75\textwidth]{iv.jpeg}
+\end{frame}
+
+
+
+\subsection{Natural Experiments: Difference-in-Differences, Event studies, and Regression Discontinuity}
+\begin{frame}
+\frametitle{Natural experiments: Difference-in-differences} 
+\begin{wideitemize}
+\item Assume two time periods (before and after) and two groups (treated and controlled)
+\item You have the following regression
+\[
+Y_{it} = \beta_0 + \beta_1 D_{it} + \beta_2 P_{it} + \beta_3 D_{it}P_{it}+u_{it}
+\]
+where $D=1$ if in treatment group, $P=1$ if after treatment started
+\item You can get the following group averages
+\begin{itemize}
+\item Treated, After: $E[Y_{it}|D_{it}=1, P_{it}=1] = \beta_0+\beta_1 + \beta_2 + \beta_3$
+\item Treated, Before: $E[Y_{it}|D_{it}=1, P_{it}=0] =\beta_0+ \beta_1 $ 
+\item Controlled, After: $E[Y_{it}|D_{it}=0, P_{it}=1] =\beta_0+ \beta_2 $
+\item Controlled, Before: $E[Y_{it}|D_{it}=0, P_{it}=1] =\beta_0 $ 
+\end{itemize}
+\item DID: $[\bar{Y}_{\text{treat,after}}-\bar{Y}_{\text{treat,before}}]-[\bar{Y}_{\text{control,after}}-\bar{Y}_{\text{control,before}}]  \to \hat{\beta}_3$
+\item Can be generalized to many time periods and many groups with TWFE, Event-studies etc (active area of research)
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Conceptualizing Difference-in-differences} 
+\begin{figure}
+\includegraphics[width=0.7\textwidth, keepaspectratio]{did.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Difference-in-Differences} 
+\begin{wideitemize}
+\item Source: Andreas V. Jensen (2025) ``Educating for Democracy? Going to College Increases Political Participation'', \textit{British Journal of Political Science}, 55,1-12
+\item Question: Does going to college increase political participation?
+\item Method: Uses a survey of US students who graduated high school at 2004, observe differences in election participation in 2004 and 2008
+\[
+\text{Turnout}_{it}=\alpha_i+\delta_t + \beta[\text{College}_i\times\text{Post}_t]+\gamma X_{it}+u_{it}
+\]
+\begin{itemize}
+  \item Here $\alpha_i$ and $\delta_t$ are individual and time fixed effects\\ (Can you find their equivalent variables in the previous equation?)
+  \item Treated: Those who entered college between 04-08
+  \item Control: Did not go to college
+\end{itemize}
+\item Result: College enrollment increase particpation by 13 percentage points
+\end{wideitemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Difference-in-Differences} 
+\begin{figure}
+\includegraphics[width=0.7\textwidth, keepaspectratio]{did_table.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Natural experiments: Regression discontinuity} 
+\begin{wideitemize}
+\item Comparing individuals just entering the treatment vs marginally did not receive one
+\begin{itemize}
+\item Assume you are treated if $Z_i \geq c$ and not if otherwise
+\item Then, you run this regression on $Z_i \in [c-h, c+h]$ for some small $h$
+\[
+Y_i = \beta X_i + \gamma (1[Z_i\geq c]\times X_i) + \delta (X_i \times (Z_i-c)) + \mu (X_i \times (Z_i-c)\times 1[Z_i\geq c])+u_i
+\]
+For simplicity, assume that no other independent variables are in place: $X_i=1$
+\item $1[Z_i \geq c]=1$ if $i$ passes threshold for eligibility (0 if otherwise)
+\item $\gamma$ captures the treatment effect: Difference between those in and out of treatment
+\item We also allow slope to be different under and above the cutoff: $\delta$ for people below cutoff and $\delta+\mu$ for those above
+\end{itemize}
+\item Treatment effect estimated here is local: May not hold for out-sample
+\item There may be cases where threshold is not strict (fuzzy RD)
+\end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Regression discontinuity in use with electoral rules} 
+\begin{wideitemize}
+\item Source: Thomas Fujiwara (2011) ``A Regression Discontinuity Test of Strategic Voting and Duverger’s Law'', \textit{Quarterly Journal of Political Science}, 6, 197-233
+\item Question: Do third-party candidates perform well in majoritarian elections with run-offs than ones with no run-offs?
+\item Design: In Brazil, precincts with more than 200,000 registered voters have run-off elections for mayors (otherwise, no run-offs)
+\item Findings: Third-party candidates perform signficantly worse in places without run-offs, suggesting that voters consider winning probabilities of candidates into account
+\end{wideitemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Natural experiments: Regression discontinuity} 
+\begin{figure}
+\includegraphics[width=0.8\textwidth, keepaspectratio]{rd.png}
+\end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
