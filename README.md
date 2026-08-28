@@ -1,2 +1,3 @@
-# cnp_f2025
-Repository for conflict and peace (political economy of development course, NTHU)
+# Conflict and Peace (Fall 2025, National Tsing Hua University)
+
+This file
