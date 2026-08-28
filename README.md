@@ -13,7 +13,7 @@ Specifically, the course covers the economic, political, and institiutional orig
 
 The course is aimed at first-year PhD (and prepared MA) students in economics and political science. It assumes familiarity with statistical inference and post-graduate level micro/macroeconomics. Each week is built around  discussion of 5-7 seminal empirical papers that cover both the key theoretical frameworks and the causal evidence based on rigorous empirical studies. 
 
-The materials are shared for reference and teaching purposes. You are welcome to adapt them with attribution; please note that the reading list and assigned papers remain the intellectual property of their respective authors and publishers.
+The materials are shared for reference and teaching purposes. You are welcome to adapt them with attribution. Please note that the reading list and assigned papers remain the intellectual property of their respective authors and publishers.
 
 
 
