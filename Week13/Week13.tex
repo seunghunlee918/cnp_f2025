@@ -1,0 +1,923 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 13: Fiscal capacity of the state}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{November 28th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{Development of fiscal capacity is a key feature of development} 
+Expansion of government size and fiscal capacity investment in the last century
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tax share of GDP: 10\% in 1910 $\to$ 30-50\% today
+\item Tax capacity improved following implementation of broad-based taxes (income tax)
+\item However, this explains the trend only in developed countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item So economic growth $\to$ better fiscal capacity? Not regularly
+\item Separate investment in capacities are key
+\end{itemize}
+\end{itemize}\medskip
+But in poor states, no noticeable increase in fiscal capacities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Raise significantly less revenues than developed countries
+\item Lag behind in the implementation of modern tax technologies
+\begin{itemize}\setlength\itemsep{3pt}
+\item Property registers are manually updated, if updated at all 
+\item Do not utilize third-party information that ensures accurate tax information
+\item Less digitalized systems, more loopholes in general
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Rise of informational capacity and taxation over time} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Economic growth does not automatically lead to increased tax} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{fig2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Less capable states rely more on distortionary and narrow based taxes} 
+Why do they depend on such taxation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Broad-base taxes require registries that cover formal sector, and audits
+\item Narrow-base taxes rely on easily observable bases (trade ports, mines etc)
+\item Large informal economy and underdeveloped finance sector: Opens up loopholes
+\item Extractive for select groups by shifting tax burden onto them
+\item Bad equilibrium: Fiscal capacity$\Downarrow\to$ Public goods and economic development $\Downarrow$
+\end{itemize}\medskip
+What the data tells us
+\begin{itemize}\setlength\itemsep{3pt}
+\item High income countries rely on broad-based taxes
+\item Narrow base taxes (tariffs) more observable in low-capacity countries
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{High income $\to$ Income tax, Lower income $\to$ Trade tax} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{fig3.png}
+\end{figure}
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Tax structure across developing countries}
+\subsection{Gordon, Li (2009): Tax structures in developing countries: Many puzzles and a possible explanation}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Gordon, Li (2009):\\ Tax structures in developing countries: Many puzzles and a possible explanation
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Do presence of informal sectors affect choice of tax policies?} 
+Major difference in tax structures across developing and developed countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Some could be attributed to social preferences over public goods and redistribution
+\item But many differences with predicted optimal taxation in generic settings
+\begin{itemize}\setlength\itemsep{3pt}
+\item These taxation preserves production efficiency under plausible assumptions
+\item Rule out tariffs, capital income taxes, differential consumption tax, inflation tax
+\end{itemize}
+\item Drastic diffrences in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Less personal income tax, more tariffs, corporate income tax, and seignorage
+\end{itemize}
+\end{itemize}\medskip
+This paper proposes that existence of informal sector explains different tax structures
+\begin{itemize}\setlength\itemsep{3pt}
+\item Incorporates enforcement problems in developing countries due to informal economy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Informal economies: Use cash over financial intermediaries
+  \item Taxes on formal economy shifts activities to informal economy $\to$ Optimal tax rate $\Downarrow$
+  \item Justifies inflation tax, differential tax across industries, and tariffs
+\end{itemize}
+
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Summary of the difference in tax choices across country income} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=\textwidth]{gl2009_t1.png}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item  High corporate income tax, tariffs, seignorage in developing countries
+\item Less personal income tax
+\item Statutory tax rates are similar across different countries!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tax policy with limited information: Differential excise taxes} 
+Characterizing informal economy into a model
+\begin{itemize}\setlength\itemsep{3pt}
+\item Informal economy not observed by government
+\begin{itemize}\setlength\itemsep{3pt}
+\item Thus, taxes cannot be levied to such firms
+\item So profits for such firms are revenues - wage cost - capital costs
+\end{itemize}
+\item Formal firms use financial systems and have higher outputs, but subject to tax
+\item Firms become formal if net profits exceed those from informal economy
+\begin{itemize}\setlength\itemsep{3pt}
+\item High excise taxes reduce the net profits $\to$ tax revenue drops
+\end{itemize}
+\end{itemize}\medskip
+Variation across industries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Sectors with low increase in output from formalizing $\to$ lower tax rates than desired
+\item This results in distortion in domestic production, which are offset by tariffs on imports
+\item Inflation tax and red tape on lightly taxed sectors may be attractive
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{How to increase benefits of using financial sector} 
+Determinants of benefits to using financial sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capital intensive firms: They need lending to finance purchase of capital
+\item If firms operate at wide distance, financial sector reduces the cost
+\item High revenue per employee: More cash transaction exposes to internal theft
+\begin{itemize}
+\item Service sectors tend to be less capital intensive and easily transfer to informal economy
+\end{itemize}
+\item Firms that do not formalize avoid corporate and excise tax, but pay inflation tax
+\item Thus, taxes are kept low for non capital-intensive sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capital-intensive ones more likely to stick to formal even without intervention
+\item This is meant to shift informal economies to formal ones
+\end{itemize}
+
+\item This explains high capital income tax in developing countries (vs. income tax)
+\item Inflation taxes also raise cost of keeping cash, inducing firms to formalize
+\end{itemize}\medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivating uses of other anti-competitive measures}
+Tariffs  
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher tariff protection for capital intensive sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Meant to offset distortions due to uneven domestic tax enforcement
+\item Specifically, aim is to induce production to a sector more likely to formalize
+\end{itemize}
+\end{itemize}\medskip
+Other anti-competitive measures
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provide monopoly power to capital-intensive firms
+\item Impose tighter regulation or monitoring on informal firms
+\begin{itemize}\setlength\itemsep{3pt}
+\item Even if revenue from such firms cannot be observed, other activities could be
+\item Higher red tape measure on those firms as monitoring device
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Key takeaways}
+Existance of informal firms twist the choice of optimal taxation 
+\begin{itemize}\setlength\itemsep{3pt}
+\item More capital taxation, tariffs, and inflation taxes
+\item This is determined by the returns to using financial sectors
+\begin{itemize}\setlength\itemsep{3pt}
+\item If financial sectors provide benefits, less incentives to join informal economy
+\item As developing countries have less developed finance sectors, high informality
+\end{itemize}
+\item Thus, models should incorporate possiblity of informal economies
+\end{itemize}\medskip
+However, leaving informal economies as is is undesirable
+\begin{itemize}\setlength\itemsep{3pt}
+\item Weakens capacity to provide essential public goods
+\item Resource misallocation$\Uparrow$ and innovation$\Downarrow$ (cost of hiding leave little for innovation)
+\item Thus, efforts to induce firms to formalize through third-party information, legal measures, and expansion of electronic filing (Benhassine et al 2018)
+\end{itemize}
+\end{frame}
+
+
+\subsection{Okunogbe, Tourek (2024): How can lower-income countries collect more taxes? The role of technology, tax agents, and politics}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Okunogbe, Tourek (2024):\\ How can lower-income countries collect more taxes? The role of technology, tax agents, and politics
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do you improve tax system in developing countries? } 
+Increasing tax revenues is a major goal in many low/middle income countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Generally have lower share of their GDP as tax revenues
+\item Low taxation is a symptom of economic and institutional constraints
+\begin{itemize}
+\item Tax base not large enough, lack of constraint on redistribution/taxes
+\end{itemize}
+\item Does economic growth automatically expand tax capacity? Not exactly
+\begin{itemize}
+\item Separate investments in improving the tax system required
+\end{itemize}
+\end{itemize}\medskip
+This paper reviews recent developments in tax administration in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Identifying taxpayers (expanding tax registries and databases)
+\item Detecting tax burden (usage of third-party information)
+\item Collect taxes to state coffers (Billing systems, legal measures for noncompliance)
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Technology in tax collection} 
+Identification: Cost of linking identity info across government agencies and registries$\Downarrow$
+
+\begin{itemize}\setlength\itemsep{3pt}
+\item National ID (Ghana Card), Digital mapping of properties (Liberia)
+\item ID information may need to be combined with other measures (Okunogbe 2023)
+\end{itemize}\medskip
+Detection: Collect third-party info (declaration of tax liabilities by third person)
+\begin{itemize}\setlength\itemsep{3pt}
+\item `Digital trails' from value-added taxes and employment taxes
+\item Requires countries to cross-check information using multiple sources
+\item Need to close international loopholes
+\end{itemize}\medskip
+Collection: Increases in electronic filing and mobile payment options
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduces cost of monitoring and Compliance
+\item May disadvantage those less familiar with electronics \\ (rural, less-educated, less-established firms)
+\end{itemize}\medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Cross-country evidence on technology and collection} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{ot2024_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Role of tax collectors} 
+What determines the effectiveness of officials
+\begin{itemize}\setlength\itemsep{3pt}
+\item Deployment: low citizen-to-staff ratio and appropriate allocation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Low burden per staff
+\item Specialization: Matching staff depending on tax types and taxpayer traits 
+\end{itemize}
+\item Incentives: Tie staff revenues to tax revenue generations
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Risk: Could increase scope for corruption
+\item Monitoring staff with audits crucial 
+\end{itemize}
+\end{itemize}\medskip
+Interaction with technology
+\begin{itemize}\setlength\itemsep{3pt}
+\item Substitute? Obviate need for in-person Interaction
+\item Complement? Help expedite tedious processes and collecting contextual knowledge
+\item Balancing the two forces is key (and unresolved question)
+\item Resistance to adopting the technological change
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Political incentives for taxation} 
+How do political incentives determine tax collection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tax$\Uparrow$ $\to$ fund public services, social programs, infrastructure $\to$ support re-election
+\item Tax$\Uparrow$ $\to$ Citizen demand, expectation for accountability $\Uparrow$ $\to$ not help that much
+\end{itemize} \medskip
+What are the factors shaping success of tax collection?
+\begin{itemize}
+\item Alternative revenue: Dampen motivation for Taxation
+\item Political competition: Competition for better governance (through public services)
+\item Availability of tech: Reduce cost of collection and resistance from taxpayers
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Expanding our knowledge} 
+Findings from other relevant studies
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tax revenue and compliance increases with increased tech and enforcement
+\item Many results are from small-scale local experiments: Generalizable?
+\end{itemize}\medskip
+What remains?
+\begin{itemize}\setlength\itemsep{3pt}
+\item How to make technology and personnel complementary?
+\item How to tax new commodities (digital activities, digital currencies)?
+\item How to increase political support for taxation?
+\end{itemize}
+\end{frame}
+
+\subsection{Jensen (2022): Employment Structure and the Rise of the Modern Tax System}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Jensen (2022):\\ Employment Structure and the Rise of the Modern Tax System
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do modern tax systems rise?}
+Modern tax systems are characterized by increased direct taxes (income tax)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Requires high collection capacities 
+\item Changes in the structure of employment may explain increase in collection
+\begin{itemize}\setlength\itemsep{3pt}
+\item Enforcement in employer-employee structure $>$ Self-employed
+\item Existence of third-party information (employer, in case of income tax)
+\end{itemize}
+\end{itemize}\medskip
+This paper uncovers new facts on tax capacity with microdata across countries and time
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employee share increases over income distribution \& further down the income distribution as country develops 
+\item Exemption threshold gradually decreases in income distribution over development
+\item Threshold is located such that employee share on tax base remains constant and high
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data, definition, and calculation strategy} 
+Data source and definitions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Household surveys (100 countries)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employment type of economically active population (EAP)
+\item Information on taxable earnings (employment / self-employment / capital / other income)
+\item For US (1870-2010) and Mexico (1960-2010), compile long run time series 
+\end{itemize}
+\end{itemize}\medskip
+Definition of key terms and strategies for calculation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Employee: if work type generates third-party information usable in tax enforcement \\ (Otherwise, self-employment)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Self-employed: casual laborers, own account workers, workers w/o contracts
+\item Calculate share of employees in EAP across country's income distribution (in deciles)
+\end{itemize}
+\item Threshold: Minimum level of gross income above which individuals have to pay taxes
+\begin{itemize}\setlength\itemsep{3pt}
+\item From country tax reports of International Bureau of Fiscal Documentation
+\end{itemize}
+\item Income tax base: \% EAP whose gross income is above income tax exemption threshold
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fact1: Employee share $\Uparrow$ with income and development levels} 
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{j2022_f1.png}
+    \caption*{Red: Employee, Blue: Self-employed}
+  \end{figure}
+  
+\end{column}  
+\begin{column}{0.35\textwidth}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Within country, employee share increase over income
+\item Across countries, employee share profile moves leftward 
+\item Over transition, increase in employee share concentrated in deciles gradually further down 
+\end{itemize}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fact2: Exemption threshold moves downward as country develops} 
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{j2022_f2.png}
+    \caption*{Red: Employee, Blue: Self-employed, Vertical: Threshold}
+  \end{figure}
+  
+\end{column}  
+\begin{column}{0.35\textwidth}
+\begin{itemize}\setlength\itemsep{3pt}
+\item At low development, threshold at top deciles 
+\item With development, growth in employee share comoves with falling thresholds
+\item Tax base increases
+\item Documents frequent updating of thresholds (base increase not driven by nominal inflation)
+\end{itemize}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Fact3: Threshold is located where employee share remains constant} 
+\begin{columns}
+\begin{column}{0.6\textwidth}
+  \begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{j2022_f3.png}
+    \caption*{}
+  \end{figure}
+  
+\end{column}  
+\begin{column}{0.35\textwidth}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Composition of tax base is constant and high in employee share
+\item Employee share: 85-95\%
+\item Suggest that employee composition matters in deciding threshold
+\item \% Self-employed $\Uparrow\to$ Enforcement costs $\Uparrow$ (high employee share desirable)
+\end{itemize}  
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways from the stylized facts}
+Cost channels at play in expanding tax base
+\begin{itemize}\setlength\itemsep{3pt}
+\item Concerns with taxing and income segment with too high-self employed population
+\begin{itemize}
+\item Employees have information trails, self-employed do not
+\end{itemize}
+\item Compliance cost imposed on newly taxed self-employed may be high
+\begin{itemize}
+\item Employees have third-party withholding
+\end{itemize}
+\item Worsen between-group horizontal equity among employee vs self-employed
+\begin{itemize}
+\item Self-employed have evasion opportunities $\to$ effective taxes paid < legal liabilities 
+\end{itemize}
+\end{itemize}\medskip
+Rise of modern taxation: Decrease in threshold (broad-based tax) happens when
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase in employee share at lower end of income distribution (Fact 1)
+\item This lowers costs of reform and expand tax base (Fact 2)
+\item While retaining high employee share, making tax administration manageable (Fact 3)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implications for developing countries} 
+Redistribution by direct taxes might be ill-suited for developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Developed countries extensively use third-party information
+\begin{itemize}
+\item Evidenced by increase in employee share down the income distribution over time
+\end{itemize}
+\item Developing countries cannot enforce taxes flexibly due to cost constraints 
+\begin{itemize}
+\item Higher share of self-employment (difficult to gather info)
+\end{itemize}
+\item For such settings, indirect taxation could be the best option for redistribution
+\end{itemize}\medskip
+Remaining issues 
+\begin{itemize}
+\item How would implementation of technology affect tax base long-run?
+\begin{itemize}\setlength\itemsep{3pt}
+\item More use of third-party information $\to$ Rising `employee' share?
+\item Expanding tax base would then be less costly $\to$ tax collection, public goods $\Uparrow$
+\item But what about adoption (existence of political will)?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Olsson, Baaz, and Martinsson (2020): Fiscal capacity in post-conflict states: Evidence from trade on Congo River [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Olsson, Baaz, and Martinsson (2020):\\ Fiscal capacity in post-conflict states: Evidence from trade on Congo River [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Course logistics} 
+\begin{itemize}\setlength\itemsep{3pt}
+\item 
+\begin{itemize}
+\item 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\section{Barriers to taxation in developing countries}
+\subsection{Balán, Bergeron, Tourek, Weigel (2022): Local Elites as State Capacity: How City Chiefs Use Local Information to Increase Tax Compliance in the DRC}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Balán, Bergeron, Tourek, Weigel (2022):\\ Local Elites as State Capacity: How City Chiefs Use Local Information to Increase Tax Compliance in the DRC
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How can local information be used effectively to increase taxes?} 
+How can fiscal capacities develop in presence of local \& traditional elites
+\begin{itemize}\setlength\itemsep{3pt}
+\item On the one hand, can capture politics and civic society
+\item On the other, could be room to collaborate to improve governance
+\item Potential trade-offs
+\begin{itemize}
+\item Enforcement backed by the state vs local knowledge and coordination?
+\end{itemize}
+\end{itemize}\medskip
+This study investigates if local elites can contribute to statebuilding
+\begin{itemize}\setlength\itemsep{3pt}
+\item Comparison between state agents vs local elites
+\begin{itemize}\setlength\itemsep{3pt}
+\item Local elites know more contextual knowledge but could lead to leakage in revenues
+\item State agents have better enforcement capacity
+\end{itemize}
+\item Based on field experiment randomizing type of tax collectors across neighborhoods
+\item Estimate changes in revenues and bribes, with tests for various mechanism
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Taxation in Democratic Republic of Congo (DRC)} 
+Setting of DRC
+\begin{itemize}\setlength\itemsep{3pt}
+\item Low-capacity state: tax/GDP ranks 188 out of 200 and  \$0.30 per capita tax revenue
+\item Relies on property tax: First campaign to expand property tax in 2016
+\item Public goods and services are scarce and low-quality
+\begin{itemize}
+\item Limited running water, electricity, unrepaired roads etc
+\end{itemize}
+\end{itemize}\medskip
+The current study focuses on the second campaign (May-Dec 2018)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Collectors trained by provincial ministry, separate for state and chiefs
+\item Involved property registration updates, providing liability information 
+\item Followed by tax visits (revisit until taxes are paid)
+\item Collectors compensated based on houses registered and revenue collection
+\item Property tax rates are tiered flat, fixed fees (low: \$2 tax, 89\% vs high: \$9 tax, 11\%)
+\begin{itemize}
+\item Equivalent to 0.32\% of property value ($\simeq$ lower end of property tax rates in US)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+RCT on 45000+ properties in 356 neighborhoods in Kasai-Central
+\begin{itemize}\setlength\itemsep{3pt}
+\item Randomized at neighborhood, treatment at past campaigns, experience of chiefs
+\item Central (state agents) vs Local (chiefs) vs State agents w/ local info vs state and local
+\item Pure control group: Declare their property values voluntarily
+\item Other aspects of collection equal
+\begin{itemize}
+\item Property registration, assessment, tax liabilities, training, collection compensation
+\end{itemize}
+\item Complemented with tax administrative data and household surveys
+\end{itemize}\medskip
+Estimation leverages random assignment of treatment (indiv $i$, neighbor $j$, strata $k$, time $t$)
+\[
+y_{ijkt}=\beta_0 + \beta\text{Local}_{jkt}+\gamma X_{ijkt} + \alpha_k + \theta_t + e_{ijkt}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item For mechanisms, other treatment arms included as separate variable
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Increase in compliance and revenues} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{bbtw2022_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Accurate assessments \& trust in government $\uparrow$, but bribes $\uparrow$} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bbtw2022_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Evidence of local information at play} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=1\textwidth]{bbtw2022_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways}
+What explains the chiefs' advantage? Better targeting with information advantage
+\begin{itemize}\setlength\itemsep{3pt}
+\item Lower effort cost? Chiefs did not make more visits
+\item Target their visits? When state agents received info from chiefs, compliance $\Uparrow$
+\item Better persuasion? Neutralize info advantage (visit in linear route)$\Rightarrow$ Central = Local
+\end{itemize}\medskip
+Takeaways and remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Should countries with low capacities rely on local elites?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Raise revenues, but also bribes
+\item To shift to state, value of \$1 lost in bribes $>$$>$ \$1 gained in revenues
+\end{itemize}
+\item For technology to increase taxes, need to surpass some state capacity threshold?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Speak to the complementary/substitutional relationship between tech and person
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\subsection{Henn, Mugaruka, Ortiz, Sánchez de la Sierra, Wu (2025): Monopoly of Taxation without a Monopoly of Violence: The Weak State's Trade-off from Taxation}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Henn, Mugaruka, Ortiz, Sánchez de la Sierra, Wu (2025):\\ Monopoly of Taxation without a Monopoly of Violence: The Weak State's Trade-off from Taxation
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Tradeoffs between monopoly of taxation \& monopoly of violence?} 
+Weak states often fail to exert de facto control over their jurisdictions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Non-state actors (rebels) take over, who sometimes provide stability over 
+\item If these areas are economically valuable, state loses lot of fiscal revenue
+\item So is it beneficial for state to take formal authority over those lands?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Regain lost fiscal revenues
+\item But could trigger inadvertent response from rebels (e.g. plundering)
+\end{itemize}
+\end{itemize}\medskip
+This paper investigates the effect of state-building attempts to increase tax revenues
+\begin{itemize}\setlength\itemsep{3pt}
+\item Military powers to reclaim land and replace rebels
+\item Negotiate with rebels (often with concession to the rebels)
+\item Leverage subnational evidence in Democratic Republic of Congo (DRC) 
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{State-building efforts to drive rebels out of DRC} 
+State absence in Eastern DRC (and postcolonial Africa in general)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many parts of DRC (East) were under armed group control since 1998
+\item Most notable of these organizations is FDLR (Forces de Libération du Rwanda)
+\end{itemize}\medskip
+Military operation and peace treaty with rebels
+\begin{itemize}\setlength\itemsep{3pt}
+\item Largest peace treaty: Sun City peace treaty in 2004
+\begin{itemize}\setlength\itemsep{3pt}
+\item Various armed groups integrated into Congolese army
+\item Allowed government to regain half the country without triggering violence
+\item Other peace agreements had smaller goals and lower credibility
+\end{itemize}
+\item Largest military operation: Kimia II (March 2009)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Joint operation with UN, national army, and Rwanda
+\item Targeted FDLR presiding and taxing over Basile Chiefdom region since 2005
+\item Although defeated, FDLR launched theft operations from the nearby hilly forest region
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Constructing the data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Armed group presence: village-level data through interviews with former combatants
+\begin{itemize}
+\item Perpetrators' affiliation, motivation (pilage/retaliate/etc), actions taken
+\end{itemize}
+\end{itemize}\medskip
+Effects of Kimia II and Sun City Peace Treaty
+\begin{itemize}\setlength\itemsep{3pt}
+\item Kimia II: FDLR vs non-FDLR villages pre (`05-`09) and post (`10-`12) in Basile Chiefdom
+\item Peace treaty: Integrated villages vs others in the region before and after `02
+\[
+Y_{i,t} = \alpha_i + \beta_t + \sum_{k=-4}^{k=3}\beta_k \text{Treat}_i \times 1[t=t_0+k] + e_{i,t}
+\]\vspace{-20pt}
+\begin{itemize}
+  \item $t_0=2009$ for Kimia II effects, $2002$ for peace treaty effects
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kimia II: FDLR increased violence afterwards} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{hmosw2025_f1.png}  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Kimia II: Driven by increase in pillages by FDLR} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{hmosw2025_t1.png}  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Peace treaty: Rise of new armed groups since treaty} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{hmosw2025_f2.png}  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+What (doesn't) explain the effects
+\begin{itemize}\setlength\itemsep{3pt}
+\item Actual violence increased (as opposed to \textit{reported} violence)
+\item Violence by other actors do not increase following Kimia II
+\begin{itemize}
+\item Thus when incentive to protect villages (for tax revenues) vanish, violence increase
+\end{itemize}
+\item Treaty raised revenues, but limited commitment ability led to questioning of legitimacy
+\end{itemize}\medskip
+Takeaways and questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Kimia II: Monopolize violence (rebels out), but lost taxation due to ensuing violence
+\item Peace treaty: Expand tax revenues but no longer monopolize violence
+\item If faced with these trade-offs what should the states do?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Asserting force desirable if state has more capacity to prevent crime 
+  \item Bargaining potentially desirable if states can commit to not negotiate with future rebels and have resource to integrate rebels
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Ch, Shapiro, Steel, Vargas (2018): Endogenous Taxation in Ongoing Internal Conflict: The Case of Colombia [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Ch, Shapiro, Steel, Vargas (2018): \\ Endogenous Taxation in Ongoing Internal Conflict: The Case of Colombia [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Trajectory of fiscal capacity development
+\begin{itemize}\setlength\itemsep{3pt}
+\item More broad-based taxation (income tax) aided by investments in capacity
+\item Many barriers to investment in developing countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item Informal economies that distort taxation decisions
+\item High enforcement cost due to lack of technology, third-party info, and personnel
+\item Establishing legitimacy difficult in face of internal conflicts
+\end{itemize}
+\item Utilization of local knowledge possible: But need to be wary of local capture/bribes
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Other input in state capacity: Personnel to execute tasks
+\begin{itemize}\setlength\itemsep{3pt}
+\item Responsible for collecting taxes, delivering public services
+\item How do you recruit talented, motivated bureaucrats? How do you retain them?
+\item How do you incentivize bureaucrats and monitor them to prevent deviant actions?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
