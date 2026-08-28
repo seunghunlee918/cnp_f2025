@@ -1,0 +1,999 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 12: State capacity -- Theoretical framework and weak states}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{November 21st, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{Drastic differences in capabilities of states across different countries} 
+Some of the poorest countries in the world are also  `weak states'
+\begin{itemize}\setlength\itemsep{3pt}
+  \item State capacity: Encompasses ability to support markets, provide public goods, and raise taxes from broad bases 
+   \begin{itemize}\setlength\itemsep{3pt}
+    \item Support markets: Enforce contracts, protect property rights
+    \item Provide public goods: Education, health, but also peace (by monopolizing violence)
+    \item Broad base taxes (income tax) are more rule-based, less burdensome for individuals, but require large investments for implementation 
+    \item Narrow base taxes (royalties and tariffs) are easy to implement but could be corruptible and extracts particular group excessively 
+  \end{itemize}
+\item Weak states: States that cannot support basic economic function, raise revenues, deliver essential public services, and provide law and order
+\end{itemize} \medskip 
+State capacity is widely dispersed, but also clustered
+\begin{itemize}\setlength\itemsep{3pt}
+\item Weak states are also poorer and mired in internal conflicts
+\item Developed countries: High income, functioning institutions, less internal conflicts
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Huge variation in state capacity across the globe}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.7\textwidth]{fig1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{State capacity clustered with income and functioning of institutions}
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2_1.png}
+\caption{Income and capacities are clustered}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig2_2.png}
+  \caption{Capacities and fragilities index}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{External wars increase capacity; internal wars hamper it}
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig3_1.png}
+\caption{External wars positively correlate}  
+\end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{fig3_2.png}
+  \caption{Internal wars negatively correlate}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why care about state capacity, and open questions?}
+Why do state capacities matter?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capable states can distribute fruits of economic development and prevent violence that stifles the progress
+\begin{itemize}
+\item Ability to tax, enforce law, and distribute services contributes to growth and peace
+\end{itemize}
+\item Ultimately relates to economic and institutional development: Many weak states are poor, authoritarian, and in internal conflict
+\end{itemize}\medskip
+
+We discuss open questions on state capacity with theories and empirical findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item What forces explain the formation of capable states?
+\item How do weak states perpetuate violence, corruption, and weak growth?
+\item What explains the clustering of state institutions, violence, and income?
+\end{itemize}
+\end{frame}
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Conceptualizing state capacity}
+\subsection{Besley, Persson (2009): The Origins of State Capacity: Property Rights, Taxation and Politics}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Besley, Persson (2009):\\ The Origins of State Capacity: Property Rights, Taxation and Politics
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What determines the state's investment in fiscal and legal capacity}
+How are institutional capacity support markets and collect taxes developed?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Historians note the development of capacity in response to external wars (Tilly 1990)
+\item Social sciences (economics, especially) typically assume such capacities exist by default
+\item In reality, institutional capacities differ starkly
+\end{itemize}\medskip
+This paper provides theoretical framework of state institutions as endogenous investments
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individuals come from different groups (ruling vs nonruling, different wealth)
+\item State collects taxes, protects property rights, and provide public goods
+\item What determines taxation, public goods provision, and support for market activities
+\item Why are there differences in investments in these capacities across different settings?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Focus on high capacities of wealthy, democratic, and parliamentary democracies 
+\end{itemize}
+\item Provides grounds for studying how institutions evolve during development
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: Definitions and layout} 
+What makes up state capacity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Legal capacity: Enforce contracts, regulate markets, and protect property rights
+\item Fiscal capacity: Collect taxes to finance public goods and `redistribution'
+\end{itemize}\medskip 
+Setting the model up
+\begin{itemize}
+\item There are two time periods $s\in\{1,2\}$ and two groups of individuals  $J\in\{A,B\}$
+\item Individuals have linear preferences over public goods and post-tax income
+\item State (led by $A$ or $B$) protects property rights, collect taxes in both periods
+\item State can also increase its legal and fiscal capacities at $s=1$
+\item State maximizes (politically) weighted sum of individual utilities under budget and capacity constraints
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: Individual utilities} 
+Individual utilities (For given group $J\in\{A,B\}$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Gain utility from public good $G_s$ (by factor of $\alpha_s$) and income $Y_s^J$ (taxed by $t_s^J$)
+\[
+v_s^J=\alpha_s G_s + (1-t_s^J)Y_s^J(p_s^J) 
+\]\vspace{-20pt}
+\item Income gain is higher with increase in $p_s^J$, enforcement of property rights, $\left(\frac{\partial Y_s^J}{\partial p_s^J} >0\right)$
+\item Taxes deduct from income but used to finance public goods
+\end{itemize}\medskip 
+Differences across groups
+\begin{itemize}\setlength\itemsep{3pt}
+\item Demographic share: $\beta^J$ of population in group $J\in\{A,B\}$ ($\beta^A+ \beta^B=1$)
+\item Different protection, taxation (negative taxes possible), and income 
+\item Public good is distributed commonly (no differences in level of public goods)
+\item Assume that group $A$ is ruling at $s=1$, with chance of continued ruling in $s=2$ is $\gamma_A$
+\end{itemize}\medskip 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up the framework: State objectives and constraints} 
+Objective of the state: Politically weighted sum of individual utilities
+\begin{itemize}
+\item $\bar{\rho}$ and $\underline{\rho}$: Relative political weights on ruling and nonruling groups ($\bar{\rho}\beta_s^A+\underline{\rho}\beta_s^B=1$)
+\[
+V_s = \alpha_s G_s + \bar{\rho}\beta_s^A(1-t_s^A)Y_s^A(p_s^A)+\underline{\rho}\beta_s^B(1-t_s^B)Y_s^B(p_s^B)
+\]\vspace{-20pt}
+\begin{itemize}
+\item $\bar{\rho}$ captures how $A$ values its own group relative to demographic share (1 or greater)
+\item $\underline{\rho}$ captures how $A$ values nonruling groups (less or equal to 1)
+\end{itemize}
+\item At $s=1$, invest in legal ($\pi_s$) and fiscal capacity ($\tau_s$) at cost of $L(\pi_2-\pi_1)$ and $F(\tau_2-\tau_1)$
+\end{itemize} \medskip
+Constraints of the state
+\begin{itemize}\setlength\itemsep{3pt}
+\item Capacity constraints: $p_s^J \leq \pi_s$, $t_s^J \leq \tau_s$
+\item Budget Constraints
+\begin{itemize}\setlength\itemsep{3pt}
+\item $s=1$: Capacity investment included $\to \sum_J \beta^J t_1^J Y_1^J=G_1 + L(\pi_2-\pi_1)+F(\tau_2-\tau_1)$ 
+\item $s=2$: No new investment$\to \sum_J \beta^J t_2^J Y_2^J=G_2 $ 
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Policy choices in utilitarian vs politically-motivated settings} 
+Policy choices on $p_s^J$ and $t_s^J$ in utiltarian governments ($\bar{\rho}=\underline{\rho}=1$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item $p_s^J$ increases indirect utilities: Provide to the fullest possible $p_s^J=\pi_s$ 
+\item $t_s^J$ works in both ways - incomes are taxed, but used for public goods
+\item $\alpha_s\geq1$: Tax to the fullest possible ($t_s^J=\tau_s$), all revenues to $G_s$ and investments 
+\item $\alpha_s<1$: $G_s=0$, smallest possible taxes (0 in $s=2$, exact cost of investments in $s=1$)
+\end{itemize}\medskip
+Politically-motivated objective maximization ($\bar{\rho}>1>\underline{\rho}$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item No different logic in legal capacity: Higest protection possible
+\item Public goods are provided only if ruling class values it sufficiently ($\alpha_s\geq\bar{\rho}$)
+\item If $\alpha<\bar{\rho}$:  $G_s=0$, and taxes could be `redistributed' from nonruling to ruling class
+\begin{itemize}
+  \item Ruling group gains $\bar{\rho}$ from `redistribution', nonruling loses $\underline{\rho}$ from this
+  \item With $\bar{\rho}-\underline{\rho}>0$ beneficial to extract (from nonruling group standpoint)
+\item Implies that in this setting, people have different interests towards fiscal capacity
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Investing in state capacity} 
+Investments in fiscal ($\tau$) and legal ($\pi$) capacities maximizes expected social utility
+\begin{itemize}\setlength\itemsep{3pt}
+\item Factors: Wealth ($Y_s^J$), Value of public goods ($\alpha_s$), Regime stability ($\gamma_A$), representativeness ($\bar{\rho}-\underline{\rho}$)
+\item Legal capacity is desirable in any case
+\item When $\alpha_s<\bar{\rho}$, high $\tau$ undesirable for non-ruling group $\to$ Underinvest in capacities
+\begin{itemize}
+  \item In other cases, no conflict over the desirability of fiscal capacity
+\end{itemize}
+\end{itemize}\medskip
+Key findings (in theory and empirics)
+\begin{itemize}\setlength\itemsep{3pt}
+\item In most cases, legal and fiscal capacities complement each other
+\begin{itemize}
+  \item $\pi\Uparrow\to$ More revenues for public goods $\to\tau\Uparrow\to$ More funds to increase protection$\to\pi\Uparrow$
+\end{itemize}
+\item What factors increase investments in state capacities?
+\begin{itemize}
+  \item High $Y_s^J$, High $\alpha_s$, High $\gamma_A$, Small $\bar{\rho}-\underline{\rho}$
+  \item Mismatch in political power and economic influence $\to$ Fiscal capacity underinvested
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical prediction matches well with observed correlates} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bp2009_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical prediction matches well with observed correlates} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.7\textwidth]{bp2009_t2.png}
+\end{figure}
+\end{frame}
+
+\subsection{Gennaioli, Voth (2015): State Capacity and Military Conflict}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Gennaioli, Voth (2015):\\ State Capacity and Military Conflict
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What explains the rise of centralized states in Europe?} 
+Centralized states are relatively recent concept
+\begin{itemize}\setlength\itemsep{3pt}
+\item Before: No professional bureaucracy, limited tax powers, armies of mercenaries
+\item Europe began to form centralized fiscal appartus from 1500s
+\item Key driver: External wars - but really?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many wars pre-1500s, and many states (Spain, Austria) late in developing fiscal capacity
+\item War may not be for common interests (personal glory)
+\item Military capacity $\to$ war (reverse causality feasible)
+\end{itemize}
+\end{itemize}\medskip
+This paper develops and tests the model of different types of wars in state-building
+\begin{itemize}\setlength\itemsep{3pt}
+\item War differs by how much money matters for military success
+\item Cohesiveness of the pre-war state also important
+\item Tests this on data of 374 battles in Europe since 1500
+\item With rising importance of money in wars, cohesive states developed more
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Historigal background and theoretical framework} 
+European wars and fiscal capacity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Role of money became important around 1500s (but not before)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Military Revolution: Standing army and new technology (gunpowder) made money crucial
+\item Divergence of military powers followed (ENG, FRA vs SPA, AUT, POL)
+\end{itemize}
+\item Some states increased taxation since 1500s, but large cross-country variations
+\begin{itemize}\setlength\itemsep{3pt}
+  \item 10-fold increase for England, Decrease for Ottoman Empire and Poland
+  \item Reliance on domain income $\to$ systemized tax collection (income, farming-based)
+\end{itemize}\medskip
+\end{itemize}\medskip
+Theoretical model: Centralized vs decentralized state without external wars
+\begin{itemize}\setlength\itemsep{3pt}
+  \item There are local, market, and home activities (not taxed)
+  \item Centralized: Local and market activities taxed by central ruler
+  \item Decentralized: Market activities taxed across different localities (Thus overtaxed)
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Local production only taxed at base. Local powerholder collects taxes and gets to keep it
+  \item Cost of centralization: Need to fend off local powerholders who lose tax revenues
+\end{itemize}\medskip
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{External wars and centralized state capacity} 
+How does external war come into play?
+\begin{itemize}\setlength\itemsep{3pt}
+\item War absorbs revenues of warring rulers + Redistributes revenues from loser to winner
+\item Winning depends on military strength (determined by manpower and expenses)
+\item War threat affects centralization incentives in two ways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase centralization: Rising revenues makes it more likely to win 
+\item Decrease centralization: Revenues spent on war, and risk of larger losses after war 
+\end{itemize}
+\item Determinant of divergent patterns of state-building
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher money sensitivity: Increase incentive to centralize
+\item Cohesiveness: External war becomes common threat $\to$ more incentive to centralize
+\item Countries less likely to win (divided to begin with) unlikely to centralize 
+\end{itemize}
+\item When money does not matter: Less incentive to centralize 
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Variables and data sources (Jacques (2007), Karaman, Pamuk (2010))
+\begin{itemize}\setlength\itemsep{3pt}
+\item Data on 374 European wars as external wars
+\item Fiscal capacity: Tax revenues per capita divided by wage (mimic share of taxes)
+\item Cohesion measured based on number of independent predecessor states, ethnic fractionalization measure, and surface area
+\end{itemize}\medskip
+Empirical strategy seeks to estimate correlates between money sensitivity, cohesion, and fiscal capacity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Primarily use OLS (along with country fixed effects)
+
+\end{itemize}\medskip
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical finding: Richer countries won more wars after 1650} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.58\textwidth]{gv2015_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Sufficient cohesion and money sensitivity matters} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.5\textwidth]{gv2015_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaway and discussion} 
+Not all external wars affect state capacity equally
+\begin{itemize}\setlength\itemsep{3pt}
+\item Early history wars did not contribute to fiscal capacity
+\item When revenues mattered in winning wars, it increased incentive to centralize
+\item The effect is augmented with initial cohesion
+\begin{itemize}
+\item These patterns explain why centralization patterns diverged even in Europe
+\end{itemize}
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item With decreased frequencies of war, what explains development of fiscal capacity?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ability to implement broad-based tax still key
+\item Potential role for digitalized tax system (Pomeranz 2015; Okunogbe, Tourek 2024)
+\end{itemize}
+\item Maybe investment in military capacity is a result of possible external war
+\begin{itemize}\setlength\itemsep{3pt}
+\item If military investment = state capacity, then Besley, Persson (2009) causal logic (war $\to$ invest capacity) still applicable
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Besley (2020): State Capacity, Reciprocity, and Social Contract}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Besley (2020):\\ State Capacity, Reciprocity, and Social Contract
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does civic culture contribute to fiscal capacity?}
+Increased tax intake enabled governments to spend on essential services 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not just on national defense, but also health care, education, income transfers etc
+\item Switches in public spending requires economic, political, and social changes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Should develop capacity to tax and raise revenues
+\item But also, cultivate civic culture that increases tax \textit{compliance}
+\end{itemize}
+\end{itemize}\medskip
+This paper extends the Besley, Persson (2009) model
+\begin{itemize}\setlength\itemsep{3pt}
+\item  By incorporating the role of civic culture, reciprocity, and social contract
+\item Relative payoffs of civic-minded citizens and materialistic citizens matter
+\item Investigates how civic culture can develop in the long-run
+\item Ultimately answers how state capacity can persist with interactions with citizens
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Motivating findings: Different attitudes to tax compliance} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.7\textwidth]{b2020_t1.png}
+\end{figure}
+\begin{footnotesize}
+  Source: Individual responses from World Value  Survey, regressing compliance on individual characteristics, country and wave dummies. Income is displayed from lowest to highest
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Model setup} 
+Basic structure of the model
+\begin{itemize}\setlength\itemsep{3pt}
+\item Share $e$ of elites who decides public goods and transfers, and non-elites
+\item Among non-elites, $\mu_s$ of civic-minded citizens and $1-\mu_s$ of materialists
+\begin{itemize}\setlength\itemsep{3pt}
+\item All subject to taxes, with possible noncompliance ($n$), and receive utility from public goods 
+\item Civic-minded: Gains if tax used on public goods ($G$), loss if used on transfers to elites ($B$)
+\item Noncompliance: Incurs cost $C(n)$, which rises with fiscal capacity $\tau$ (easily detected)
+\item Individual Utility: $\lambda>0$ for civic-minded citizens, $\lambda=0$ for materialists\vspace{-5pt}
+\[\alpha G + b + w(1-(1-n)[t-\lambda\{G-eB\}-\tau C(n)])\] 
+\end{itemize}\vspace{-10pt}
+\item Revenues must be spent on public goods $G$, transfers to elites ($B$) and non-elites ($b$)
+\begin{itemize}\setlength\itemsep{3pt}
+\item For every $B$, share $0\leq\sigma\leq1$ must be spent on $b$. Thus $b=\sigma B$  (Higher $\sigma$ $\to$ cohesiveness)
+\item Budget: $eB+(1-e)\sigma B = T-G $
+\end{itemize}
+\item Fiscal capacity is determined by physical investments but also `tax morale'
+\begin{itemize}\setlength\itemsep{3pt}
+  \item For materialists, only physical investments matter
+\item For civic-minded person, public good$\uparrow \to$ tax morale $\uparrow$ (transfer$\uparrow\to$ tax morale $\downarrow$)  
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Optimal policy choice}  
+Optimal policy choice
+\begin{itemize}\setlength\itemsep{3pt}
+\item Elites choose $t$, $G$, and $B$ to maximize the sum of individual utilities
+\item Subject to cohesiveness of institutions ($\sigma$), fiscal capacity ($\tau$) and civic culture ($\mu$)
+\item Whether revenues are spent on $G$ or $B$ depends on cohesiveness and civic culture
+\begin{itemize}
+\item Public goods are more likely to be provided in scenario where civic culture ($\mu\Uparrow$) and cohesiveness ($\sigma\Uparrow$) are dominant (and also raise fiscal capacity)
+\item This comes from the fact that civic-minded persons are more likely to comply if revenues are used for public goods (and vice versa)
+\item Furthermore, high cohesiveness makes transfers to elites expensive $\to$ make public goods relatively cheaper
+\end{itemize}
+\item Over time, additional public goods due to $(\mu, \sigma) \Uparrow$ $\Rightarrow$ benefits of being civic-minded $\Uparrow$
+\begin{itemize}
+\item Conversely, narrow range of public goods provision from $(\mu, \sigma) \Downarrow$ $\Rightarrow$ civic-mindedness $\Downarrow$
+\end{itemize}
+\item Initial state of civicness, cohesiveness + strength of common interest ($\alpha$) matters
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Core implications of the model} 
+Cohesiveness of institutions and civic culture is complementary
+\begin{itemize}\setlength\itemsep{3pt}
+\item Cohesiveness of institutions are strengthened when more civic-minded persons induce high public goods over transfers to elites
+\item People are more likely to be civic minded if institutional setups make transfers to elites costly (through cohesiveness)
+\end{itemize}\medskip
+These determine how common interests develop
+\begin{itemize}\setlength\itemsep{3pt}
+\item In a less cohesive, weakly civic-minded setting, external threat may not significantly increase common interest
+\end{itemize}\medskip
+Civic-mindedness and cohesivess can be fostered in more representative political setup
+\begin{itemize}\setlength\itemsep{3pt}
+\item Elites that more closely represents non-elites more likely to sustain power
+\item Further increases returns for being civic-minded
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Potential extensions} 
+High dependence on outside sources of funds
+\begin{itemize}\setlength\itemsep{3pt}
+\item Outside sources of funding reduces need for own-source tax revenues
+\item This reduces importance of tax compliance and the role of civic culture
+\item Sudden, exogenous changes to outside funds $\to$ Challenges in raising fiscal capacity 
+\end{itemize}\medskip
+Can elites determine civic-mindedness ($\mu$)?
+\begin{itemize}\setlength\itemsep{3pt}
+\item We assumed that $\mu$ is exogenously determined
+\item But these can be potentially determined by elites
+\item Room for extension: Making tax avoidance costly, Benefits of public services over time
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways: How these topics can be empirically studied} 
+How can fiscal capacities be built 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Evolution towards broad-based system (Gordon, Li 2009; Jensen 2022)
+\item Efforts to gather more accurate information in developing countries (Balan et al 2021)
+\end{itemize}\medskip
+What increases tax morale and compliance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase benefits of compliance (tax breaks for formal firms) - (Benhassine 2018)
+\item Tax perceptions and electoral outcomes (Christensen, Garfias 2021)
+\end{itemize}\medskip
+Other factors that contribute to state capacities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Role of bureaucrats: Well-motivated, well-trained bureaucrats matter for effective public goods provision
+\item Active studies on how to recruit and monitor them (Dal Bó et al 2013)
+\end{itemize}
+\end{frame}
+
+
+\subsection{Rogowski, Gerring, Maguire, Cojocaru (2022): Public Infrastructure and Economic Development: Evidence from Postal Systems [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Rogowski, Gerring, Maguire, Cojocaru (2022):\\ Public Infrastructure and Economic Development: Evidence from Postal Systems
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+\section{Symptoms of Weak States}
+\subsection{Shleifer, Vishny (1993): Corruption}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Shleifer, Vishny (1993):\\ Corruption
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What conditions increase possibility of corruption}
+Definition and setup on corruption
+\begin{itemize}\setlength\itemsep{3pt}
+\item Corruption: Sale by government officials of government property for personal gain
+\begin{itemize}\setlength\itemsep{3pt}
+\item Collecting bribes for providing permits, custom passage, bar competitor entry
+\item Defense officials selling contracts for personal gain
+\end{itemize}
+\item In some cases, bribes \textit{may} account for a large fraction of national income
+\begin{itemize}\setlength\itemsep{3pt}
+\item In reality, really difficult to track. Most estimates may be underestimated
+\end{itemize}
+\end{itemize}\medskip
+This paper provides framework on the organization and effects of corruption
+\begin{itemize}\setlength\itemsep{3pt}
+\item Compare different types of bribes (theft by officials vs not)  
+\item Explain the distortionary effects of bribes 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Bribe ``greases the oil?": Overcome cumbersome regulation etc
+\item Slows down development, imposes additional costs
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Baseline model} 
+Model setup
+\begin{itemize}\setlength\itemsep{3pt}
+\item Government good is up for sale (say, a passport or a license)
+\item Official in charge can deny the sale of this good without risk of detection by its boss
+\item Consider the official as monopolist: Maximize values of bribe for selling the good
+\end{itemize}\medskip
+Cost-benefit problem of the official
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public good has a demand function $D(p)$, where $p$ is the official government price
+\item For the official, no cost in \textit{producing} the good (already made by government)
+\item Marginal cost of selling the good is different case by case
+\begin{itemize}\setlength\itemsep{3pt}
+\item Official turn over $p$ to government per sale (no theft): $p$ per sale $\to$ Buyer price $>p$ 
+\item Officials turn nothing to government (theft): 0 marginal cost $\to$ Buyer price $<p$
+\end{itemize}
+\item Create a shortage of goods (first case) \& Reduce observance of law (second case)
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+  \frametitle{Buyer price when corruption is present}
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{sv1993_f1_2.png}
+  \caption{Without theft}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{sv1993_f1_1.png}
+  \caption{With theft}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{What if you need multiple bribes to get a good?} 
+Suppose you need more than one licenses 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Two goods ($x_1, x_2$) are involved, with bribe and official prices of ($p_1, p_2$) and ($MC_1, MC_2$)
+\item Officials may act independently or collude
+\begin{itemize}
+\item In former, each sets their own bribe $\to$ bribe prices are higher $\to$ underprovision of goods
+\item In latter, keep bribe on one good down and profit off from bribe on the other
+\end{itemize}
+\item If a given good is supplied by different competing officials, level of bribes $\Downarrow$
+\begin{itemize}
+\item If someone asks for a bribe, go to the other official that do not ask for observance
+\end{itemize}
+\item The first two cases lead to underprovision and higher bribes compared to the third
+\end{itemize}\medskip
+What determines which one of the above structure are realized?
+\begin{itemize}\setlength\itemsep{3pt}
+\item How responsive is public pressure against corruption? (e.g active monitoring)
+\item How active is the political competition (which leads to pressure against corruption)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{How does corruption further distort outcomes?} 
+ Corruption is usually done in secret
+\begin{itemize}\setlength\itemsep{3pt}
+\item Thus, more actions need to be carried out by officials to avoid detection
+\item May involve inducing substitutions into goods where bribes are hard to detection
+\begin{itemize}
+\item Results in higher bribes (to cover costs) and further underprovision of certain goods
+\end{itemize}
+\item These actions increase social costs,  much more than taxes
+\end{itemize}\medskip
+Other costs incurred due to secrecy
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reluctance to change and innovation (keep outsiders off)
+\item Reluctance to being open (hinder efforts for transparency)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Updated analysis on corruption so far}
+How to curb incentives for corruption among bureaucrats?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Using data from public procurement (Best et al 2023)
+\begin{itemize}
+\item Breaks down prices charged in procurements to corruption and non-corrupt factors
+\end{itemize}
+\item Using bureaucrat placement (Khan et al 2019; Xu et al 2021)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Finds that those assigned to home states are less effective
+\item Other evidence that performance-based postings lead to better outcomes
+\end{itemize}
+\end{itemize}\medskip
+How to increase monitoring against corruption? 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Effects of media reports on capture of public funds (Reinikka, Svensson 2005)
+\begin{itemize}
+\item Provide information on local officials’ usage of funds $\to$ reduce wasted expenditures
+\end{itemize}
+\item Effects of reports on corrupt officials (Ferraz, Finnan 2008; Larreguy et al 2020)
+\begin{itemize}
+\item Publicize audit on local officials' performance $\to$ Accountability $\Uparrow$ ($\because$ electoral outcomes)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Dal Bó, Dal Bó, Di Tella (2006): Plata o Plomo? Bribe and Punishments in a Theory of Political Influence }
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dal Bó, Dal Bó, Di Tella (2006):\\ Plata o Plomo? Bribe and Punishments in a Theory of Political Influence
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do state capture affect quality of public officials} 
+In weak states, politicians are subject to punishments by private entities and bribes
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Many private entities seek to influence politicians through bribes and coercion
+\item Punishments and bribes complement: Threat of punishment makes bribing easier
+\item Yet, there are things where models with only corruption cannot explain
+\begin{itemize}
+\item Why give officials more discretion and immunity?
+\item When is it justified for the state to monopolize violence?
+\end{itemize}
+\end{itemize}\medskip
+This paper updates framework of political influence to include bribes and coercion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Investigates how possibility of coercion affects quality of public workers 
+\item Explains why political immunities exist in contexts where private coercion is prevalent
+\item Explains how discretion actually makes public work less attractive
+\begin{itemize}\setlength\itemsep{3pt}
+\item In model with bribes only, immunities are rarely justified (weaken monitoring mechanisms)
+\item Also in the old model, discretion increases corruption and appeal of public work
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Model setup: Decision to join public work}
+First stage: Citizens decide to enter public office or not 
+\begin{itemize}\setlength\itemsep{3pt}
+
+\item Citizens endowed with ability $a\in[0,\infty)$ (a probability distribution)
+\item Alternative is to choose private sector (which gives wage $a$, equivalent to their ability)
+\item Return from public work: public sector wage ($w$) + behavior of pressure group 
+\item Citizens with $a\leq w$ apply (and $w$ types selected, assuming recruiters observe types)
+\end{itemize} \medskip
+Second stage: Pressure group has an opportunity to influence officials
+\begin{itemize}\setlength\itemsep{3pt}
+\item Public workers provide public good, whose quality positively correlates with ability
+\item Have discretion to allocate ($\pi$) towards pressure group, with cost $c$ if caught
+\item With probability $\gamma$, officials decide to accept bribes or face punishments
+\begin{itemize}
+  \item $1-\gamma$: Only punishment (no possibility to accept bribes) - when bribes are infeasible
+\end{itemize}
+\item Pressure groups can either bribe ($b$) or punish ($p$) at costs $\beta\Phi(b)$ and $\rho\Psi(p)$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Analysis of payoffs} 
+Decision on accepting (and handing out) bribes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Officials facing pressure groups accept bribes (share $\gamma$) if \vspace{-5pt}
+\[
+w+b-c \geq w-p
+\]
+\vspace{-20pt}
+\item Pressure groups sets $b$ and $p$ to maximize the following profits\vspace{-5pt}
+\[
+\Pi(b,p)=\gamma(\pi-\beta\Phi(b))-(1-\gamma)\rho\Psi(p) \ \ \text{\textit{subject to }}b\geq c-p
+\]
+\vspace{-20pt}
+\item $\tilde{\pi}$: Minimal discretion required for pressure groups to influence officials (break-even)
+\begin{itemize}
+\item Inversely related to state capture: $\tilde{\pi}\Uparrow$ $\to$ Cost of bribing an official $\Uparrow$ $\to$ State capture  $\Downarrow$
+\end{itemize}
+\end{itemize}\medskip
+If only bribes are available ($p=0$ for all cases)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Solve $\gamma(\pi-\beta\Psi(b))$ subject to $b\geq c$ $\to$Bribe just enough to cover $c$, ($b=c$)
+\item Official payoffs/skill is $w$, and $\tilde{\pi}^0=\beta\Phi(c)$
+\item Drop in bribe costs ($\beta\downarrow$) $\to$ Higher state capture ($\tilde{\pi}\Downarrow$), no effect on quality of officials
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What happens when both bribes and coercion are possible?} 
+Problem when both $b$ and $p$ are active
+\begin{itemize}\setlength\itemsep{3pt}
+\item Pay bribes just enough to cover $b=c-p$ (Bribes become cheaper)
+\item The shortfall is made up with nonzero punishment $p^*$, such that $b+p^*=c$
+\item $\tilde{\pi}^p$ satisfies $\frac{1-\gamma}{\gamma}\rho\Psi(p^*)+\beta\Phi(c-p^*)$ $\to$ Any discretion $\pi$ larger than this, then influence 
+\item Resulting equilibrium payoff of official if pressure groups are active
+\begin{itemize}\setlength\itemsep{3pt}
+\item If official refuses bribe, payoff is $w-p^*$ (lower due to nonzero punishments)
+\item If bribes are accepted, payoff is $w+b-c = w+c-p^* -c = w-p^*$
+\end{itemize}
+\item When pressure groups are inactive: payoff is $w>w-p^*$
+\item Thus, the quality of bureaucrats fall in this scenario
+\item Furthermore, $\tilde{\pi}^p<\tilde{\pi}^0$ $\to$ When threats are usable, more state capture!  
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Negative effects amplified with cheaper ways to influence officials} 
+Exogenous changes in cost of influence (Suppose that $\beta$ and $\rho$ drops)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Recall that $\tilde{\pi}^p=\frac{1-\gamma}{\gamma}\rho\Psi(p^*)+\beta\Phi(c-p^*)$ and $\Pi(b,p)=\gamma(\pi-\beta\Phi(b))+(1-\gamma)\rho\Psi(p)$
+\item Fall in any one of $\beta$  and $\rho$ raises profits and decreases $\tilde{\pi}^p$
+\begin{itemize}\setlength\itemsep{3pt}
+\item The latter implies state capture will be more rampant 
+\item Existing pressure groups ramp up activity + new pressure groups enter
+\end{itemize}
+\item If primarily driven by $\rho\Downarrow$, then payoff of officials (and quality) definitely falls
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Usage of coercion increases in any case
+\end{itemize}
+\item If primarily driven by $\beta\Downarrow$, change to pay off ambiguous (but definitely not increase)
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Existing groups shift away from coercion $\to$ Minimal effect on wages
+\item New entrants that use both coercion and bribes $\to$ lower payoffs
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Implication on discretions}
+How do discretion affect quality of politicians 
+\begin{itemize}\setlength\itemsep{3pt}
+\item If discretion $\pi<\tilde{\pi}^p$, less incentives for pressure groups to influence officials
+\item Higher discretion could lead to more waste (more corrupt decision)
+\item As more groups with coercion decrease payoffs, quality of officials worsened
+\end{itemize}\medskip
+Immunity of officials (in principle)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can insulate honest officials from outside pressures, mitigate false accusations
+\item But can mask corrupt officials
+\item In setting with rampant coercion from pressure groups
+\begin{itemize}\setlength\itemsep{3pt}
+\item There are greater effect of protection to officials with immunity
+\item This can overweigh bad effects of masking corrupt officials
+\end{itemize}
+\item When legal system is effective, masking effects outweigh pressure effects
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Threat of coercion imposes negative effects on governance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduces payoff for officials $\to$ lower quality of officials
+\item More influence from private pressure groups $\to$ Increased state capture
+\item Augments effects of bribes: Cheaper to bribe officials
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ultimately, need to improve legal capacity 
+\begin{itemize}\setlength\itemsep{3pt}
+\item To prevent pressure groups and detect corruption
+\item But transitioning to better legal system is tough
+\end{itemize}
+\item Incentives of bureaucrats: How to attract incorruptible moral officials?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Under what conditions can governments bring them in (what sort of incentives?)
+\item Topic of Dal Bó et al (2013) in two weeks
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\subsection{Sanchez de la Sierra (2020): On the Origins of the State: Bandits and Taxation in Eastern Congo [Student Presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Sanchez de la Sierra (2020):\\ On the Origins of the State: Bandits and Taxation in Eastern Congo [Student Presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Capable states are the foundation for economic and institutional development
+\begin{itemize}\setlength\itemsep{3pt}
+\item Able to collect taxes (or any resources) for common interests
+\item Provision of essential public services
+\item Protect market activities with legal measures
+\item Role played by how much significance of common interest and civic movements 
+\begin{itemize}
+  \item Internal conflicts debilitate state capacity, external conflicts likely raise it
+\end{itemize}
+\item Weak states experience corruption and state capture (leading to further corruption)
+\end{itemize}\medskip
+How are we doing this empirically
+\begin{itemize}\setlength\itemsep{3pt}
+\item How do developing countries create policy instruments to enhance state capacity?
+ \begin{itemize}
+  \item Field and natural experiments on fiscal capacity
+\end{itemize}
+\item Studies on the bureaucrats implementing state operations
+ \begin{itemize}
+  \item How to motivate and monitor them?
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
