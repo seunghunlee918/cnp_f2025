@@ -1,0 +1,773 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 5: Impact of crime and conflict on individuals}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{October 3rd, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{How do conflicts affect individuals?} 
+Conflicts have very clear short-run implications
+\begin{itemize}\setlength\itemsep{3pt}
+\item Loss of life - both in terms of deaths and reduced healthy years
+  \item Destruction of physical capital and infrastructures
+\item Reduced economic activity and human capital accumulation
+\end{itemize} \medskip
+What is very worrisome: Negative effects can persist
+\begin{itemize}\setlength\itemsep{3pt}
+\item How do former combatants reintegrate?
+\item Does it affect how we value future? ($\because$ Uncertainty about stable future)
+\item Does it lock-in vulnerable individuals to crime / conflict specific capital?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some effects are already long-run!} 
+Negative permanent health effects (Bundervoet et al 2009)
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.4\textwidth]{fig1.png}
+\caption{Progression of Civil war in Burundi}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Some effects are already long-run!} 
+Negative permanent health effects (Bundervoet et al 2009)
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.6\textwidth]{fig2.png}
+\caption{Progression of Civil war in Burundi}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conflicts can trigger other channels with long-run implications} 
+Interrupting human capital accumulation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Unable to acquire skills at schools
+\item Could have implications in the long-run labor market performance
+\item Potentially may acquire skills only applicable in limited (illicit) sectors
+\end{itemize} \medskip
+But studying this topic is very tricky
+\begin{itemize}\setlength\itemsep{3pt}
+\item Data is rare: Mostly developing countries + Dangerous to obtain them
+\item Need to observe these individuals in the long-run
+\item Even if acquired, endogeneity issues!
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Ensuring that exposed individuals are comparable to the non-exposed are challenging
+  \item Measurement error in being exposed to crime / conflict
+\end{itemize}
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{What we do today} 
+Highlight novel channels that highlight effect of conflict in individuals
+\begin{itemize}\setlength\itemsep{3pt}
+\item Ability to make long-run investment $\Downarrow$
+\begin{itemize}\setlength\itemsep{3pt}
+\item Become more risk-averse
+\item Uncertain environments (state presence, underlying policy changes)
+\item Equally affect individuals and firm decisions
+\end{itemize}
+\item Accumulation of specific capital that does not apply to general skills
+\begin{itemize}\setlength\itemsep{3pt}
+\item Illegal industry specific capital: Difficult to look for other opportunities
+\item Also potentially explain their criminal life path
+\end{itemize}
+\end{itemize} \medskip
+We highlight potential channels that explain how effects of conflicts in individuals persist
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Impact on individual and firm decision-making}
+\subsection{Brown, Montalava, Thomas, Velásquez (2019): Impact of Violent Crime on Risk Aversion: Evidence from the Mexican Drug War}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Brown, Montalava, Thomas, Velásquez (2019): \\ Impact of Violent Crime on Risk Aversion: Evidence from the Mexican Drug War
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does exposure to crime affect attitudes towards risk} 
+Attitudes towards risk influence key decisions over the course of one's life
+\begin{itemize}\setlength\itemsep{3pt}
+\item Willingness to take risks affect choices on investment, occupation, migration etc
+\item Less known: How do life events change willingness to take risks?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Some studies in Psychology dating 1990s (Carmil \& Breznitz 1991)
+\end{itemize}
+\item Causal analysis may be difficult
+\begin{itemize}\setlength\itemsep{3pt}
+\item Exposure to life events that can change attitudes may be selective to begin with
+\item Thus, those exposed to such events may differ on many dimensions to those not exposed
+\end{itemize}
+\end{itemize}\medskip
+This paper uses panel survey data and variation in crime exposure 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Uses surveys conducted before and after surge of violence following War on Drugs
+\item Leverages location, timing, and magnitude of violence as variation
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Violence in Mexico} 
+Surge of violence in mid-2000s
+\begin{itemize}\setlength\itemsep{3pt}
+\item Homicide rate $<10$ per 100,000 before $\to$ $\simeq30$ after (currently 5th highest)
+\item $\Uparrow$ police vs drug cartels, fights among splintered cartels since onset of War on Drugs
+\item Splintered cartels spread throughout Mexico
+\end{itemize} \medskip
+How these events could affect attitudes towards risk
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fear $\Uparrow$ $\to$ Optimism $\Downarrow$, Risk-taking $\Downarrow$ (Risk-averseness $\Uparrow$)
+\item Economic conditions $\Downarrow$ $\to$ Risk-taking $\Downarrow$ (Risk-averseness $\Uparrow$)
+\item Health $\Downarrow$ $\to$ Risk-taking $\Downarrow$ (Risk-averseness $\Uparrow$)
+\item[$\to$] Goal is to distinguish these channels using data
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individual panel surveys (Mexican Family Life Survey 2 and 3)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Socioeconomics and demographics
+  \item Risk aversion measured with question on types returns from hypothetical gambles
+  \item Attrition not correlated with conflict environment and other covariates
+  \end{itemize}
+\item Homicide statistics from government statistics office (INEGI)
+\end{itemize} \medskip
+Empirical strategy leverages violence across municipalities and time with panel regression
+\[
+y_{ijmt}=\beta_1 \text{Hom}_{jt}+\beta_2 X_{it-1}+\theta_i+\gamma_t + \lambda_m+e_{ijmt}
+\]
+\vspace{-10pt}
+\begin{itemize}\setlength\itemsep{3pt}
+  \item ($i,j,m,t$)=(indiv, origin, destination, year)
+  \item $Y_{ijmt}=1$ if risk averse, $X_{it-1}$ measured year before to avoid reverse causality
+  \item Attrition not correlated with $\text{Hom}_{jt}$ (Otherwise, $\beta_1$ is biased+-))
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Leveraging pre vs post violent waves} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{bmtv2019_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Eliciting risk from survey questions} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=\textwidth]{bmtv2019_f2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Cross section vs panel regression discrepancy} 
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+\includegraphics[keepaspectratio,width=\textwidth]{bmtv2019_t1.jpeg}
+\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+Why the discrepancy
+\begin{itemize}\setlength\itemsep{3pt}
+  \item MxFLS2: Less risk-averse indivs more likely to stay in high violence areas and agree to be surveyed
+  \item Using panel: Observe same people across time - Able to use fixed effects to control unobservable characteristics
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Fear seems to be the most relevant mechanism} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=\textwidth]{bmtv2019_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Violence can affect decision-making by affecting risk attitudes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Violence exposure $\to$ Increased risk-averseness (decreased risk-taking)
+\item Driven by increased sense of fear following violence
+\item Compares with conventional cross-section estimates: Show that they can be biased
+\end{itemize}\medskip
+What can we take away from here?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Consequence of violence: Less willingness to engage in risky but beneficial endeavors
+\begin{itemize}\setlength\itemsep{3pt}
+\item Could lead to lot of missed opportunities for development
+\item Which implies less wealth accumulation and income
+\end{itemize}
+\item Another channel in which violence hurts development
+\begin{itemize}\setlength\itemsep{3pt}
+\item Violence need not destroy capital directly to impact growth and development
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Blair, Christensen, Wirtschafter (2022): How Does Armed Conflict Shape Investment? Evidence from the Mining Sector}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Blair, Christensen, Wirtschafter (2022): \\ How Does Armed Conflict Shape Investment? Evidence from the Mining Sector
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do conflicts affect firms' investment decisions?} 
+Uncertainty can disincentivize investment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Armed conflicts increase uncertainties over future economic returns
+\item Many measures taken to reduce armed conflict
+\begin{itemize}
+\item e.g. Monopolize violence (only the state can legally control military/police etc)
+\end{itemize}
+\item But do armed conflicts have unilateral effects on investment incentives? 
+\end{itemize}\medskip
+This paper tells us that armed conflicts do have divergent effects on investments
+\begin{itemize}\setlength\itemsep{3pt}
+\item Even within the same country, distance from conflict may affect changes to incentives
+\item Destruction of production, state absence, uncertain policies apply differently
+\begin{itemize}
+  \item Local threats (Destruction, state absence) vs Universal factors (uncertainty) 
+\end{itemize}
+\item Reviews findings from previously publish papers 
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical framework of conflict and investments} 
+Firms concerned about political instability to the extent that it constrains operations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Factors to consider: Production closure, state absence, uncertainty, reputation
+ \begin{itemize}\setlength\itemsep{3pt}
+  \item Production closure (-)
+  \item State absence: Lax regulations, difficult to tax (+), less protection of property (-)
+  \item Uncertain policies, government action and income horizon (-)
+  \item Reputation for working with warring government (-)
+\end{itemize} \medskip
+\item Exposure to political risk is heterogenous (by proximity)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Conflict site: Destruction of production sites $\to$ Investment $\Downarrow$
+  \item Buffer zone: Ungoverned and difficult to tax $\to$ Investment?
+  \item Country with Conflict: Still governed normally $\to$ Investment?
+  \end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical framework of conflict and investments} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{bcw2022_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical framework of conflict and investments} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{bcw2022_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Investment: Mining investment from SNL Metals and Mining dataset
+\begin{itemize}
+\item Includes data on investments made, locations from 1997-2014
+\end{itemize}
+\item Conflict data from UCDP dataset
+\end{itemize}\medskip
+Research design leverages variation in distance from conflict site and investment
+\[
+y_{ict}=\alpha_{ic}+\delta_{it} + \theta C_{ct} + \sum_k \kappa^k D^k_{ict}+e_{ict}
+\]\vspace{-15pt}
+\begin{itemize}\setlength\itemsep{3pt}  
+\item firm-country, firm-time fixed effects
+\item $C_{ct}$ capture whether a conflict happened at country $c$ in year $t$
+\item $k$ is a distance bandwidth
+\item $ D^k_{ict}$ captures whether firm $i$ in $c$ is exposed to conflict at year $t$ in bandwidth $k$ 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Effects differ by proximity} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.48\textwidth]{bcw2022_f2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Yet these heterogeneities are not captured at aggregate level} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.6\textwidth]{bcw2022_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Conflicts do not have unilateral influence on investment outcomes
+\begin{itemize}\setlength\itemsep{3pt}
+\item Different factors at work depending on proximity to conflict 
+\item Can take advantage of lax rules due to state absence? they may increase investments
+\item Otherwise, conflicts can discourage investment
+\end{itemize}\medskip
+Possible extensions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Effects of state absence on investments (later: Sanchez de la Sierra (2020))
+\begin{itemize}\setlength\itemsep{3pt}
+\item Non-state actors can take over (call them bandits)
+\item If protecting business activity is in bandits' interests, economic activity can continue
+\item Otherwise, they have no interest to protect
+\end{itemize} \medskip
+\item This difference could appear in dimensions other than proximity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Difference by sector of industry, for instance
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\subsection{Mirenda, Mocetti, Rizzica (2022): The Economic Effects of Mafia: Firm Level Evidence[Student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Mirenda, Mocetti, Rizzica (2022): \\ The Economic Effects of Mafia: Firm Level Evidence [Student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+ 
+
+\section{Effects on lifepath of individuals}
+\subsection{Humphreys, Weinstein (2007): Demobilization and Reintegration}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Humphreys, Weinstein (2007):\\ Demobilization and Reintegration
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What determines successful demobilization and reintegration?} 
+Many efforts to end protracted conflicts and bring normalcy afterwards
+\begin{itemize}\setlength\itemsep{3pt}
+\item Peacekeeping operations (PKOs) led by the United Nations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reform institutions and rebuild infrastructures to reduce incentives for further violence
+\end{itemize}
+\item Disarmament, demobilization, and reintegration (DDR) is key part of this process
+ \begin{itemize}\setlength\itemsep{3pt}
+\item  El Salvador, Cambodia, Sierra Leone, Tajikistan etc
+\end{itemize}
+\item Not enough micro-level evidence to assess the success
+\end{itemize}\medskip
+This paper uses micro-level evidence to identify factors contributing DDR programs
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Survey of combatants from warring factions in Sierra Leone
+\item Variation in the degree of reintegration across former combatants
+\item Identifies factors - personal characteristics, and contexts - that explains DDR effects
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting: Post-civil war in Sierra Leone (SL)} 
+History of post-war progress
+ \begin{itemize}\setlength\itemsep{3pt}
+\item War declared over in January 2002 by SL government (after 11 years!)
+\item 5 warring entities involved - War ended with capture of leader of a major faction
+ \end{itemize}\medskip
+ DDR process 
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Assemble at reception center $\to$ Disarm $\to$ receive allowances, necessities $\to$ civilian
+\item Receive job training (equally across 5 factions, uncorrelated with political affiliations)
+\end{itemize}\medskip
+
+Hypotheses on successes of DDR
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Success depends on dissolving combatant networks, improving earnings, fostering trust on democratic process, and reconciling with families and friends
+\item Those not happy with earnings potential + distrust other groups less likely to integrate
+\item Conversely, DDR could be most pronounced on high dissatisfaction and distrust indivs
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Outcome variables from surveying 1000+ combatants across warring groups
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Delinked: Break ties with the faction? (time/business relation/seeking help)
+\item Employed: Reintegrate to workforce
+\item Democratic: Confident in democracy? (elect/talk to officials vs fight/traditional leader)
+\item Accepted: Any problems in gaining acceptance from family and friends?
+\end{itemize}\medskip
+Key independent variables of integration
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Distrust: Believe in others to comply to peace agreement?
+\item Dissatisfaction: Faction benefitted or worse-off after agreement?
+\end{itemize}\medskip
+The paper estimate correlates across various characteristics and above outcomes
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Probit with dummies for factions applied
+\item Not necessarily causal: Not a randomized procedure in allocating one to DDR
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Refer to Blattman and Berman's works we covered few weeks ago
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{How are the combatants doing in these outcomes?}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{mh2007_t1.jpeg}
+\end{figure} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Who are more or less likely to reintegrate to begin with?}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+  \begin{figure}
+  \includegraphics[keepaspectratio,width=\textwidth]{mh2007_t3.jpeg}
+\end{figure} 
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}\setlength\itemsep{5pt}
+\item \textcolor{blue}{Distrust and dissatisfaction} only explains a small part of reintegration
+\item Some work in opposite directions (\textcolor{red}{political support for factions})
+\item \textcolor{green}{High-ranked, wealthier, and educated} ones less likely to reintegrate (on some dimensions only)
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{No systematic evidence of the effect of DDR on reintegration}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{mh2007_t2.jpeg}
+\end{figure} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions}
+The observed correlation between DDR and reintegration is weak 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Dissatisfaction and distrust only explains partially
+\item Some personal characteristics are more robustly correlated
+\item Participation at DDR does not contribute to reintegration\
+\end{itemize}\medskip
+So is DDR not effective at all? Not so fast...
+\begin{itemize}\setlength\itemsep{3pt}
+\item Differential factors within DDR could have different effects
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Difference in providing short-run money vs long-run opportunities vs cognitive care
+  \item See Blattman, Jamison, Sheridan (2017) - Companion of Blattman, Annan (2016) 
+\end{itemize}
+\item Could be different depending on how conflict ended
+\begin{itemize}\setlength\itemsep{3pt}
+  \item This one ended with one side losing
+  \item Not all conflicts end this way (most end without clear winners)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Sviatchi (2022): Making a Narco: Childhood Exposure to Illegal Labor Markets and Criminal Life Paths}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Sviatchi (2022):\\ Making a Narco: Childhood Exposure to Illegal Labor Markets and Criminal Life Paths
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Does early exposure to criminal life affect future life paths?} 
+Illegal markets operated by organized criminal groups involve so many individuals
+\begin{itemize}\setlength\itemsep{3pt}
+\item The `Kingpins': Pablo Escobar, Arturo Beltran Leyva, Al Capone ..
+\item But there are also the `footsoldiers': Mostly from marginalized backgrounds
+\item So How did they enter the criminal life?
+\begin{itemize}
+\item Spot benefit-cost calculus? Persistent factors that lock them into criminal life?
+\end{itemize}
+\end{itemize}\medskip
+This paper: Early exposure $\to$ formation of very specific human capital $\to$ lock-in
+\begin{itemize}\setlength\itemsep{3pt}
+\item Exogenous shocks to illegal markets in Peru from US intervention in Colombia
+\item Return to illegal act $\Uparrow$$\to$ Child labor in coca farming $\Uparrow$
+\item Accumulate human capital specific to illegal activities $\to$ Incarceration $\Uparrow$
+\item Early interventions (cash transfers for education) may offset these effective
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Illegal drug markets in Latin America} 
+Coca Production Colombia, Bolivia, Peru: Only places agroecologically suitable
+\begin{itemize}\setlength\itemsep{3pt}
+\item Change of drug policy in one can spill over, but to one of these countries only!
+\item As US shifted anti-drug efforts to Colombia, production shifted to Peru (early 2000s)
+\item Aerial spraying at Colombia hiked prices $\to$ Coca production rises in Peru
+\item Largest producer of cocaine by 2012 
+\end{itemize}\medskip
+Which individuals are more likely to be `locked-in' to this sector?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Labor market situation matters when deciding to continue education or work
+\item Age 11-14: End of primary school $\to$ secondary education vs labor market
+\item Coca price hike has effect on this group: Induce to switch off from education
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data sources} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Coca and other agricultural data: Satellite imagery + Agricultural census
+\item Coca price: UN Office on Drugs and Crime
+\item 2 Peruvian household surveys: Educational attainment and labor outcomes
+\item School and incarceration data obtained from administrative data
+\end{itemize}\medskip
+Empirical strategy leverages price shocks, timing of exposure, and location
+\begin{itemize}\setlength\itemsep{3pt}
+\item Labor market effects for indiv $i$ at area $d$ at time $t$ in age  bracket $k$: $Y_{idt} = \beta_0(PC_t\times \text{Coca}_d) + \sum_k \beta_k \text{Age}_k \times (PC_t\times \text{Coca}_d) +\alpha_d + \phi_t + \sigma_r t + X_{idt}+e_{idt}$ \medskip
+\item Long-run effects (incarceration and crime) for each birth cohort $c$  $Y_{dc}=\beta\text{Priceshock}\times\text{Age11-14}_{dc}+\sum_k \beta_k\text{Priceshock}\times\text{Age $k$}_{dc} + \alpha_d + \delta_c + \sigma_d c + e_{cd}$ \medskip
+\item Why? Incarceration data at cohort level (not individuals)
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Geographic and Temporal variation} 
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{figure}
+\includegraphics[keepaspectratio, width=\textwidth]{s2022_f1.jpeg}
+\caption{Coca production over time}
+\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+  \begin{figure}
+\includegraphics[keepaspectratio, width=\textwidth]{s2022_f2.jpeg}
+\caption{Coca suitability (1994) and production intensity (2000s)}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Price shock increase illegal labor participation, esp for 11-14 yr olds}
+    \begin{figure}
+\includegraphics[keepaspectratio, width=0.8\textwidth]{s2022_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{This exposure locks them into criminal industry-specific capital}
+    \begin{figure}
+\includegraphics[keepaspectratio, width=0.7\textwidth]{s2022_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Timely educational intervention offsets lock-in effects}
+    \begin{figure}
+\includegraphics[keepaspectratio, width=0.55\textwidth]{s2022_t3.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and Discussion} 
+Exposure to illegal markets and crime locks children into criminal life path
+\begin{itemize}\setlength\itemsep{3pt}
+\item Drop out of school: Cannot accumulate formal human capital
+\item More likely to be incarcerated later
+\item Intervention offsetting incentives to join labor early do mitigate some effects
+\end{itemize}\medskip
+Discussion 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Hints that environment where children grows matters
+\begin{itemize}
+\item Active research in economics, education, psychology (Moving to Opportunity etc)
+\end{itemize}
+\item Exposure at critical timing can tilt incentives, leading to long-run effects 
+\begin{itemize}
+\item Exposure to adverse events (crime, natural disasters) in utero
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\subsection{Couttenier, Petrencu, Rohner, Thoenig (2019): The Violent Legacy of Conflict: Evidence on Asymlum Seekers, Crime, and PublicPolicy in Switzerland [Student Presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Couttenier, Petrencu, Rohner, Thoenig (2019): \\ The Violent Legacy of Conflict: Evidence on Asymlum Seekers, Crime, and Public Policy in Switzerland [Student Presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Conflicts affect individuals through many channel
+\begin{itemize}\setlength\itemsep{3pt}
+\item Direction destruction of physical capital and life opportunities
+\begin{itemize}
+\item Not directly covered this week, but indirectly hinted throughout semester
+\end{itemize}
+\item Affect perspectives on future outlook through changing attitudes towards risk
+\item May lock-in individuals exposed to crime, especially at critical timing
+\end{itemize} \medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item What is the effective rehabilitation and reintegration methods 
+\begin{itemize}
+\item Not just conflicts, but applies to criminals (Law and economics, labor economics)
+\end{itemize}
+\item Any institutional setup that mitigate or aggravates impact on individuals? (Next week)
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
