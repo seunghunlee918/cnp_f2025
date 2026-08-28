@@ -1,0 +1,896 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 11: Consequences of migration and host society perception}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{November 14th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{What we know about migration so far} 
+Share of migrants increasing across many countries
+\begin{itemize}\setlength\itemsep{3pt}
+\item 2024: 304 million people globally are migrants, roughly 4\% (UNDESA)
+\item Global South to North migration: Seeking labor and educational opportunities
+\item Rising share of migration across countries within Global South
+\item Internally displaced persons on the rise: 83 million people (UNDESA)
+\begin{itemize}
+\item Those forced to flee violence, disasters, or crises but remain within country borders
+\end{itemize}
+\end{itemize}\medskip
+Reasons for migration are also diverse
+\begin{itemize}\setlength\itemsep{3pt}
+\item Primary motivation are for labor and educational opportunities
+\item But there are also political migrants: Those fleeing conflicts and political instability
+\item Increasing share of those fleeing environmental disasters
+\end{itemize}\medskip
+With rising conflicts and natural disasters globally, understanding forced migration is crucial
+\end{frame}
+
+\begin{frame}
+\frametitle{Growth in migrant populations, even in Asia} 
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{fig1.png}
+\end{figure}
+\begin{scriptsize}
+Source: UN Department of Economics and Social Affairs (Note: For US, 9.2\% $\to$ 15.2\%; Europe: 7.1\% $\to$ 12.6\%)
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Migration dynamics and rationale} 
+\begin{figure}
+  \begin{subfigure}{0.5\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{fig2.png}  
+  \end{subfigure}
+  \begin{subfigure}{0.45\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{fig3.png}  
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{How do migrants integrate into host societies?} 
+This is a two-way effort: Effort of migrants and the natives
+\begin{itemize}\setlength\itemsep{3pt}
+\item So far, emphasis on the Effects of migrants on host society
+\begin{itemize}\setlength\itemsep{3pt}
+\item Impact of migrant workers on themselves and natives (Peri et al 2016 and many more)
+\item Impact of migrant voters on electoral outcomes (Barbsai et al 2017; Mayda et al 2022)
+\item Migrant \& Second generation (Bleakly, Chin 2010; Bratsberg et al 2020)
+\end{itemize}
+\item We know relatively little about how natives in the host societies affect integration
+\begin{itemize}\setlength\itemsep{3pt}
+\item Are they perceived with prejudice as outsiders? How?
+\item Are these based on accurate or misguided information?
+\item What does it imply for migrant integration and policies?
+\end{itemize}
+\end{itemize}\medskip
+In this lecture, we focus the impacts of forced migration (political and climate migrants)\\ \medskip
+In addition, we look at how migrant perceptions of natives affect integration and policies
+\end{frame}
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Consequences of migration}
+
+
+\subsection{Card (1990): The Impact of Mariel Boatlift on the Miami Labor Market}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Card (1990): \\ The Impact of Mariel Boatlift on the Miami Labor Market
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does migrant inflow affect labor market?}
+Migration policy debates center around how migrants affect native workers' outcomes
+\begin{itemize}\setlength\itemsep{3pt}
+\item How does it affect their wages and employment?
+\item If migrants substitute native workers, lower wages and employment for natives
+\item If migrants complement native workers, effects may not be straightforward
+\begin{itemize}\setlength\itemsep{3pt}
+\item Migrants and natives may have different skill sets: May not compete for same jobs
+\item Some natives (e.g. high-skilled) are probably not as affected as others (e.g. low-skilled)
+\item Host society can absorb these changes (Demand for specific workers $\Uparrow$)
+\end{itemize}
+\item Still debating on how this affects native worker outcomes in various settings
+\end{itemize}\medskip
+We look at one of the earliest works that started this debate
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverages sudden and large inflow of Cuban migrants to a concentrated area (Miami)
+\item Micro-data that identifies migrants \& pre-migrant labor market situations
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Migrant inflow following Mariel Boatlift (Exodo del Mariel)} 
+What is Mariel Boatlift?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Approx. 120,000 Cubans entered US in 05/1980 - 09/1980
+\item After Cuban govt announcement that anyone who wanted to leave Cuba could do so
+\item Half of them settled in Miami \& high \% of less-skilled workers with low English fluency
+\item Lower occupation attainment when compared to earlier cohorts of Cuban migrants
+\end{itemize}\medskip
+Labor market in Miami around Mariel Boatlift
+\begin{itemize}\setlength\itemsep{3pt}
+\item Miami: Migrant intensive even before the Boatlift (35.5\% of population foreign-born)
+\item Also had large Black American contingent (17.3\% of population)
+\item Cubans and other Hispanics primarily work as craftsmen and operatives
+\item Black Americans in Laborer and service-related occupations 
+\item White Americans in in Technical and Manager positions 
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item 1979-1985 individual data from Current population survey (CPS) 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Also includes pre-Boatlift Miami labor market outcomes
+  \item Cubans separately identified in CPS (vs `other Hispanics')
+  \item Relatively large Miami sample - 1,200 per month
+  \end{itemize}
+\end{itemize}\medskip
+Empirical findings leverage pre vs post Boatlift trends in different cities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Compare: Atlanta, LA, Houston, Tampa (similar demographics and economic growth)
+\item Looks at hourly earnings, and unemployment across different demographic groups
+\item Similar to DiD (but not exact - Miami had lower earnings than others pre-Boatlift)
+\item Control for education, age, gender, race, gender $\to$ Generate predicted wage
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Wage differences stable over the period for non-Cubans} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.8\textwidth]{c1990_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Stable employment differentials for low-skilled Blacks} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.6\textwidth]{c1990_t2.png}
+\end{figure}
+\begin{itemize}
+  \item Differences likely due to 1982 recession (not Boatlift)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Labor market outcomes for Cuban population stable across the period} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=0.67\textwidth]{c1990_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Subsequent studies and remaining questions} 
+What did the subsequent studies find?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Card (1990): No effect on non-Cuban and Cubans (Absorbed additional labor force)
+\item Borjas (many, including 2017): Large wage $\Downarrow$ for high school dropouts
+\item Peri \& Yasenov (2019): Using synthetic controls, finds limited effect on that high-school dropout wages
+\item Clemens \& Hunt (2019): Wage decline explained by race composition changes uniquely within Miami CPS subsamples. Using stable samples, they find no effect on low-skill wages 
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item What happens to home countries of migrants?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Home country loses human capital that could have contributed
+  \item Especially since most migrants are in the productive stages of their lives
+\end{itemize}
+\item How do migrants determine where to settle?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Many migrants can choose where to live, do they follow network of previous migrants?
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Waldinger (2010): Quality Matters: The Expulsion of Professors and Consequences for PhD Student Outcomes in Nazi Germany}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Waldinger (2010): \\ Quality Matters: The Expulsion of Professors and Consequences for PhD Student Outcomes in Nazi Germany
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does migration affect innovation at home nation?} 
+Quality of workers determines potential for innovation
+\begin{itemize}\setlength\itemsep{3pt}
+\item University quality $\to$ successful professional career, innovation of students
+\begin{itemize}
+\item For PhD students, this means getting publications, patents, and future jobs
+\end{itemize}
+\item Many key determinants: Professors, department resources etc
+\item Causal analysis difficult
+\begin{itemize}\setlength\itemsep{3pt}
+\item Selection bias: Top quality students select into top schools
+\item Omitted variable bias: quality of laboratories and research programs
+\end{itemize}
+\end{itemize}\medskip
+This paper leverages dismissal of professors to study how  migration affects innovation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Nazi Germany dismissed `politically unreliable' professors from German Universities
+\item Mathematics were particularly hard-hit: Many were Jews or were labeled as such
+\item Looks at how sudden dismissal affected student outcomes and innovation
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Expulsion of professors by Nazi Regime} 
+Who were dismissed by the Nazi government
+\begin{itemize}\setlength\itemsep{3pt}
+\item `Law for the Restoration of the Professional Civil Service'
+\item Non-Aryans (Jews in particular), Any professors who supported opposition
+\item Led to dismissals and `early retirements' from German Universities
+\item Mathematics: About 18\% of all professors dismissed in 1933-34
+\item Many fled to foreign universities (mostly US) and unable to advise former students
+\item Top departments (Gottingen, Berlin) were hard hit
+\end{itemize}\medskip
+Who were the PhD students of Math in Germany
+\begin{itemize}\setlength\itemsep{3pt}
+\item Focus on PhD students who obtained degree by 1938
+\item Those from top universities are more likely to publish and become full professors
+\item Some also got high school teacher license
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Students: Career outcomes of `23-`38 cohort from German Mathematical Association
+\item Professor data: List of Displaced German Scholars, University Calendar
+\item Department quality: Avg \# of citation-weighted publications in top journals
+\end{itemize}\medskip
+Regression that leverages exogenous changes in department quality due to dismissals
+\[
+Y_{idt}=\beta_1+\beta_2\text{Quality}_{dt-1}+\beta_3\text{S/F Ratio}_{dt-1}+\gamma X_{idt}+ \phi_t + \psi_d + e_{idt}
+\]
+\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Two variables likely endogenous: Adjust for changes induced by dismissals
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Dismissal induced reduction in faculty quality (higher value $\to$ larger fall)\vspace{-5pt}
+    \[ (Avg. \text{1932 Quality})-(Avg. \text{1932 Quality of stayers})
+    \]
+    \item Dismissal induced increase in S/F ratio: 
+    \[\frac{\# \text{1932 student}}{\# \text{1932 Prof}-\# \text{Dismissed Prof}}-\frac{\# \text{1932 student}}{\# \text{1932 Prof}}\]
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Significant drop-off in quality of departments with dismissals} 
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[keepaspectratio,width=\textwidth]{w2010_f1.png}
+    \caption{Department size}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[keepaspectratio,width=\textwidth]{w2010_f1_2.png}
+    \caption{Faculty quality}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Drop-off in PhD student outcomes correlated with quality} 
+\begin{figure}
+    \includegraphics[keepaspectratio,width=0.9\textwidth]{w2010_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Effects driven by changes in top 10 institutions} 
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[keepaspectratio,width=\textwidth]{w2010_t2_1.png}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+    \includegraphics[keepaspectratio,width=\textwidth]{w2010_t2_2.png}
+
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions}
+Departure of talent does affect productivity and outcomes of remaining students 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Quality of faculty has sizeable effects on student outcomes at German Universities
+\item Quality of instruction matters even in selective settings
+\item Departure of key talents could have long-run productivity consequence at home
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Are these effects persistent? Depends on whether the talent returns home
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not applicable here: These professors could not return to Germany
+\item Return migrants can transfer knowledge and resources from foreign countries 
+\end{itemize}
+\item Other ways in which migrants affect innovation and productivity
+\begin{itemize}\setlength\itemsep{3pt}
+\item Studies using how visa restrictions (H1B in US)$\to$ $\Downarrow$ patents, $\Uparrow$ Outsourcing by US firms
+\item Potentially suggest that migrant labor may not be replaced with domestic labor
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Mahajan, Yang (2020): Taken by Storm: Hurricanes, Migrant Networks, and US Immigration}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Mahajan, Yang (2020):\\ Taken by Storm: Hurricanes, Migrant Networks, and US Immigration
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Do negative shocks at origin countries increase migration?} 
+Many unanswered questions in migration, with mixed theoretical and empirical findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Negative shocks at home lead to increase or decrease in international migration?
+\item What roles do network of prior migrants play in outmigration decision?
+\item Are these driven by legal or illegal channels?
+\item Are these migrations likely to be temporary or permanent?
+\end{itemize}\medskip
+This paper uses hurricanes to estimate impact of natural disasters on migration decisions
+\begin{itemize}\setlength\itemsep{3pt}
+\item 25 years of hurricanes data covering 159 origin countries of US migrants
+\item Examines how prior migrant presence affects future migrant flows
+\item Uses these data to answer theoretical ambiguities
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Individuals decide to stay home vs move to attractive location
+  \item Rising fixed cost of moving out vs Returns to migration higher
+  \item Migrant networks may reduce migration costs vs reduce migration needs ($\because$ remittances)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Conceptual justification can go either way} 
+Stay at home location vs move to more attractive location
+\begin{itemize}\setlength\itemsep{3pt}
+\item If one chooses to move, there is a fixed cost to migrate
+\item After shock: Destination becomes (relatively) more attractive vs Moving costs rises
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increased demand raises cost of migration services
+\item Make it difficult to obtain credit to finance migration
+\end{itemize}
+\end{itemize}\medskip
+Migrant network may also have a complicated role
+\begin{itemize}\setlength\itemsep{3pt}
+\item Earlier research: Larger network$\to$ $\Downarrow$ Fixed costs
+\begin{itemize}
+\item Reduce search and information costs, social support, and sponsor relatives 
+\end{itemize}
+\item Prior migrants as insurance network, reducing need to migrate
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can send financial assistance home (remittances) that helps with coping the shock
+\item This can happen instead of helping them migrate in response to shocks
+\end{itemize}
+\end{itemize}\medskip
+$\Rightarrow$Uses empirical analysis to identify which channel is working
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item US immigration rates: 1980-2004 for each observable origins (US Census data)
+\item Hurricanes: Tracks from National Oceanic and Atmospheric Administration
+\item Migrant networks: Census, American Community Survey, and DHS data
+\end{itemize}\medskip
+Leverage variation in returns to migration across time and origin locations
+\[
+Y_{jt} = \beta_0 + \beta_1H_{jt}+\beta_2(H_{jt}\times s_{j,1980})+\eta_j+\delta_t + \phi_j\times t + e_{jt}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item $H_{jt}$: Hurricane index for origin $j$ at year $t$
+\item $s_{j,1980}$: Stock of migrants from $j$ at US in 1980 
+\item $\beta_1$ measures effect of hurricanes on migration 
+\item $\beta_2$ captures differentiated effects of hurricanes based on prior migrant network 
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{How does the hurricane track data look like?} 
+\begin{figure}
+    \includegraphics[keepaspectratio,width=0.8\textwidth]{my2020_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Increased migration, amplified by presence of migrant networks} 
+\begin{figure}
+    \includegraphics[keepaspectratio,width=0.8\textwidth]{my2020_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Increases are driven by naturalized migrants} 
+\begin{figure}
+    \includegraphics[keepaspectratio,width=0.8\textwidth]{my2020_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Additional findings and remaining questions}
+Additional findings 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Using different sources of migration data (DHS) does not change results
+\item Effects are driven by youngest (0-12 y.o) and prime age (18-44 y.o) migrants
+\begin{itemize}\setlength\itemsep{3pt}
+\item Those who migrate for work related reasons and their children
+\end{itemize}
+\item Family sponsorships (not refugees or employment sponsor) are key networks
+\item This is driven by increase in desire to migrate
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leniency programs by US (TPS and DED) did not change
+\end{itemize}
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Implications for climate-driven migration
+\begin{itemize}
+\item Increasing importance due to increases in natural disasters
+\end{itemize}
+\item Causation for any studies with immigration treatment: Selection due to prior networks
+\begin{itemize}
+\item Shift-share IV: Early-stage migrants shares and contemporary shifts
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Becker, Grosfeld, Grosjean, Voigländer, and Zhuravskaya (2020): Forced Migration and Human Capital: Evidence from Post WWII Population Transfers [Student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Becker, Grosfeld, Grosjean, Voigländer, and Zhuravskaya (2020):\\ Forced Migration and Human Capital: Evidence from Post WWII Population Transfers [Student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+
+\section{How do natives (hosts) perceive migrants}
+\subsection{Fouka, Tabellini (2022): Changing In-Group Boundaries: The Effect of Immigration on Race Relations in the United States}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Fouka, Tabellini (2022): \\ Changing In-Group Boundaries: The Effect of Immigration on Race Relations in the United States
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How are in/out-group boundaries formed in multigroup relations?} 
+Categorization of in/out-group members explain attitudes of the majority group
+\begin{itemize}\setlength\itemsep{3pt}
+\item In-group favoritism and out-group prejudice $\to$ Possible conflict \& violence
+\item The boundaries change through interactions $\to$ Even in multigroup setting?
+\item Demographic shifts from migration serves as natural experiment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Introduction of a new minority group
+\item Shift prejudice from one minority to other? Lump all minorities together?
+\end{itemize}
+\end{itemize}\medskip
+This paper studies how inflow of new migrants affects perception of existing minorities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverage variation in Mexican migrants and perception on Black Americans
+\item \textit{Affective distance} and size determines which attributes matter for social categorization
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individual's feelings towards members of different groups relative to their own
+\item Relative size affects intergroup relations
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conceptual Framework: Dynamics of categorizing  in and out-groups}
+
+Attributes used for classification are determined by group share and affective distance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Classification maximizes ratio of across-group differences over in-group differences
+\item For attribute $j$, let $I_j^k=1$ if group $k$ differ from in-group in terms of $j$ (0 if same)
+\item For group $k$ with size $n^k$ with affective distance $\delta^k$, salient attribute $j$ maximizes
+\[
+\max_j R_j =\left. \underbrace{\frac{\sum_k \delta^k n^k I_j^k}{\sum_k n^k I_j^k}}_{\substack{\text{weighted avg of} \\ \delta\text{ across out-groups}
+}}\middle/ \underbrace{\frac{\sum_k \delta^k n^k (1-I_j^k)}{\sum_k n^k (1-I_j^k)}}_{\substack{\text{weighted avg of} \\ \delta\text{ across in-groups}
+}}\right.
+\]
+\end{itemize}\medskip \vspace{-10pt}
+Takeaway % Refer to page 4 (proposition 2)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Group composition change (size) $\to$ Salient attribute changes (immigration over race)
+\item Existing groups can be recategorized from outsider to insider depending on
+\begin{itemize}\setlength\itemsep{3pt}
+\item Whether it differs from rising groups in terms of attributes
+\item Affective distance and size of the incoming group
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy}
+
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Migrants: Census (1970-2010), American National Election Study (ANES)
+\item Sentiment: Feelings thermometer + stereotypical views from ANES 
+
+\end{itemize}\medskip 
+Empirical strategy leverages Mexican and other migrant inflow and attitudes (DID)
+\[
+y_{irst}=\beta_1 M_{rst} + \beta_2 S_{rst} + X_{irst} + \gamma_{rs}+\mu_{rt} + \eta_{irst}
+\]\vspace{-20pt}
+\begin{itemize}
+\item $M_{rst}$: Share of Mexican migrants in census tract $r$ in state $s$ at time $t$
+\item $S_{rst}$: Share of non-Mexican migrants in census tract $r$ in state $s$ at time $t$
+\item $M_{rst}$ and $S_{rst}$ can be endogenous \medskip
+\begin{itemize}\setlength\itemsep{3pt}
+\item Instrument with predicted share of migrants using 1960 settlement shares (Shift-share IV)
+\item Relevance: Idea is that new inflow of migrants tends to follow previous ones 
+\item Exogeneity: States with high share of Mexicans in `60 not on different $y_{irst}$ trajectory
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Favorable towards Blacks, not so for Hispanics}
+\begin{center}
+\begin{figure}
+\begin{subfigure}{0.75\textwidth}
+\includegraphics[width=\textwidth]{ft2022_t1.jpg}
+\end{subfigure}
+\begin{subfigure}{0.75\textwidth}
+\includegraphics[width=\textwidth]{ft2022_t2.jpg}
+\end{subfigure}
+\end{figure}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Driven by increased salience of immigration over race}
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.9\textwidth, keepaspectratio]{ft2022_t3.jpeg}
+\end{figure}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Composition of hate crime victims change}
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.725\textwidth, keepaspectratio]{ft2022_t4.png}
+\end{figure}
+\end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Takeaways and discussions} % Why I need to test this
+
+Inflow of migration changes boundaries of who is in or out 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Distant group size (Mexicans) $\Uparrow$ $\to$ favorable attitudes towards existing minorities
+\item Shifting salient issue (migration) determines recategorization of in/out-groups
+\item Results generalized to wider set of ethnicities (Asians in-group, Muslims out-group)
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Is size the most pressing factor in determining affective distance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Southeast Asian worker migrants still viewed out-group, despite size
+\item Other factors contribute to affective distance? (e.g. economic/educational background?)
+\end{itemize}
+\item Are all ingroup members the same?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Black Americans still not considered equal to White Americans
+\item Differences within Hispanics (Cuban and Venezuelans vs other Hispanics)
+\item In-groups can be broken up? (e.g. media / socioeconomics / gentrification)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Alesina, Miano, Stantcheva (2023): Immigration and Redistribution}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Alesina, Miano, Stantcheva (2023):\\ Immigration and Redistribution
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Does immigration change policy support?}
+Conflicts on policy designs, particularly redistribution,  following increase in immigration
+\begin{itemize}\setlength\itemsep{3pt}
+\item Do citizens have accurate perception about migrants?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Do they over/underestimate the share of migrant population?
+  \item Do they believe that immigrants burden welfare system without contributing to it?
+  \item Do they believe that immigrants are culturally distant?
+\end{itemize}
+\item What is the link between the perceptions and support for redistribution policy?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Do treatments that aim to correct perceptions affect opinions on these policies?
+\end{itemize}
+\end{itemize}\medskip
+This paper uses survey experiment to address how immigration affects policy preferences
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Online survey on 22,000 people across 6 countries (US, UK, FRA, GER, ITA, SWE)
+  \item Gather information on perception on migrants and preferences for redistribution
+  \item Various treatment to test if highlighting migration affects policy opinions
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy}
+Randomized survey experiment design: salience treatment and information treatment
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Background info: Gender, age, education, employment, political orientation etc
+\item Salience treatment: Immigration block before redistribution block (control: vice versa)
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textit{Tests whether making migration salient affects policy preferences}
+\item Immigration: Ask perception on immigrants, views on immigration policy
+\item Redistribution: Ask redistribution and govt role questions (no reference to migrants)
+\end{itemize}
+\item Information treatment: Control group and three types of information
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textit{Tests whether providing additional information changes the effect of salience }
+\item Video 1 on the share of immigrants
+\item Video 2 on the origins of the immigrants
+\item Video 3 that emphasizes hard work of immigrants (no facts)
+\end{itemize}
+\item 8 groups of treatment arms: Uses OLS to compare across the groups
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Content of the video experiment}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.6\textwidth]{ams2023_f1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{There are drastic misperception on migrants}
+\begin{figure}
+  \begin{subfigure}{0.35\textwidth}
+    \includegraphics[keepaspectratio, width=\textwidth]{ams2023_f2_1.png}
+    \caption{Share of immigrants}
+  \end{subfigure}
+  \begin{subfigure}{0.35\textwidth}
+    \includegraphics[keepaspectratio, width=\textwidth]{ams2923_f2_2.png}
+    \caption{Share of Muslim immigrants}
+  \end{subfigure} 
+\end{figure}
+Note: Also documented misperception on education, attribute of poverty status
+\end{frame}
+
+\begin{frame}
+\frametitle{Salience reduces support, limited correction by information}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{ams2023_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Driven by misperception on economic status of immigrants}
+\begin{figure}
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{ams2023_f3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions}
+Much of the debates are actually based on misperceptions on immigrants
+\begin{itemize}\setlength\itemsep{3pt}
+\item Overestimate size, cultural distance, and poverty status of migrants
+\item Just making people think about migration skews policy preferences
+\begin{itemize}\setlength\itemsep{3pt}
+\item Driven by misperception on economic status of immigrants
+\item Particularly dominant on older, less educated, poorer, and right-wing respondents
+\end{itemize}
+\item Follow-up: Those with larger misperceptions less willing to pay for correct information
+\end{itemize}\medskip
+Remaining questions on policy preferences
+\begin{itemize}\setlength\itemsep{3pt}
+\item How to correct misperceptions that can skew policy preferences?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Otherwise, could be used by anti-immigration parties (or extremists)
+\item Worrisome given that those who need this more are less willing
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Hainmueller, Hiscox (2010): Attitudes toward Highly-Skilled and Low-Skilled Immigration: Evidence from a Survey Experiment [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Hainmueller, Hiscox (2010):\\ Attitudes toward Highly-Skilled and Low-Skilled Immigration: Evidence from a Survey Experiment [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Migrants do contribute, but are often misunderstood
+\begin{itemize}\setlength\itemsep{3pt}
+\item Contribute in labor market, human capital, and politics
+\item Yet misperceptions about their efforts inhibit integration and further contribution
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Natives often consider them as out-group and view them with prejudice
+\item Often perpetuated by lack of credible information and misinformation from media
+\end{itemize}
+\item Often leads to further social and political conflicts
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Policy decisions are skewed against their favor
+\item Often victimized by crime and conflict even in host societies
+\end{itemize}
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+ \item How do you improve two-way efforts to increase migrant-native integration?
+ \begin{itemize}\setlength\itemsep{3pt}
+ \item Ways to address economic/cultural barriers and misinformation?
+\end{itemize}
+\item Studies on political refugees and climate migrants
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Limited possibility to return to homeland $\to$ Understanding integration is crucial
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
