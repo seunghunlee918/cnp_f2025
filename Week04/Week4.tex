@@ -1,0 +1,779 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 4: Engaging in (organized) crime}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{September 26th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{What drives people into crime?} 
+We have already highlighted how economic forces motivate people into conflicts
+\begin{itemize}\setlength\itemsep{3pt}
+\item If opportunity cost of work is higher, people less likely to join crime
+\begin{itemize}
+\item Employment prospects, Returns from education, long-run income flow discourage crime
+\end{itemize}
+\item People often compare their returns in legal markets vs illegal markets
+ \begin{itemize}
+\item This explains many types of crimes: From joining criminal groups to tax evasion
+\end{itemize}
+\end{itemize}\medskip
+Here we focus on organized criminal groups
+\begin{itemize}\setlength\itemsep{3pt}
+\item Not just the violence they cause, but also the strategic motives behind their business
+\item Also have recruiting mechanisms that target the vulnerable
+ \begin{itemize}
+\item Youth and the poor, sometimes (ethnically/culturally) marginalized individuals
+\end{itemize}
+\item Sometimes run their own `governments' (criminal governance)
+\begin{itemize}
+\item Collect ``protection fees" (extortions), compete with formal governments for citizen support
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Youth disproportionately affected} 
+\begin{figure}[H]
+  \includegraphics[keepaspectratio,width=0.6\textwidth]{fig3.png}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+\caption*{\footnotesize{Source: Soares, Rodrigo (2006) ``The welfare cost of violence across countries", \textit{Journal of Health Economics}, 25, 821-846}}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Large share of criminal groups, but with short career paths} 
+\begin{figure}[H]
+  \includegraphics[keepaspectratio,width=0.6\textwidth]{fig2.png}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+\caption*{\footnotesize{Source: Preito-Curiel et al (2023) ``Reducing cartel recruitment is the only ay to lower violence in Mexico", \textit{Science}, 381, 1312-1316 }}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Criminal governance is actually widespread} 
+What is criminal governance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provision of order, services, and market regulation by non-state criminal entities
+\item Often in places with absent or captured (central/local) governments 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Bandits collecting mineral taxation in Congo (Sanchez de la Sierra 2020)
+\item Italian Mafia responsible for trash collection (some estimates say \$ 8.8B USD worth)
+\end{itemize}
+\item Replaces state in some cases: Difficult to hold criminals accountable
+\end{itemize}\medskip
+Continuously contested question: Why?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Why are some states unable to address criminal governance?
+\item Why do organized criminal groups engage in governance, not direct violence (or mix)?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Criminal governance is actually widespread} 
+\begin{figure}[H]
+  \includegraphics[keepaspectratio,width=0.67\textwidth]{fig4.png}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime is not just limited to developing countries!} 
+\begin{figure}[H]
+  \includegraphics[keepaspectratio,width=0.8\textwidth]{fig1.png}
+    \captionsetup{justification=raggedright,singlelinecheck=false}
+\caption*{\footnotesize{Source: Global Organized Crime Index (https://ocindex.net/2023/heatmap/)}}
+\end{figure}
+\end{frame}
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Cause and consequences of individuals joining (organized) crime}
+\subsection{Pinotti (2015): The Causes and Consequences of Organised Crime: Preliminary Evidence across Countries}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Pinotti (2015): \\ The Causes and Consequences of Organised Crime: Preliminary Evidence across Countries
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What are the causes and consequences of organized crime?} 
+Organized crime imposes serious consequences 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Violent activities can destroy physical and human capital
+\item Also increases uncertainties and riskiness $\to$ hurt long run investment and growth
+\item Yet, relationship among organized crime, economics, and institutions still uncertain
+\end{itemize} \medskip
+This paper provides cross-country empirical evidence on these relations
+\begin{itemize}\setlength\itemsep{3pt}
+\item Organized crime $\propto $ levels of per capita economic output $\Downarrow$
+\begin{itemize}
+\item Two-way relation!! 
+\end{itemize}
+\item Politicians are more corrupt and/or vulnerable to attacks by organized crime
+\begin{itemize}
+\item Suggest that organized crime$\to$ Weak institution
+\end{itemize}
+\item Organized crime presence is positively correlated with natural resource endowment
+\begin{itemize}
+\item But only in fragile states with weak legal capacity: Weak institution$\to$ organized crime
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Measuring organized criminal group presence} 
+By nature, measuring organized criminal group presence is tricky
+\begin{itemize}\setlength\itemsep{3pt}
+\item Usually do not operate out in the open (and not always violent)
+\item When they do, they can pressure law enforcement to prevent detection
+\end{itemize} \medskip
+How this paper approaches this issue
+\begin{itemize}\setlength\itemsep{3pt}
+\item Source: Executive Opinion Survey (World Economic Forum data) across 147 countries
+\begin{itemize}\setlength\itemsep{3pt}
+  \item `In your country, to what extent does organized crime impose costs on business?'
+  \item Measured on 1 (least affected) to 7 (most affected) scale, averaged across `06-`13
+
+\end{itemize}
+\item Economic performance from Penn World Table 8.0
+\item Political variables from World Bank Governance Indicators
+\item OLS to derive descriptive relations 
+\[
+Y_i = \alpha + \beta\text{Organized crime}_i +\gamma X_i + e_i
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime correlates well with homicide rate} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio,width=0.7\textwidth]{p2015_f0.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime negatively correlates with economic indicators} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio,width=0.7\textwidth]{p2015_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime negatively correlates with economic indicators} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio,width=0.9\textwidth]{p2015_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime negatively correlates with institutional quality} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio,width=\textwidth]{p2015_f2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Organized crime negatively correlates with institutional quality} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio,width=0.9\textwidth]{p2015_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Positively correlated with natural resource dependence in weak states} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio,width=0.7\textwidth]{p2015_f3.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways} 
+These findings highlight descriptive relations, but not causal
+\begin{itemize}\setlength\itemsep{3pt}
+\item Organized crime is hard to detect (measurement error)
+\item Organized crime is a result of economic and political conditions (reverse causality)
+\end{itemize}\medskip
+Many modern research on the topic tries to unearth causal relationship
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverage sudden economic shock: Economic condition $\to$ Organized crime
+\item Leverage political events (e.g. assassinations): Political event $\to$ Organized crime
+\item IV method (e.g. road networks, agriculture): Organized crime $\to$ Economics and politics
+\item In a rare instance, some people design an randomized experiments 
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Chimeli, Soares (2017): The Use of Violence in illegal Markets: Evidence from Mahogany Trade in Brazilian Amazon}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Chimeli, Soares (2017): \\ The Use of Violence in illegal Markets: Evidence from Mahogany Trade in Brazilian Amazon
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does illegalization of a market cause violence?}
+In illegal markets, state presence is limited 
+\begin{itemize}\setlength\itemsep{3pt}
+\item No formal means to enforce contracts and guarantee property rights
+\item Violence potentially is used as arbitration device
+\item But causal link between market illegality and violence is limited
+\begin{itemize}
+\item Extremely rare, unable to do randomized experiment
+\end{itemize}
+\end{itemize} \medskip
+This paper uses illegalization of mahogany trade in Brazil to answer this question
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverage variation in homicide rates across areas with different mahogany shares
+\item Homicide rates $\Uparrow$ in high mahogany growth areas 
+\item This is amplified in states with high mahogany export shares
+\item Homicides subsided with federal effort to reduce illegal mahogany trades itself
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mahogany trades in Brazil and violence}
+Brazil as a  Mahogany exporter
+\begin{itemize}\setlength\itemsep{3pt}
+\item One of the largest exporters before prohibition in 2001
+\item Illegalization: Limited issuing of licenses in 1999, and introduced export quota at 2001
+\item Illegalization of mahogany markets since
+\begin{itemize}\setlength\itemsep{3pt}
+\item Traded as `other timber species'
+\item Trade picked up until active monitoring and enforcement came in at late in 2000s
+\end{itemize}
+ \end{itemize} \medskip
+ Violence and illegal mahogany markets
+ \begin{itemize}\setlength\itemsep{3pt}
+\item No formal credit markets or contracts available $\to$ resort to violence
+\item Use intimidation and threats on indigenous tribe leaders to steal Mahogany
+\item Also use illegal weapons in the process
+\item These were sometimes carried out by organized criminal groups in the area
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mahogany trades persisted under `others'}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.75\textwidth]{cs2017_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy}
+Data sources 
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Mahogany presence: Brazilian Secretariat on International Trade
+\item Violence: Ministry of Health keeps homicide rates at municipality level
+\item Also control for mortality, land conflicts, total areas planted, agricultural GDP etc
+\end{itemize} \medskip
+Diff-in-diff leverages variation in mahogany and violence across time and municipalities
+\[
+Y_{it}= \alpha + \beta_1 D_{[`99\leq t\leq`01]\times}\text{M}_i + \beta_2 D_{[`02\leq t\leq`08]\times}\text{M}_i + \beta_3 D_{[t\geq`09]\times}\text{M}_i + \gamma Z_{it} + \phi_i+\mu_{st}+e_{it}
+\]
+\begin{itemize}\setlength\itemsep{3pt}
+\item Breaks down into 3 periods: Different modes of illegalization and enforcement
+\item Outcome variables: Primarily homicide rates
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Illegalization increases violence}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.75\textwidth]{cs2017_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Particularly in a state with very high Mahogany exports}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.7\textwidth]{cs2017_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Victims usually prime aged male}
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.75\textwidth]{cs2017_t3.jpeg}
+\end{figure}
+\begin{itemize}
+\item Suggests that deaths are due to criminal dispute over domestic violence
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion and takeaways}
+Illegality of markets can increase violence
+\begin{itemize}\setlength\itemsep{3pt}
+\item These are not explained by socioeconomic conditions
+\item Monitoring and enforcement $\to$ Illegal market $\Downarrow$ $\to$ Violence $\Downarrow$
+\end{itemize} \medskip
+What cautionary tale does it provide?
+\begin{itemize}\setlength\itemsep{3pt}
+\item In absence of adequate monitoring and enforcement, addressing unwanted externalities with overly restrictive regulations may increase social loss
+\begin{itemize}\setlength\itemsep{3pt}
+\item When markets become illegal, violence replaces formal credit markets and contracts
+\end{itemize}
+\item But how to establish capable monitoring? 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Corruption can make monitoring difficult (police implicitly cooperating with bandits)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Dix-Carneiro, Soares, Ulyssea (2018): Economic Shocks and Crime: Evidence from Brazilian Trade Liberalization [Student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Dix-Carneiro, Soares, Ulyssea (2018):\\ Economic Shocks and Crime: Evidence from Brazilian Trade Liberalization [Student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+
+\section{Criminal governance: Relationship between formal state and organized criminal groups}
+\subsection{Dell (2015): Trafficking Networks and the Mexican Drug War}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dell (2015): \\ Trafficking Networks and the \\ Mexican Drug War
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do organized criminal groups respond to crackdowns?} 
+Many countries engage in counterinsurgency strategies to drive out organized crime
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mexico: Spent \$9 billion USD per year ($\simeq$ Social development expenses)
+\item Causal evidence of crackdowns is rare
+\begin{itemize}\setlength\itemsep{3pt}
+\item Selection bias: State chooses where crackdown takes place deliberately
+\item Reverse causality: Governments choose places likely to expect high violence
+\end{itemize}
+\end{itemize}\medskip
+This paper uses plausibly exogenous variation in crackdowns 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Closely elected mayors of the party spearheading crackdowns (PAN)
+  \item Places with close elections are less likely to be different on other dimensions
+  \item Driven by drug traffickers killing each other (incumbent gang vs new gangs)
+  \item PAN victories divert trafficking route, increase violence on alternate routes
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Background information} 
+Drug Trafficking in Mexico
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Large industry: \$14-48 billion USD (mostly to US)
+  \item Drug trafficking organizations (DTOs) present in 68\% of Mexican municipalities
+  \item Number of operating DTOs increasing since 2006 (also engage in other illicit activities)
+\end{itemize}\medskip
+Crackdowns on the DTOs
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Felipe Calderón (PAN): Made crackdowns a centerpiece of his administration
+ \begin{itemize}\setlength\itemsep{3pt}
+  \item Mexico was previously a one-party (PRI) country, which took passive stance on DTOs
+  \item Federal police/military arrest high-rank traffickers and seize drugs 
+  \end{itemize}
+\item Mayors: Name police officers who can assist federal government crackdowns
+\begin{itemize}\setlength\itemsep{3pt}
+  \item PAN mayors were actively supporting this
+  \item Also more likely to request federal help compared to non-PAN mayors
+\end{itemize}  
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Official govt data on drug trades, DTO presence and related crimes (confidential)
+  \item Election data from state electoral committees (available right now)
+\end{itemize}\medskip
+Effects of close PAN victory (i.e. increased crackdown)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Regression discontinuity leveraging close margin of victory for PAN
+  \[
+  Y_m = \alpha_0 + \alpha_1\text{PAN}_m+\alpha_2\text{PAN}_m\times f(\text{margin}_m)+\alpha_3(1-\text{PAN}_m)\times f(\text{margin}_m) +e_m
+  \]
+  \item Close election of PAN mayors vs Close loss of PAN mayors
+  \item Other characteristics equal: Confirms that no other characteristics differ (Table 1)
+\end{itemize}\medskip
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Existing drug-related violence intensifies} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=\textwidth]{d2015_f1.jpeg}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Driven by rival gangs attacking incumbent gangs weakened by enforcements
+\item Does not happen pre-election or pre-inauguration after elections (Rest of Fig 3)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Do DTO responses have spillovers?} 
+Logic behind spillovers to other regions
+\begin{columns}
+\begin{column}{0.49\textwidth}
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.75\textwidth]{d2015_f2.jpeg}
+\end{figure}  
+\end{column}
+\begin{column}{0.49\textwidth}
+  \begin{itemize}
+\item Close PAN victories raise costs of trafficking 
+\item This incentivizes DTOS to shift paths 
+\item Leading to increase in drug-related violence elsewhere  
+  \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Indeed, violence do spillover} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{d2015_t1.jpeg}
+\end{figure} 
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+Crackdowns induce direct and spillover costs 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Violence in PAN municipalities $\Uparrow$ ($\because$ rival gangs kill weakened incumbent gangs)
+\item Violence spills over to nearby municipalities ($\because$ reroute to find cheaper transport costs)
+\item Thus, DTOs respond to changing environments, offsetting effectiveness of crackdowns
+\end{itemize}\medskip
+So what does it inform about crackdown policies?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Emphasize ways to deter violence at its roots
+\begin{itemize}
+\item Other ways to disincentivize violence (very tricky question)
+\end{itemize}
+\item Focusing on high-rank arrests may open other gangs to take over
+\begin{itemize}\setlength\itemsep{3pt}
+\item Especially in places where inter-cartel competition is fierce (Mexico)
+\item End up having criminal governance by rival gangs
+\end{itemize}
+\end{itemize} 
+\end{frame}
+
+\subsection{Blattman, Duncan, Lessing, Tobón (2025): Gang Rule: Understanding and Countering Criminal Governance}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Blattman, Duncan, Lessing, Tobón (2025): \\ : Gang Rule: Understanding and Countering Criminal Governance
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Can state and criminal governance coexist? How?} 
+Classical explanation focuses on the \textit{monopolitic} governance of state or criminal groups
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fill in the vacuum: Criminal groups fill in the absence of the state
+\item Competition: State exerts influence by driving out criminal groups (and vice versa)
+\item But there are cases where \textit{duopolistic} rule exists (Italy, South Africa, Latam etc.)
+\begin{itemize}
+\item Criminal groups rule civilians and coexist with state governance
+\end{itemize}
+\end{itemize}\medskip
+This paper identifies how duopolistic governance becomes possible
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Gangs govern civilians to protect illegal revenues (drug dealing)
+  \item In settings where such gains are high, state presence $\Uparrow$ $\Rightarrow$ Criminal rule $\Uparrow$
+  \item Thus, state and criminal rule becomes complements, not substitutes
+  \item Leverages exogenous boundary changes that changes the distance to closest state HQ
+  \item Distance to HQ $\Downarrow$ $\to$ state responsiveness and criminal presence $\Uparrow$
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Context and framework} 
+Context: Medellín, Colombia
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Has well-organized bureaucracy and large fiscal revenues
+  \item Security and legal services provided at sub-city level
+  \item Poorer blocks have \textit{combos}: small local gangs providing security and drug trade
+\end{itemize} \medskip
+Why do gangs provide security services? (interview with gang leaders)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Providing security reduce need for police presence
+  \item Expected residents to be loyal (i.e. cooperate with gangs over state)
+\end{itemize}
+How can state-gangs be complementary?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Classic: When state fails to meet demand for governance, gangs enter
+  \item Twist: Simultaneous governance protects gangs illicit business from state repression
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Illicit profit $\Uparrow$ \& gang-state services differ: Gang incentive to govern areas close to state $\Uparrow$
+  \item Low profit or state already dominant: Incentive to govern $\Downarrow$
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Interviews with the criminal group leaders to understand motives and combo presence
+\item Surveys on residents and businesses to gather data on governance and perceptions
+\end{itemize}\medskip
+Geographic regression discontinuity that leverages 1987 reform 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Analysis at block-pairs
+  \item New borders in Medellín (6 sub-area $\to$ 16) divided a subregion into 2-3 smaller units
+  \item Changes the nearest security and justice service location for some blocks
+  \item Regress the following equation: $\Delta d_{ij}$ is the treatment  ($i,j$: block pairs, $b$: border)
+  \[
+  \Delta Y_{ijb} = \alpha_b + \beta \Delta d_{ij}+\theta \Delta X_{ij}+ \lambda B_{ij}+e_{ijb}
+  \]
+  \item Confirm that other characteristics do not change with the new border introduction
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Description of the regression discontinuity} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio, width=\textwidth]{bdlt2025_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{State and combo presence increases as distance to HQ decreases} 
+\begin{figure}[H]
+\includegraphics[keepaspectratio, width=0.6\textwidth]{bdlt2025_t1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Combo response strong in areas with high drug rents} 
+Regression augmented with measure of illicit rent $\pi_{ij}$
+\[
+  \Delta Y_{ijb} = \alpha_b + \beta \Delta d_{ij} 
+  +\gamma \pi_{ij}+ \delta \Delta d_{ij}\times \pi_{ij}+\theta \Delta X_{ij}+ \lambda B_{ij}+e_{ijb}
+\]
+\begin{figure}[H]
+\includegraphics[keepaspectratio, width=\textwidth]{bdlt2025_t2.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Presence of criminal groups does not increase perceived legitimacy} 
+Legitimacy: combination of trust, fairness, and satisfaction
+\begin{itemize}\setlength\itemsep{3pt}
+\item State and combo legitimacy does not increase (two slides before)
+\item In high drug rent areas, closer $\Rightarrow$ legitimacy for both state and combos $\Downarrow$ (slide before)
+\item Qualitative interview results match: Residents unhappy with influx of `undesirable' ppl
+\item No significant economic development for most measures...
+\end{itemize}\medskip
+Why did this happen?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Gangs overestimating how loyal citizens were to them
+\item Gangs entering areas to offset loyalty penalty coming from drug sales
+\item Yet, providing security could reduce police patrol (so motives to enter exist)
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussions} 
+State and criminal presence can be complementary
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Particularly in areas where returns from illegal trades are high
+  \item Could explain converse case: Low illicit returns $\Rightarrow$ Gang extortions rise
+\end{itemize}\medskip
+What is to be learned from this? (ongoing question)
+\begin{itemize}\setlength\itemsep{3pt}
+\item To cut criminal presence, need to attack root causes that incentivize them
+\begin{itemize}\setlength\itemsep{3pt}
+\item Tougher than said, what are the criminal groups after to begin with?
+\item Criminal groups can strategically move to retain these benefits (see any drug wars)
+\end{itemize}
+  \item Can the findings be generalized, even in places with high extent of illicit activities?
+ \begin{itemize}
+\item Active state vs. organized criminal conflict in such places too (see Mexico)
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+
+\subsection{Trejo, Ley (2018): Why Did Drug Cartels Go to War in Mexico? Subnational Party Alternation, the Breakdown of Criminal Protection, and the Onset of Large-Scale Violence [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Trejo, Ley (2018): \\ Why Did Drug Cartels Go to War in Mexico? Subnational Party Alternation, the Breakdown of Criminal Protection, and the Onset of Large-Scale Violence [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Many individuals join organized crime, some of which evolve to criminal governance
+\begin{itemize}\setlength\itemsep{3pt}
+\item Particularly in economically or institutionally less developed areas
+\item Illegalization of the markets potentially gives organized crime an opportunity
+\item Some of them are on verge to compete governments out
+\begin{itemize}
+\item Either strategically coexisting in and duopoly
+\item Or adjusting their survival strategy accordingly
+\item Sometimes outright fighting formal state
+\end{itemize}
+\end{itemize}\medskip
+Unanswered questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item How do you effectively curb incentives to join crime?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Monitoring requires transparent and accountable government: Not always the case
+\item Hardline stance can go wrong (Mexico) but it can deliver a strong message 
+\end{itemize}
+\item What can be done to address criminal governance?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Organized crime not accountable to the populace: How to break up these groups?
+\item Minimizing state absence/capture: Organized crime presence limited in capable states
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
