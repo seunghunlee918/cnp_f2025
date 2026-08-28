@@ -1,0 +1,939 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+  \definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 10: Resistance - Overcoming collective action problems}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{November 7th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{What is collective action?} 
+Definition of collective action
+\begin{itemize}\setlength\itemsep{3pt}
+\item Action taken by a group in pursuit of perceived shared interests
+\begin{itemize}\setlength\itemsep{3pt}
+\item Self-organizing protests to advocate certain causes and interests
+\item Fighting in the military during wartimes
+\item Negotiations / strikes carried out by labor unions (or any interest groups)
+\item Management of communal resources
+\end{itemize}
+\item Involves sharing information and coordination among individuals to pool resources
+\item Requires motivation and incentives from many individuals sharing common goals
+\end{itemize}\medskip
+This is a conceptual framework often used across many disciplines in social sciences
+\begin{itemize}\setlength\itemsep{3pt}
+\item Politics: How do interest groups sway votes? How do alliances sustain themselves?
+\item Economics: How are public goods managed? How do groups organize?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why is it difficult to achieve?} 
+Individual and collective incentives are misaligned
+\begin{itemize}\setlength\itemsep{3pt}
+\item Larger groups: Larger misalignment and smaller return per capita
+\begin{itemize}
+\item Coordination challenges: Larger coordination costs and information costs
+\end{itemize}
+\item Free-riding: Attempt to benefit from public good without individual contribution
+\begin{itemize}\setlength\itemsep{3pt}
+\item Game theory: If everyone thinks the same, public good is underprovided
+\item Tragedy of commons: Rational individuals end up depleting shared resource
+\end{itemize}
+\end{itemize}\medskip
+So how to overcome this problem?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Decrease coordination costs: Communications and dispute settlement mechanisms
+\item Align individual and collective incentives
+\begin{itemize}\setlength\itemsep{3pt}
+\item Make deviations costly: Monitoring, enforcement of contracts / laws
+\item Internalize collective benefits: Increase awareness and salience of collective goals
+\end{itemize}
+\item Institutional setup to aggregate collective interests and costs effectively (governance)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{However, collective actions do happen worldwide} 
+\begin{figure}
+  \centering
+  % First row
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth, keepaspectratio]{fig1.jpg}
+    \caption{Political protests}
+  \end{subfigure}
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth]{fig2.jpg}
+    \caption{Environmental protests}
+  \end{subfigure}
+  
+  % Second row
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth]{fig3.jpg}
+    \caption{Community service}
+  \end{subfigure}
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth]{fig4.jpg}
+    \caption{Paying taxes}
+  \end{subfigure}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Access to media and collective action problems} 
+Academic interest in media increasing
+\begin{itemize}\setlength\itemsep{3pt}
+\item Dissemination of information and mechanism for improving accountability
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Voters can monitor politicians (i.e. align interests of principals and agents)
+  \item Improved transparency $\to$  make leaders behave well and foster trust in institutions
+  \item Better information as basis for electoral outcomes
+\end{itemize}
+\item Social media, can help people mobilize
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Inform users of the reality more accurately (information channel)
+  \item Used to coordinate and mobilize group activities (coordination channel)
+\end{itemize}
+\end{itemize}\medskip
+Just as these positives, media can work in reverse: Thus, an active arena of research
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Potentially used as tools of repression (if government control is strong)
+  \item Unchecked dissemination of misinformation
+  \item Decaying trust in message may erode media's potential to lower coordination costs
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Access to media and collective action problems} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.67\textwidth]{fig5.png}
+\end{figure}
+\end{frame}
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Understanding collective action - costs, leaders, and engagement}
+\subsection{Ostrom (2000): Collective Action and the Evolution of Social Norms}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Ostrom (2000): \\ Collective Action and the Evolution of Social Norms
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: What explains how collective action takes place}
+Classic theories on when collective action happens 
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Traditional thought: Groups take collective action whenever members jointly benefited
+\item Mancur Olson (1965): Zero contribution thesis
+\begin{quote}
+  ``Unless the number of individuals in a group is quite \textcolor{blue}{small}, or unless there is \textcolor{blue}{coercion or some other special device} to make individuals act in their common interest, \textcolor{blue}{rational, self-interested} individuals will not act to achieve their common interests"
+\end{quote}
+\item In fairness, this explains some dilemma that we see in group action
+\begin{itemize}\setlength\itemsep{3pt}
+\item Why some people free-ride on collective benefits
+\item Why small interest group yield more influence than general public
+\end{itemize}
+\item However, there are many incidences where zero contribution thesis is contradicted
+\begin{itemize}
+\item Individuals voluntarily organized to provide mutual protection and monitor each other
+\end{itemize}
+\item So what are the key factors that affect the likelihood of successful collective action?
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What are the existing lab evidence: Rational egoist perspective}
+Behavior of self-interested rational individuals (Rational egoist) in public goods game
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Individuals split their income into public good contribution and private consumption
+  \item There are large number of individuals $N$ in this game
+  \item Public goods yield some benefits for the individuals (i.e. individuals enjoy some share)
+  \item But it reduces private consumption
+\end{itemize}\medskip
+Rational egoist predicts that equilibrium contribution is 0 (in most cases)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Given others' contribution, individuals access benefits without paying costs
+  \item Since every individual thinks the same way, no one contributes
+  \item Difficult to deviate from this equilibrium
+  \begin{itemize}\setlength\itemsep{3pt}
+  \item Suppose A contributes nonzero amount when everyone else contribute 0
+  \item Unless the returns to individual from public good $>$ contribution, A is worse off
+  \item And if the returns from public good $>$ contribution, equilibrium is not zero
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{What are the existing lab evidence: What is actually found}
+Findings from multiple lab experiments differ from rational egoist framework
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Individuals contribute 40-60\% of endowments in finite games
+  \item Contributions decay, but well above zero except for the final finite stage game
+  \item Those who believe others will cooperate contribute to public goods themselves
+  \item Individuals do learn to cooperate
+  \item Face-to-Face communication increases cooperation substantially
+  \item Individuals are willing to monitor/punish those who make below average Contributions
+  \item Contextual framing matters (e.g. specifying sanctions, communications etc) 
+\end{itemize} \medskip
+These findings suggest that there may be more type of people than mere rational egoists
+\end{frame}
+
+\begin{frame}
+\frametitle{Rebuilding collective action theory: Those who use norms}
+Maybe there are some `conditional cooperators'
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Those willing to cooperate when they estimate sufficient share of others also do
+  \item Explains large contributions at initial stage (and can motivate rational egoists to join)
+  \item Vary in tolerance for free-riding - the most tolerant ones contribute to the end
+\end{itemize} \medskip
+Or there are also `willing punishers'
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Those willing to rebuke or impose costs on non-cooperators 
+  \item Can reward active cooperators too
+\end{itemize} \medskip
+Emergence of these types?
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Evolutionary process: Norms on collective action $>$ individual returns for survival 
+  \item Thus, preferences adopt: People internalize cooperation as well as individual returns
+\end{itemize} \medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Common goods as collective action problem}
+Common goods: How to cooperate when it is individually beneficial to use up resources
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Nonexcludable: Difficult to prevent beneficiaries from enjoying benefits
+  \item Rivalrous: Individual consumption subtracts from benefits available to others
+  \item Think of a fish stock at international waters
+  \item \textit{Note: Public goods are nonexcludable and \textbf{nonrivalrous}}
+\end{itemize} \medskip
+Management of these situations suggests rise of cooperation in collective action problems
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Leader who oversees joint outcomes as key stimulus
+  \item Clear boundary, well-tailored local rules
+
+  \item Open to participation and communication in redistribution
+
+\item Existence of accountable monitors and graduated sanctions help sustain collective action
+\item Resolving conflicts through accessible low-cost, local arenas for discussion
+\item Multilayer governance and minimal recognition of right to organize (not unanimity)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Threats to sustained collective action}
+What makes sustained collective action vulnerable?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Migration changes composition of those who cooperate and understand social norms
+\begin{itemize}
+\item If in-migrants integrate well, these problems can be mitigated (two-way effort involved)
+\end{itemize}
+\item Lack of large-scale institutional and governance arrangements to settle disputes
+\item Increasing opportunistic behavior through corruption
+\item Too much reliance on external sources that are unaware of local contexts
+\item Failure in horizontal/intergenerational transmission of norms through communication
+\item National governments imposing single set of rules on all units of governance
+\item Not adapting well to technological change
+\end{itemize}\medskip
+Growing need to understand how contextual factors affect cooperation and sustain collective action
+\end{frame}
+
+\subsection{Dippel, Heblich (2021): Leadership in Social Movements: Evidence from the ``Forty-Eighters" in Civil War}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Dippel, Heblich (2021): \\ Leadership in Social Movements: Evidence from the ``Forty-Eighters" in Civil War
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do leaders contribute to social movements?} 
+How do you enlist people to join a costly endeavor?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Economic motives might be weak: Low and irregular pay
+\item Legal monitoring may sometimes be absent (especially wartime)
+\item Yet, we see many contemporary and historical examples of joining a costly endeavor
+\item So what brings these people to this cause?
+\end{itemize}\medskip
+This paper uses introduction of Forty-Eighters to study effects of leaders on enlistments
+\begin{itemize}\setlength\itemsep{3pt}
+\item German revolutionaries who supported egalitarian causes expelled for their activities
+\item Began campaigning for anti-slavery after 1854 (Kansas-Nebraska Act)
+\item Huge campaigners against slavery and mobilizers of Union Army volunteers
+\item Influence participation through local newspapers and social clubs
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{How people fought in the US Civil War 1861-1865} 
+US civil war
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Fought over slavery and Southern secession 
+\item 1/5 Adult men involved in fighting, 620,000 died in battle
+\end{itemize}\medskip
+So how did Germans get involved?
+\begin{itemize}\setlength\itemsep{3pt}
+\item German revolution (1848-1849): Many protested for republican and egalitarian causes
+\item Systematically prosecuted and expelled to US - hence called `Forty-Eighters'
+\item Many Forty-Eighters argued for emancipation following Kansas-Nebraska Act (1854)
+\begin{itemize}
+\item Slavery adopted based on popular sovereignty (raising salience of slavery)
+\end{itemize}
+\item Circulated arguments and swayed votes against slavery, later involved in enlistments
+\begin{itemize}
+\item Newspapers, Social clubs, public speeches, enlisted themselves to Union Army
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources (town-level data)
+\begin{itemize}\setlength\itemsep{3pt}
+ \item Forty-Eighters: 493 Individual Biographies and genealogical source
+ \begin{itemize}
+\item Identify locations of their residence by 1856
+  \end{itemize}
+ \item Town characteristics from 1850, 1860 Census extracts
+ \item Union Army enlistment: Digitalized Union Army Registers
+\end{itemize}\medskip
+Compare Forty-Eighters towns matched with similar non-Forty-Eighters towns
+ \begin{itemize}\setlength\itemsep{3pt}
+\item Match control group towns that share similar distribution of covariates 
+ \begin{itemize}
+  \item This is called propensity score matching
+\end{itemize}
+\item Compares the matched towns with this equation
+\[
+Y_i = \beta D[\text{FortyEighter}_i] + \gamma X_i +\phi_s+ \epsilon_i
+\]\vspace{-20pt}
+\item Also complemented with IV: Quasi-random destination distribution of Forty-Eighters
+\begin{itemize}
+\item Not enough time to select own destination, so followed co-passengers' destination
+\end{itemize}
+\end{itemize}
+\end{frame} 
+
+\begin{frame}
+\frametitle{Enlistment and Forty-Eighters settlements match closely} 
+\begin{figure}
+\begin{subfigure}{0.495\textwidth}
+\includegraphics[keepaspectratio, width=\textwidth]{dh2021_f1.png}
+\caption{Forty-Eighters settlements}
+\end{subfigure}
+\begin{subfigure}{0.495\textwidth}
+\includegraphics[keepaspectratio, width=\textwidth]{dh2021_f2.png}
+\caption{Enlistments in Union Army}
+\end{subfigure}
+
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Enlistment and Forty-Eighters settlements match closely} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=\textwidth]{dh2021_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Newspaper circulation and social clubs explain the effects} 
+\begin{figure}
+\includegraphics[keepaspectratio, width=\textwidth]{dh2021_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Other results
+\begin{itemize}\setlength\itemsep{3pt}
+\item IV results are consistent with previous results
+\item Forty-eighters enlisted in Union Army themselves: Desertions $\Downarrow$ in those companies
+\item Long-run: More likely to become members of groups advocating civil rights (NAACP)
+\end{itemize}\medskip
+Discussion
+\begin{itemize}\setlength\itemsep{3pt}
+\item Grassroots leadership can spread social movements
+\item They serve as focal points in motivating belief through information
+\item Emphasis on role of leaders are actively studied in Economics
+\begin{itemize}\setlength\itemsep{3pt}
+  \item How do politicians/leaders affect performances of their groups?
+  \item Firm profits, economic growth, institutional stability etc
+  \item Possible to use episodes of sudden absence to show how leaders matter
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\subsection{Bursztyin, Cantoni, Yang, Yuchtman, Zhang (2021): Persistent Political Engagement: Social Interactions and the Dynamics of Protest Movements [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{LARGE}
+    \textcolor{NTHU1}{%
+Bursztyin, Cantoni, Yang, Yuchtman, and  Zhang (2021): \\ Persistent Political Engagement: Social Interactions and the Dynamics of Protest Movements
+ [student presentation]   }
+  \end{LARGE}
+\end{center}
+\end{transitionframe}
+
+
+
+
+
+\section{Role of media in resistance and collective action}
+\subsection{Manacorda, Tesei (2020): Liberation Technology: Mobile Phones and Political Mobilization in Africa}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Manacorda, Tesei (2020): \\ Liberation Technology: Mobile Phones and Political Mobilization in Africa
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Can digital information foster political mobilization} 
+Are mobile technologies `liberation technologies'?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Can they assist marginalized groups in overcoming collective action problems?
+\begin{itemize}
+\item Low-cost, decentralized, multi-way communication can foster activism and mobilization
+\item Especially when formal political participation is blocked or repressed
+\end{itemize}
+\item However, this may not always increase mobilization
+\begin{itemize}\setlength\itemsep{3pt}
+\item It may strengthen government surveillance and repression
+\item May increase government accountability through information and greater transparency
+\end{itemize}
+\end{itemize}\medskip
+This paper analyzes whether mobile networks foster political mobilization in Africa
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Rapid mobile network expansion in 1998-2012 despite limited landline infrastructure
+\item Rise of mobilizations motivated by grievances (foot riots, civil unrest like Arab spring)
+\item Utilize georeferenced data on mobile coverage and uprisings
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Development of networks and protests in Africa} 
+How mobile phones helped protests in Africa
+\begin{itemize}\setlength\itemsep{3pt}
+\item Arab Spring spread by video of self-immolation of Tunisian vendor
+\begin{itemize}\setlength\itemsep{3pt}
+\item The vendor protested authorities’ seizure of his goods after refusing to pay bride 
+\item Circulated online and eventually to Al Jazeera
+\item Protests erupted, fueled by discontent with low living standards, corruptions
+\end{itemize}
+\item This spilled over to Egypt, where mobile penetration was highest in Africa
+\item Egyption President Mubarak resigned, despite efforts to shutdown internet
+\end{itemize} \medskip
+Other evidence suggest that mobile phones channeled grievances to protests
+\begin{itemize}\setlength\itemsep{3pt}
+\item Food riots in 2007-2012 across 14 countries spread with mobile messages and video recordings of police repression
+\item Mobile coverage on average was 60\% higher in countries with food riots
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Development of networks and protests in Africa} 
+\begin{figure}
+  \begin{subfigure}{0.4\textwidth}
+    \centering
+    \includegraphics[keepaspectratio, width=\textwidth]{mt2020_f1.png}
+    \caption{Mobile network coverage}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.55\textwidth}
+    \centering
+    \includegraphics[keepaspectratio, width=\textwidth]{mt2020_f2.png}
+    \caption{Continentwide Protests and GDP}
+  \end{subfigure} 
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources (Georeferenced unit: 55 km $\times$ 55 km grid)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mobile coverage: GSMA dataset of 2G, 3G, 4G coverage (1998-2012)
+\item Protests $\to$ GDELT, ACLED, SCAD,  Participation $\to$ Afrobarometer surveys
+\item Control for population, nightlights, rainfall, temperature, natural resources etc
+\end{itemize}\medskip 
+Leverage geographical (cell $j$ in country $c$) and yearly ($t$) variation in coverage and protests
+\[
+y_{jct} = \beta_1 \text{Cov}_{jct} + \beta_2\text{Cov}_{jct}\times\Delta \text{GDP}_{ct}+\gamma X_{jct} + f_j + f_{ct}+u_{jct}
+\]\vspace{-20pt}
+\begin{itemize}\setlength\itemsep{3pt}
+\item However, mobile coverage may not be random - instrument $\text{Cov}_{jct}$ with lighting strikes
+\begin{itemize}
+\item Frequent lightning damages mobile networks(negatively correlated instrument)
+\end{itemize}
+\item Thus the first stages are
+\[
+\begin{aligned}
+\text{Cov}_{jct} &= \delta_0+ \delta_1 \text{ltn}_{jc}\times t + \delta_2\text{ltn}_{jct}\times\Delta \text{GDP}_{ct}+\gamma_1 X_{jct} + f_j + f_{ct}+e_{jct}\\
+\Delta\text{GDP}_{ct}\text{Cov}_{jct} &= \theta_0+ \theta_1 \text{ltn}_{jc}\times t + \theta_2\text{ltn}_{jct}\times\Delta \text{GDP}_{ct}+\gamma_2 X_{jct} + f_j + f_{ct}+\epsilon_{jct}
+\end{aligned}
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Protests in covered areas respond to \textit{economic shocks}} 
+\begin{figure}
+    \includegraphics[keepaspectratio, width=\textwidth]{mt2020_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Heterogeneities across different contexts} 
+\begin{figure}
+    \includegraphics[keepaspectratio, width=0.7\textwidth]{mt2020_t2.png}
+\end{figure}
+\begin{itemize}
+\item Mobilization $\Uparrow$ in autocracies, captured media, urban area, and areas with past conflicts
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and discussion} 
+Mobile phones help mobilization, but primarily through channeling grievances
+\begin{itemize}\setlength\itemsep{3pt}
+\item When grievances do not arise, effects are insignificant
+\item Effects of mobile coverage \textit{interacted with GDP (economic downturns)} significant
+\item Effects replicated at individual level participation outcomes
+\item Thus, mobile phones facilitate mobilization by channeling grievances
+\end{itemize}\medskip
+Discussions and remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item  Mobile phones decrease cost of acquiring information and improves coordination
+\begin{itemize}\setlength\itemsep{3pt}
+\item Required for mobilization and other collective actions
+\end{itemize}
+\item Results generalizable beyond timeframe and region?
+\begin{itemize}\setlength\itemsep{3pt}
+\item What about states with advanced capacities and high technological level?
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Guriev, Melnikov, Zhuravskaya (2021): 3G Internet and Confidence in Government}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Guriev, Melnikov, Zhuravskaya (2021): \\ 3G Internet and Confidence in Government
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does mobile network affect confidence in government?}
+ Independent political thinking vs empowerment of nondemocratic regimes?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase awareness and overcome collective action problems 
+\item Easier dissemination of fake news, propaganda, and surveillance
+\begin{itemize}
+\item Former weakens confidence in government, latter strengthens it (esp nondemocracies)
+\end{itemize}
+\end{itemize}\medskip
+This paper analyzes how expansion of 3G networks affect confidence in government
+\begin{itemize}\setlength\itemsep{3pt}
+\item 840,000 individuals across 2,232 regions in 116 countries from 2008-2017
+\item 3G $\Uparrow \to$ Support for government $\Downarrow$ 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Awareness of corruption $\Uparrow$, less trusting in institutions
+\item Network channels outrage against status quo contagiously
+\end{itemize}
+\item Effect dominant when internet is not censored and traditional media is censored
+\item Makes people aware of misgovernance: Effect present in highly corrupt countries
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Data sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Government approval: Gallup World Poll (2008-2017) 
+\begin{itemize}
+\item Yes/No on confidence in national government, judiciary, elections, corruption perception
+\end{itemize}
+\item 3G coverage: GSM association (same as Manacorda and Tesei (2020))
+\item Institutional quality: Global Incidence of Corruption Index, Panama Papers Database (by journalists at ICIJ), Freedom House censorship index
+\item Lightning: World Wide Lightning Location Network (WWLLN)  
+\end{itemize}\medskip
+Empirical strategy leverages 3G rollout variation across time and regions
+\[ 
+Y_{irt}=\gamma_1 \text{3G}_{rt} + \gamma_2 \text{Development}_{rt}+\lambda X_{irt} + \phi_r + \delta_t + \epsilon_{irt}
+\]
+\vspace{-20pt}
+\begin{itemize}
+  \item Lightning used to instrument 3G coverage
+  \[
+  \text{3G}_{rt} =  \beta_1 \text{ltn}_{r}\times t \times \text{Rich}_{c_r} + \beta_2\text{ltn}_{rt}\times \text{Poor}_{c_r} + \mu X_{irt} + \phi_r + \delta_t + \nu_{irt}
+  \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Expansion of 3G networks, 2007-2018} 
+\begin{figure}
+  \centering
+    \includegraphics[keepaspectratio, width=\textwidth]{gmz2021_f1.png}
+    \caption{3G network expansion in 2007-2018}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Confidence in governance decreases across the board} 
+\begin{figure}
+  \centering
+    \includegraphics[keepaspectratio, width=0.85\textwidth]{gmz2021_t1.png}
+  
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{More so with uncensored internets and censored traditional media} 
+\begin{figure}
+  \centering
+    \includegraphics[keepaspectratio, width=0.85\textwidth]{gmz2021_t2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decrease in approval driven by corruption detection} 
+\begin{figure}
+  \centering
+    \includegraphics[keepaspectratio, width=0.9\textwidth]{gmz2021_t3.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key takeaways and discussions} 
+Major findings in this paper
+\begin{itemize}\setlength\itemsep{3pt}
+  \item 3G expansion decreases confidence in government
+  \item Effects depends on censorship and corruption levels
+\begin{itemize}\setlength\itemsep{3pt}
+\item Internet censorship raises confidence, traditional media censorship decreases confidence
+\item Effect stronger in more corrupt countries (by detecting new episodes of corruption)
+\end{itemize}
+\item Electoral consequences: Voters disillusioned with incumbents
+\begin{itemize}
+\item Vote share for incumbent $\downarrow$ Anti-establishment populists $\uparrow$
+\end{itemize}
+\end{itemize}\medskip
+Discussions and remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Who benefits from the 3G network?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Nonpopulist oppositions did not gain vote shares
+\item Anti-establishment includes extreme left and right-wing parties
+\end{itemize}
+\item What explains why anti-establishment are well off?
+\begin{itemize}\setlength\itemsep{3pt}
+\item What contents (potentially misinformation)?, Effects and mechanisms of misinformation?
+
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Enikolopov, Marakin, Petrova (2020): Social Media and Protest Participation: Evidence from Russia}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Enikolopov, Marakin, Petrova (2020): \\ Social Media and Protest Participation: Evidence from Russia
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Does social media alleviate collective action problems?}
+Overcoming collective action problems depends on ability to communicate 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Social media allows conversations without intermediaries at low cost
+\item This may lead to enhanced dissemination of information
+\item However, if social media panders to rulers, information may decrease protests
+\item Challenges: Selection bias in social media usage (individual, geographic characteristics)
+\end{itemize}\medskip
+This paper leverages unexpected protests and features of social media (VK) in Russia
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverages political protests in Russia in 2011
+\item Protests more likely in areas where those with close ties to first users of VK lived
+\item Distinguish information vs collective action channels
+\begin{itemize}\setlength\itemsep{3pt}
+\item Information: Increase awareness to those who do not know
+\item Collective action: Facilitate coordination of logistics and peer pressure
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{How social media facilitates protests and application to Russia} 
+Two channels explaining effects of social media on protests
+\begin{itemize}\setlength\itemsep{3pt}
+\item Overall effect: Providing precise information + Assist in coordinating logistics
+\begin{itemize}\setlength\itemsep{3pt}
+\item Information: Negative content $\to$ Protest $\Uparrow$, Positive content $\to$ Protest $\Downarrow$
+\item Coordination: Always raises protests
+\end{itemize}
+\item Coordination augmented by city size: Overcomes large coordination costs in cities 
+\item If critical mass required: Protests occur only if certain threshold of users is reached
+\end{itemize}\medskip
+Russian protests in 2011 and Vkontakte (VK)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Internet usage uncensored in 2011 (increased censoring after protests since 2012)
+\item VK: First users personally approved by founder Pavel Durov - primarily SPSU students
+\begin{itemize}
+  \item Fun fact: Same person who found Telegram
+\end{itemize}
+\item Protests in 2011 against parliamentary election fraud in Dec 2011
+\begin{itemize}
+  \item VK users more aware of election fraud and coordinated protests
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{It is the election where this happened...} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.8\textwidth]{emp2020_f1.jpg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data sources and empirical strategy } 
+Data sources (covering 625 cities in Russia)
+\begin{itemize}\setlength\itemsep{3pt}
+\item City of residence of VK users who joined before 2011 summer
+\item Hand collected protest info (newspapers and online resources, 12/2012 - 05/2012)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Complemented with alternative source from police and organizers 
+\end{itemize}
+\item VK founder cohort matched based on birth year, university, year of study (public)
+\item Election data from Central Election Commission
+\end{itemize}\medskip
+Empirical strategy uses exogenous variation based on location of VK founder's cohort
+\[
+\begin{aligned}
+  \text{OLS}: & Y_{i}= \beta_0 + \beta_1 VK_i + \beta_2 X_i + e_i\\
+  \text{IV}: &VK_i=\gamma_0 + \gamma_1 f(\text{same SPSU cohort as VK founder})_i + \gamma_2 X_i+u_i\\
+\end{aligned}
+\]
+\begin{itemize}\vspace{-10pt}
+\item Verifies that same cohort as VK founder determines (not earlier or later) VK usage
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{VK penetration, instrumented with VK founder cohort, raises protests} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.8\textwidth]{emp2020_t1.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{VK penetration effects larger in bigger cities} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=\textwidth]{emp2020_f2.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Other notable results
+\begin{itemize}\setlength\itemsep{3pt}
+\item Electoral outcomes: VK penetration \textit{raised vote share} of ruling party
+\begin{itemize}\setlength\itemsep{3pt}
+\item On average, more positive contents describing ruling party documented
+\item Voting outcomes only affected by information effect: You vote alone
+\item Protests depends on information and coordination effects
+\item Thus, in this case, information and coordination effects worked in opposite directions
+\end{itemize}
+\end{itemize}\medskip
+Takeaways and remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Social media does increase protests, primarily through coordination channel
+\begin{itemize}\setlength\itemsep{3pt}
+\item Information effect could still repress protests if government propaganda dominates
+\end{itemize}
+\item If different contents exist in social media, which one dominates?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Could be a key to understanding misinformation propagation
+\item Also necessary key to understand polarization on internet?
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\subsection{Gagliarducci, Onorato, Sobbrio, Tabellini (2020): War of the Waves: Radio and Resistance During World War II [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+Gagliarducci, Onorato, Sobbrio, Tabellini (2020): \\ War of the Waves: Radio and Resistance During World War II [student presentation]
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+There are many ways to overcome collective action problems
+\begin{itemize}\setlength\itemsep{3pt}
+\item Role of leaders to stimulate a cause and organize a movements
+\item Media's potential to bring individuals for a common cause
+\begin{itemize}\setlength\itemsep{3pt}
+\item Bring new and accurate information to those who were unaware of it previously
+\item Lower the cost of coordination: Make it easy to reach out to people
+\item Internet can achieve this if it is uncensored and traditional media is censored
+\end{itemize}
+\end{itemize}\medskip
+Remaining questions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leadership can be used to motivate bad things (Tianyi Wang 2021 AER)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Effective ways to hold decision-makers accountable is the key 
+\end{itemize}
+\item Likewise, media could channel negative influence
+\begin{itemize}\setlength\itemsep{3pt}
+\item Misinformation, echo-chamber effect (or both)
+\item What are the ways to mitigate or control misinformation?
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
+
+
