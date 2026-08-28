@@ -1,0 +1,916 @@
+
+\documentclass[aspectratio=169]{beamer}
+
+\mode<presentation>
+\usetheme{Boadilla}
+\definecolor{NTHU1}{RGB}{127,16,132}
+\definecolor{NTHU2}{RGB}{228,210,231}
+\definecolor{blue}{RGB}{30,90,205}
+\definecolor{red}{RGB}{213,94,0}
+\definecolor{green}{RGB}{0,128,0}
+\definecolor{charcoalgray}{RGB}{108,104,104}
+\setbeamercolor{title}{fg=NTHU1}
+\setbeamercolor{frametitle}{fg=NTHU1}
+\setbeamercolor{block title}{bg=NTHU1, fg=white}
+\setbeamercolor{block body}{bg=NTHU2}
+\setbeamercolor{structure}{fg=NTHU1}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{item}{fg=NTHU1}
+\setbeamercolor{subitem}{fg=NTHU1}
+\setbeamercolor{section in toc}{fg=NTHU1}
+\setbeamercolor{description item}{fg=NTHU1}
+\setbeamercolor{caption name}{fg=NTHU1}
+\setbeamercolor{button}{bg=NTHU1, fg=white}
+\setbeamercolor{caption name}{fg=NTHU1}
+\usepackage{graphics}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{bookmark}
+\usepackage{multirow, makecell}
+\usepackage{float}
+\usepackage{fancyvrb}
+\usepackage{caption}
+\captionsetup[figure]{singlelinecheck = false, format= hang, justification=centering}
+\captionsetup[subfigure]{singlelinecheck = false, format= hang, justification=raggedright}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\usepackage{threeparttable}
+\usepackage{appendixnumberbeamer} 
+\usepackage[T1]{fontenc}
+\usepackage[default]{lato} 
+\usepackage{smartdiagram}
+\smartdiagramset{
+  back arrow disabled = true,
+  module minimum width=1cm,
+  module x sep = 3,
+  uniform arrow color=true,
+}
+\usepackage{xcolor}
+\usepackage{colortbl}
+	\definecolor{light-gray}{gray}{0.99}
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{10pt}}{\enditemize}
+\newenvironment{wideenumerate}{\enumerate\addtolength{\itemsep}{10pt}}{\endenumerate}
+\newenvironment{widedescription}{\description\addtolength{\itemsep}{10pt}}{\enddescription}
+\hypersetup{
+colorlinks=true,
+linkcolor=NTHU1,
+filecolor=green, 
+urlcolor=blue,
+}
+\beamertemplatenavigationsymbolsempty
+\setbeamercolor{author in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{title in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{date in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{section in head/foot}{bg=white, fg=NTHU1}
+\setbeamercolor{headline}{bg=white}
+\setbeamertemplate{footline}{
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+            \usebeamerfont{date in head/foot}%\insertdate
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}\hspace*{2em}
+        \end{beamercolorbox}}%
+        \vskip0pt%
+    }
+    %% May need to script the introduction!!!!!!
+%\setbeamercolor{page number in head/foot}{fg=NTHU1}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}{\leavevmode\leftskip=3em\rlap{\hskip-1.75em\inserttocsectionnumber.\inserttocsubsectionnumber}
+\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+%\setbeamertemplate{headline}{%
+  %\begin{beamercolorbox}[ht=5.5ex]{section in head/foot}
+    %\vskip2pt\insertnavigation{0.33\paperwidth}\vskip2pt
+  %\end{beamercolorbox}%
+%}
+\newenvironment{transitionframe}{\setbeamercolor{background canvas}{bg=white}\setbeamertemplate{footline}{} \begin{frame}[noframenumbering]}{\end{frame}}
+
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+
+\title[]{Conflict and Peace} % Change this regularly
+\subtitle[]{Week 2: Economic Incentives behind Conflicts}
+\author[Lee]{Seung-hun Lee }
+\institute[]{Taipei School of Economics\\ National Tsing Hua University}
+
+\date[]{September 12th, 2025}
+
+\begin{document}
+\begin{transitionframe}
+\titlepage
+\end{transitionframe}
+
+
+%%% Color slides for section headers: Use for colloquium version (The ones bewteen \iffals and \fi)
+
+\section{Overview of the topic}
+\begin{frame}
+\frametitle{Stylized facts about conflicts (Blattman, Miguel, 2010)} 
+Many conflicts take form of internal conflicts
+\begin{itemize}\setlength\itemsep{3pt}
+\item Roughly 20-30\% of countries have active civil war/conflicts during 1960-2000s
+\item At a given year: Kill approx 270,000 ppl \& 8.44 mil disability-adjusted life-years $\Downarrow$
+\item Slows down GDP growth (2\% yr) \&  human capital, infrastructure, and institutions $\Downarrow$
+\item Disproportionately affect poorer regions 
+\end{itemize}\medskip
+Economic roots of (civil) wars
+\begin{itemize}\setlength\itemsep{3pt}
+\item Poverty and weak economic growth correlated with conflict onset
+\item Resource abundance raises risk of conflicts via higher rents to be seized
+\item Individuals more inclined to join conflict when returns to work and peace are low 
+\item Weak state capacity to contain conflict leads to longer duration
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Share of wars of different types}
+  \begin{figure}
+    \includegraphics[keepaspectratio,width=0.7\textwidth]{fig5.png}
+    \caption*{Source: Ray, Esteban (2017) ``Conflict and Development", \textit{Annual Reviews of Economics},9,263-293}
+  \end{figure}
+  
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Share of countries with active conflicts each year}
+  \begin{figure}
+    \includegraphics[keepaspectratio,width=0.8\textwidth]{bm2010_f1.jpeg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Disproportionate distribution of conflicts}
+  \begin{figure}
+    \includegraphics[keepaspectratio,width=0.8\textwidth]{bm2010_f2.jpeg}
+  \end{figure}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Why do people fight? (Blattman, 2022)}
+War is costly, yet people fight due to 
+\begin{itemize}\setlength\itemsep{3pt}
+\item \textbf{Unchecked interests:} Decisionmakers that benefit from wars not held accountable
+\item \textbf{Intangible interests:} Preference for values such as identity-based vengeance and glory
+\item \textbf{Uncertainty:} Lack of information on others' (and own) benefits and constraints
+\item \textbf{Commitment Problem:} Inability to trust promises to constrain power over time
+\item \textbf{Misperceptions:} Mistaken beliefs that lead to errors in judgement
+\end{itemize} 
+These are not mutually exclusive \\
+\bigskip
+In all, economic calculuus explains why conflicts occur\\
+\bigskip
+We explore how economics and political science approaches the causes of conflict with these baseline reasons in mind
+\end{frame}
+
+\begin{frame}
+  \frametitle{Why? Still an ongoing problem}
+\begin{figure}
+  \centering
+  % First row
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth, keepaspectratio]{fig1.png}
+    \caption{Israel-Palestine War}
+  \end{subfigure}
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth]{fig2.png}
+    \caption{Russia-Ukraine War}
+  \end{subfigure}
+  
+  % Second row
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth]{fig3.png}
+    \caption{Religious conflict in Burkina Faso}
+  \end{subfigure}
+  \begin{subfigure}{0.4\textwidth}
+    \includegraphics[width=0.75\linewidth]{fig4.png}
+    \caption{Martial law attempt (South Korea)}
+  \end{subfigure}
+
+\end{figure}
+\end{frame}
+
+
+\begin{transitionframe}
+\frametitle{Roadmap for today}
+\tableofcontents
+\end{transitionframe}
+
+\section{Resource and commodity shocks affect conflicts}
+
+
+
+\subsection{Caselli, Morelli, Rohner (2015): The Geography of Interstate Resource Wars}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Caselli, Morelli, Rohner (2015): \\ The Geography of Interstate Resource Wars
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+\begin{frame}
+\frametitle{Q: Resource endowment \& Location $\Rightarrow$ Interstate conflict} 
+Natural resources as triggers of wars
+\begin{itemize}\setlength\itemsep{3pt}
+\item Many individual cases studies, but lack systematic causal estimation
+\item Theoretical predictions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Resource endowments closer to the border $\Rightarrow$ $\Uparrow$ Interstate Conflicts
+\item The farther the resources, more costlier to claim them
+\end{itemize}
+\item Empirical analysis
+\begin{itemize}\setlength\itemsep{3pt}
+\item Negative correlations between distance and conflicts documented
+\item Possible omitted variable bias: Resource-endowed countries innately belligerent?  
+\end{itemize}
+\end{itemize}
+Key innovation and takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Incorporate likelihood of conflicts over geographical setting with asymmetrical payoff
+  \item Model how motives of countries respond to resource values and Acquisition costs
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Correlation between Conflict and distance to resources} 
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{cmr(2015).png}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting up theoretical framework} 
+Setup for the Model (payoffs in the matrix)
+\begin{center}
+\begin{tabular}{|l|c |c |}
+\hline
+& Country B: Peace  &Country B: Conflict\\ \hline
+ Country A: Peace   & $0,0$ & $x+c_A, -x + c_B$ \\ \hline
+ Country A: Conflict &$x+c_A, -x + c_B$ & $x+c_A, -x + c_B$\\ \hline
+\end{tabular}
+\end{center}
+\begin{itemize}\setlength\itemsep{3pt}
+\item $x$ is the payoff of conflict to $A$, $-x$ is the loss from conflict to $B$  (asymmetry)
+\begin{itemize}
+\item If $x>0$: $A$ is the expected winner
+\end{itemize}
+\item $c$ is the net benefit (benefit $-$ cost) of conflict
+\begin{itemize}
+\item Usually $c<0$: Conflicts are very costly..!
+\end{itemize}
+\item Peace persists if
+\begin{itemize}
+  \item for A: $0\geq x+c_A $ and for B: $0\geq -x + c_B \Rrightarrow c_B \leq x \leq -c_A$
+  \item i.e. Conflicts are costly ($c_A$ and $c_B$ far below zero) and gains from conflicts ($x$) is small
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Takeaways from the framework} 
+Testible predictions
+\begin{itemize}\setlength\itemsep{3pt}
+\item Higher asymmetric payoff ($x\Uparrow $) $\Rrightarrow$ Conflict rises
+\begin{itemize}
+\item One country has oil > None have oil
+\item Two countries have oil > None have oil
+\item One country has oil > Two countries have oil (smaller asymmetry in the latter)
+\end{itemize} \medskip
+\item Conflict inversely related with cost of acquisition (distance) 
+\begin{itemize}
+\item One country has oil: Conflict rises when oil is close
+\item Both have oil: Changes in distance that increses oil presence asymmetry increase conflicts
+\end{itemize} \medskip
+\item Overall: Payoff asymmetry and lesser cost of acquisition makes conflicts likely
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and Identification} 
+Sources of data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Dyadic Militarized Interstate Dispute dataset with 0-5 scale for conflict intensity
+
+\item Explanatory variables
+\begin{itemize}
+\item Georeferenced oil data (PETRODATA) $+$ Distance from borders from CShapes dataset
+\item Control: land area, GDP per capita, population, democracy, trade, among others
+\end{itemize}
+\end{itemize} \medskip
+Regression Approach (by country pair ($d$)-year ($t$))
+\[
+\begin{aligned}
+Y_{d,t+1}&=\alpha+\beta\text{One}_{d,t}+\gamma{\text{One}\times\text{Dist}}_{d,t} \\ 
+&+\delta\text{Both}_{d,t}+\eta{\text{Both}\times\text{MinDist}}_{d,t}+{\text{Both}\times\text{MaxDist}}_{d,t}+\xi X_{d,t}+u_{d,t}
+\end{aligned}
+\]
+\begin{itemize}\setlength\itemsep{3pt}
+\item (None/One/Both) countries in pair $d$ has resources
+\item Control for distance from border (MinDist: Smaller of the distances where Both $=1$)
+\item Comparison relative to country pairs without any oils (None)
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Key Results} 
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{cmr2015_t1.jpeg}
+\end{figure}
+\begin{itemize}
+\item When all are controlled, Oil presence $\to$ $\Uparrow$ Conflcit and $\Uparrow$ Dist $\to$ $\Downarrow$ Conflict
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mechanism and discussion} 
+Findings are robust to
+\begin{itemize}\setlength\itemsep{3pt}
+\item Different measures of conflicts (Full scale war only, disupte intensity)
+  \item Controlling for oil production/reserve amounts
+\item Estimation methods (Logit, Probit regressions)
+\item Reducing sample to cases where there were no border changes
+\end{itemize} \medskip
+Key takeaways from the paper
+\begin{itemize}\setlength\itemsep{3pt}
+\item Asymmetrical oil presence $\to$ $\Uparrow$ Conflicts
+\item Distance matters: $\Uparrow$ Distance to oil $\to$ $\Downarrow$ Conflict
+\item Most dangerous: Only one country has oil, and it is close 
+\item Thus, conflicts increase when gains are asymmetric and costs of acquisition are low
+\end{itemize}
+\end{frame}
+
+
+
+\subsection{Dube, Vargas (2013): Comodity Price Shocks and Civil Conflict: Evidence from Colombia}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Dube, Vargas (2013): \\ Comodity Price Shocks and Civil Conflict: Evidence from Colombia
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do different income shocks affect conflicts?} 
+Relationship between income and conflict: Complicated
+\begin{itemize}\setlength\itemsep{3pt}
+\item Reduce conflicts: Wages $\Uparrow$ \& Labor supplied to conflict $\Downarrow$ (opporunity cost effect)
+ \item Increase conflcits: Spoils to fight over $\Uparrow$ (rapacity channel)
+ \begin{itemize}
+\item Presumably, different types of income shocks lead to different effect on conflicts
+\end{itemize}
+\end{itemize}
+\medskip
+This paper leverages different sources of income shocks to answer this dilemma
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Colombia: Long history of civil conflicts, with high escalation in 1990s
+\item Agricultural goods (labor-intensivity $\Uparrow$) vs Natural resource prices (labor-intensivity $\Downarrow$)
+ \begin{itemize}
+\item Coffee vs Oil: Colombia's biggest exports
+\end{itemize}
+\item Use variation in municipal conflict incidence and commodity distribution in Colombia
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{History of civil conflicts in Colombia} 
+Long history of civil wars
+\begin{itemize}\setlength\itemsep{3pt}
+\item Left-wing guerrilla (FARC, ELN) vs govt vs right-wing paramilitaries (Oficina Cartel etc)
+\item Rooted in \textit{La Violencia} in 1948, current form took place in 1960s
+\item Heightened in 1990s, ongoing low-intensity fights despite peace agreement in 2016
+\end{itemize}
+\medskip
+What did they fight over?
+\begin{itemize}\setlength\itemsep{3pt}
+\item Appropriate resource returns, government revenues through various channels
+\item Coffee returns huge: One of the largest exporters in the world
+\item Actively recruited rural workers by paying wages over minimum wage
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Data and empirical strategy} 
+Sources of (some of the) data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflict Analysis Resource Center (CERAC) for civil war episodes: 1988-2005
+\item Commodity distribution: Agricultural land area, oil/gold production, coca production
+\item Price: International Coffee Organization and Internatinal Financial Statistics  
+\end{itemize} \medskip
+Empirical strategy 
+\begin{itemize}\setlength\itemsep{3pt}
+\item DID with IV for coffee prices:  Colombian conflicts $\to$ prices directly (reverse causality)
+\[
+Y_{jrt} = \alpha_j + \beta_t + \delta_r t + \gamma\text{Coca}_{jr}t+\lambda(\text{Oil}_{jr}\times PO_t)+\rho(\widehat{\text{Coffee}_{jr}\times PC_t}) + \phi X_{jrt}+e_{jrt}
+\]
+\item Rainfall $\times$ Temperature $\times$ Exports of other big producers as IV
+\begin{footnotesize}
+\[
+\text{Coffee}_{jr}\times PC_t = \alpha_j + \beta_t + \delta_r t + \gamma\text{Coca}_{jr}t+\lambda(\text{Oil}_{jr}\times PO_t) + \sum_{m=0}^1\sum_{n=0}^1\theta_{mn}(R_{jr}^m\times T_{jr}^n\times E_{t})+ \phi X_{jrt}+e_{jrt}
+\]
+\end{footnotesize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Descriptive findings} 
+\begin{figure}
+\centering
+\begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{dv2013_f4.jpeg}
+  \caption{Coffee price \& trend of violence in coffee vs non-coffee municipalities}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{dv2013_f5.jpeg}
+  \caption{Oil price \& trend of violence in oil vs non-oil municipalities}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Overall effect on violence}
+  \begin{figure}
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{dv2013_t2.jpeg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Leading mechanism behind the outcomes}
+  \begin{figure}
+  \includegraphics[keepaspectratio, width=0.8\textwidth]{dv2013_t3.jpeg}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion} 
+Robustness of the outcomes and ruling out other mechanisms
+\begin{itemize}\setlength\itemsep{3pt}
+\item Results consistent when substitute commodities are used
+\begin{itemize}\setlength\itemsep{3pt}
+\item Oil $\to$ Coal and Gold
+\end{itemize}
+\item Not driven by changes in population composition following conflict-induced migration
+\item Not affected by decreasing government presence or enforcement (increases instead)
+\item Results unaffected when coca-production is accounted for
+\end{itemize}
+\medskip
+Key takeaways from the paper
+\begin{itemize}\setlength\itemsep{3pt}
+\item Different commodity price shocks trigger different channels of conflict
+\item Labor-intensive price $\Uparrow$ $\to$ Opportunity cost of forgoing labor $\Uparrow$ $\to$ Conflict $\Downarrow$
+\item Less labor-intensive price $\Uparrow$ $\to$ Maximizable rents $\Uparrow$ $\to$ Conflict $\Uparrow$
+
+\end{itemize}
+\end{frame}
+
+\subsection{McGuirk, Burke (2020): The Economic Origins of Conflict in Africa}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  McGuirk, Burke (2020): \\ The Economic Origins of Conflict in Africa
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How do price shocks differently affect producers \& consumers?}
+Explaining how economic shocks can affect conflict is tricky
+\begin{itemize}\setlength\itemsep{3pt}
+\item Shocks to opportunity cost also affect spoils and capacity to repel insurgents
+\item Income may affect conflict, and vice versa (reverse causality)
+\item Both income and conflict may be affected by omitted factors (legal institutions)
+\end{itemize}\medskip
+This paper differentiates incidence of conflicts by actors and motives 
+\begin{itemize}\setlength\itemsep{3pt}
+\item Leverage food price shocks and differences in food-production across households
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Grain price $\Uparrow$ $\to$ Income $\Uparrow$ for producers ($\because$ Higher returns on food production)
+  \item Grain price $\Uparrow$ $\to$ Real Income $\Downarrow$ for consuming households ($\because$ Spend more on food)
+\end{itemize}
+\item Conflict may take different forms
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Conflict over land, workers, and resources (factor conflict) - aim to displace population
+  \item Conflict over splitting spoils (output conflict) - more transient
+\end{itemize}
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Theoretical framework}
+Setting
+\begin{itemize}\setlength\itemsep{3pt}
+\item Consider an economy of producers (landownders) and consumers (work or fight)
+\item Food price changes affect returns from land \& relative wages between work vs fighting
+\end{itemize}\medskip
+Factor conflict
+\begin{itemize}\setlength\itemsep{3pt}
+\item Producer price $\Downarrow\to$ Farming returns $\Downarrow$. Consumper prices $\Uparrow\to$ Income $\Downarrow$ \& Fight $\Uparrow$
+\item Crop price $\Uparrow$: Reduce factor conflict for producers ($\because$ choose farming over attacking)
+\item  Crop price $\Uparrow$: Increase conflict for consumers ($\because$ choose high-paying armed groups)
+\end{itemize}\medskip
+Output conflict
+\begin{itemize}\setlength\itemsep{3pt}
+\item Both consumers and producers can appropriate returns from food price increase
+\item With higher spoils available,  Crop price $\Uparrow\to$ Conflict $\Uparrow$ for both
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and Empirical Strategy}
+Data sources at the grid level data
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflict: UCDP, ACLED, and Afrobarometer
+\begin{itemize}\setlength\itemsep{3pt}
+\item Factor conflict: involve more organized groups using UCDP
+  \item Output conflict: riots and violence against civilians using ACLED and Afrobarometer
+\end{itemize}
+\item Food/consumer price: Spatial distribution of crops + annual world price (UNFAO)
+\end{itemize}\medskip
+Empirical strategy leverage price and conflict variations at cell $i$, country $l$, and year $t$
+\[
+\begin{aligned}
+\text{Factor conflict}_{ilt} &=\alpha_i + \sum_{k=0}^2 \beta^p_{ilt-k}\text{PPI}_{ilt-k}+\sum_{k=0}^2 \beta^m_{ilt-k}\text{CPI}_{ilt-k} + \gamma_l\times t + e_{ilt}\\
+\text{Output conflict}_{ilt} &= \alpha_i+ \sum_{k=0}^2 \theta^p_{ilt-k}\text{PPI}_{ilt-k}+\sum_{k=0}^2 \theta^m_{ilt-k}\text{CPI}_{ilt-k} + \gamma_l\times t + e_{ilt}
+\end{aligned}
+\]
+\begin{itemize}\setlength\itemsep{3pt}
+\item Hypotheses: $\beta^p<0$, but $\beta^m, \theta^p, \theta^m>0$
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Descriptive trends in conflict incidence}
+\begin{figure}
+\centering
+\begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{mb2020_f1a.jpeg}
+  \caption{Factor conflicts and food price}
+\end{subfigure}
+\begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio, width=\textwidth]{mb2020_fb2.jpeg}
+  \caption{Output conflicts and food price}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Regression results}
+\begin{figure}
+\centering
+\begin{subfigure}{0.425\textwidth}
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{mb2020_t1.jpeg}
+  \caption{Factor conflicts and food price}
+\end{subfigure}
+\begin{subfigure}{0.425\textwidth}
+  \includegraphics[keepaspectratio, width=0.9\textwidth]{mb2020_t2.jpeg}
+  \caption{Output conflicts and food price}
+\end{subfigure}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Notable heterogeneity of effects}
+Effects are weaker in more economically developed areas (factor conflicts)
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Uses nightlight luminosity to proxy economic development (Table 3)
+  \item Coefficient on CPI $\times$ luminosity $<0$
+  \item Incidence of conflicts after price shocks less likely in more developed areas
+  \item These areas suffer less income shocks compared to poorer areas
+\end{itemize} \medskip
+Shocks to food prices have greater impact than cash crop prices
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Cash crops: Non-food crops that does not impact real income of consumers
+  \item Food crop price $\Uparrow\to$  Conflict $\Uparrow$, Cash crop price $\Uparrow\to$  Conflict $\Downarrow$ 
+\end{itemize} \medskip
+These results suggest household-level economic shocks determine decision to fight
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion}
+Income shocks matter
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Uses price changes that generate opposing income shocks within countries 
+  \item Finds opposing trends in the incidence of conflicts within countries
+  \item Rules out the explanation that state's capacity to deter insurgency explains conflicts
+  \item Advances the discussion using much more localized data than in the past
+\end{itemize} \medskip
+Where to go forward
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Need to locally tailor policy response aimed at minimizing violence
+  \begin{itemize}\setlength\itemsep{3pt}
+    \item Workfare programs for rural areas (keep opportunity cost of joining conflicts high)
+    \item Buffer stocks or insurance products to shelter consumers from negative income shocks
+    \end{itemize} 
+  \item Political/historical grievances may still play a role in conflict incidence (Next week)
+  
+\end{itemize} \medskip
+\end{frame}
+
+
+
+\subsection{Cao, Chen (2022): Rebel on the Canal: Disrupted Trade Access and Social Conflict in China, 1650-1911 [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Cao, Chen (2022): \\ Rebel on the Canal: Disrupted Trade Access and Social Conflict in China, 1650-1911 \\  (student presentation)
+    }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+
+
+
+
+\section{Economic opportunities to individuals explain conflicts}
+\subsection{Shapiro, Vanden Eynde (2023): Fiscal Incentives for Conflict: Evidence from India's Red Corridor}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+ Shapiro, Vanden Eynde (2023): \\ Fiscal Incentives for Conflict: Evidence from India's Red Corridor }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: How does tax revenue structures affect conflict outcomes?} 
+Fiscal revenue structures can shape incentives and prizes for conflict
+\begin{itemize}\setlength\itemsep{3pt}
+\item Differentiated revenue and expenditure stream in decentralized contexts
+\item Resource royalties are shared with small number of local governments
+\item Distribution of such royalties can lead to violence, $\to$ Govt fail to internalize benefits
+\end{itemize} \medskip
+This paper
+\begin{itemize}\setlength\itemsep{3pt}
+\item Utilizes variations in resource royalties across time and types of resources
+\begin{itemize}\setlength\itemsep{3pt}
+\item 10-fold increase in iron royalty to states 
+\item Compare with other resources witout such hikes
+\end{itemize}
+\item Document rise in state-vs-insurgent conflicts, with aim to take control of these zones
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Maoist Conflict in India} 
+Fiscal structure in India
+\begin{itemize}\setlength\itemsep{3pt}
+\item Central govt sets royalty rates on minerals
+\item State govt owns resources and receives revenues, but cannot set own rates
+\item Iron ore royalty to states $\times10$ since `09: Royalty $\Uparrow$ and Price $\Uparrow$ 
+\end{itemize}\medskip
+Mining in India
+\begin{itemize}\setlength\itemsep{3pt}
+\item Largest producers of iron, bauxite, and coal
+\item Maoist rebels benefit: Take control of mining areas + Extortion from miners
+\end{itemize}\medskip
+Maoist conflicts (Naxalite)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Communist uprising against that started as low intensity in 1960s
+\item Intensified in 2004 following merger of two major factions
+\item Claimed 5,000+ lives in `07-`13, prevalent in center-east regions (Red Corridor region)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Red Corridor in India} 
+\begin{figure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{sve2023a.jpeg}
+  \end{subfigure}
+  \begin{subfigure}{0.49\textwidth}
+  \includegraphics[keepaspectratio,width=\textwidth]{sve2023_a1.jpeg}
+  \end{subfigure}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Data and Empirics} 
+Data Sources
+\begin{itemize}\setlength\itemsep{3pt}
+\item Conflict data: South Asia Terrorism Portal (2017-13)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Maoist $\to$ Police, and vice versa, at district level
+\end{itemize}
+  \item Mineral endowments: Geological Survey of India + satellite imagery
+\end{itemize}\medskip
+Empirical Strategy: Diff-in-diff using introduction of royalty reforms
+\begin{itemize}\setlength\itemsep{3pt}
+\item OLS with Fixed effects: Compare districts with different iron endowments
+\[
+y_{ist}=\alpha_i + \beta \text{Iron}_{is}\times\text{Post}_t+ \gamma \text{Iron}_{is}\times\log{\text{Iron price}}_t + \mu_{st}+e_{ist}
+\]
+\item Main parameter: $\beta$ (Effect of reforms on iron-producing areas)
+\item Control for international iron price: Value of iron itself could affect conflicts 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Incidence and intensity of violence rises} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{sve2023_t2.jpeg}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Mean of $\log(\text{Iron})$: 1.7 $\to$ What happens by moving from no-iron to mean-iron area?
+\item Incidence: Police-on-Maoist violence 12 p.p (=0.068 $\times$ 1.7)$\Uparrow$
+\item Intensity: Increase by 12\% and 10\% each (=0.056 $\times$ 1.7)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Red Corridor in India} 
+\begin{figure}
+  \includegraphics[keepaspectratio,width=0.9\textwidth]{sve2023_t3.jpeg}
+\end{figure}
+\begin{itemize}\setlength\itemsep{3pt}
+\item Increase in illegal mining by 15 p.p
+\item State's counterinsurgency $\uparrow$ for rents or miners help Maoists to keep illegal activities
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Discussion} 
+What drives violence (or not)
+\begin{itemize}\setlength\itemsep{3pt}
+\item Effect fades out: State seeems to have established control 
+\item Not driven by resource prices: No statistical relationship with conflicts
+\item This effect not shown with other types of resources
+\item Changes in incentives: Reflected in illegal mining activities
+\end{itemize}
+Takeaways
+\begin{itemize}\setlength\itemsep{3pt}
+\item Fiscal revenue structure can explain conflicts
+\item Driven by increased security efforts or miners funding conflict to avoid royalties
+\item There are cases where bandits take over, especially in state absence \\ (See Sanchez de la Sierra 2020, to be covered later in semester)
+\end{itemize}
+
+\end{frame}
+
+
+\subsection{Blattman, Annan (2016): Can Employment Reduce Lawlessness and Rebellion?}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+ Blattman, Annan (2016): \\ Can Employment Reduce Lawlessness and Rebellion? }
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Q: Does incentives to individuals affect conflict participation} 
+Many fragile states provide work to deter interest in conflicts and illicit activities
+\begin{itemize}\setlength\itemsep{3pt}
+\item Aim to stimulate employment by providing capital and training 
+\item Decrease incentives for illegal work
+\item Provide income to integrate soldiers back into economy
+\end{itemize} \medskip
+However, ex-fighters (High-risk men) are different
+\begin{itemize}\setlength\itemsep{3pt}
+\item Comparative advantage in violence over human/social capital
+\item Generally show lack of interest in existing rehabilitation programs
+\end{itemize}\medskip
+This paper experimentally assesses the effect of providing capital on conflict participation
+\begin{itemize}\setlength\itemsep{3pt}
+\item Experiments effects of providing agricultural training and capital inputs to ex-soldiers
+\item Highlights that long-run economic incentives can deter conflict participation
+\end{itemize}\medskip
+\end{frame}
+
+\begin{frame}
+\frametitle{Liberian Civil wars} 
+History
+\begin{itemize}\setlength\itemsep{3pt}
+\item Civil wars in 1989-1996 and 1999-2003
+\item Killed 10\% of population, with many young men recruited to fight
+\item By 2008: Ex-soldiers engaged in illicit activities while clustered in remote `hotspots'
+\end{itemize} \medskip
+Experiment
+\begin{itemize}\setlength\itemsep{3pt}
+\item Takes place in 2009 in two regions (Bong and Sinoe)
+\item Trains agricultural skills and social skills during program
+\item After graduation, participants provided with farming tools worth around \$125 
+\item Note that some were given cash (implementation mistakes)
+\end{itemize}\medskip
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Research Design} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.45\textwidth]{ba2016_f1.jpeg}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Empirical Strategy} 
+\begin{itemize}
+\item Program assignment randomized: OLS regression between treated vs control group
+\item Randomized within blocks defined by training site, rank, community
+\end{itemize}
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.5\textwidth]{ba2016_t1.jpeg}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Shift away from illicit activities to agriculture} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.67\textwidth]{ba2016_t3.jpeg}
+\end{figure}
+\begin{itemize}
+\item More interest in agriculuture, but not complete shift from illicit activities
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Decreased interst in violence following the program} 
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.67\textwidth]{ba2016_t4.jpeg}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Other notable outcomes and discussions} 
+Other findings
+\begin{itemize}\setlength\itemsep{3pt}
+\item Limited effect on networking and integration
+\begin{itemize}\setlength\itemsep{3pt}
+\item Combintation of economic interventions and other social interventions required?
+\end{itemize}
+\item Impacts of training alone without capital lower
+\begin{itemize}\setlength\itemsep{3pt}
+\item Provision of \textit{long-run} economic incentives required for effective rehabilitation
+\end{itemize}
+\end{itemize} \medskip
+Takeaway
+\begin{itemize}\setlength\itemsep{3pt}
+\item Individual's decision to participate in illicit activities respond to economic margins
+\item However, these should come with long-run horizons and may not affect integration
+\item Economic and behavioral treatment suggested for effective rehabiliation \\ (also generalizable to developed countries)
+\end{itemize}\medskip
+\end{frame}
+
+\subsection{Berman et al (2011): Do Working Men Rebel? Insurgency and Unemployment in Afghanistan, Iraq, and the Philippines [student presentation]}
+\begin{transitionframe}
+\begin{center}
+  \begin{huge}
+    \textcolor{NTHU1}{%
+  Berman et al (2011): \\ Do Working Men Rebel? Insurgency and Unemployment in Afghanistan, Iraq, and the Philippines [student presentation]}
+  \end{huge}
+\end{center}
+\end{transitionframe}
+
+\begin{frame}
+\frametitle{Takeaways and remaining questions} 
+Economic incentives do determine decision to fight
+\begin{itemize}\setlength\itemsep{3pt}
+  \item Resource endowments shape returns from participating in war vs peaceful activities
+  \item High opportunity costs deter participating in conflicts
+  \item Individual incentives matter: Largely comes from benefits of labor market vs conflicts
+\end{itemize} \medskip
+Unanswered questions
+\begin{itemize}\setlength\itemsep{3pt}
+  \item How to design incentives to deter interest in conflicts?
+  \item Some institutions prevent incentives from spilling into conflicts: What? How?
+  \item Other determinants of conflict: Cultural factors, misperceptions from misinformation, among other things
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%
+\end{document}
